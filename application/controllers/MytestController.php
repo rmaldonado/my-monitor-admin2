@@ -10,12 +10,18 @@ class MytestController extends CController
     
     public function actionGetmap()
     {
-        echo "getMap";
+        //echo "getMap";
         $act = $this->getAction();
         $req = Yii::app()->getRequest();
         $id = $req->getParam("id");
         $mod = new UserEvents();
-        var_dump($mod);
+        $view = 'getmap';
+        $viewdata = array(
+            'ppt' => array(
+                    'kk' => 'sdfsfds'
+                ),
+        );
+        $this->render($view, $viewdata);
         
     }
 }
