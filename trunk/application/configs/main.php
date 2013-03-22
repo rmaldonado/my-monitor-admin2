@@ -25,6 +25,12 @@ return array(
 		),
         'errorHandler'=>array(
             'errorAction'   => 'site/error',
+        ),
+        'viewRenderer'=>array(
+          'class'=>'SmartyViewRenderer',
+            'fileExtension' => '.tpl',
+            //'pluginsDir' => 'application.smartyPlugins',
+            //'configDir' => 'application.smartyConfig',
         ),        
 	),
     'params'    => require(dirname(__FILE__).'/params.php'),
