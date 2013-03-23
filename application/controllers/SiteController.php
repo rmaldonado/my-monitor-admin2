@@ -22,7 +22,7 @@ class SiteController extends CController implements IWebServiceProvider
 	 */
 	public function actionIndex()
 	{
-		$this->render('index');
+		//$this->render('index');
 	}
 
 	/**
