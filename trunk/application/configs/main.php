@@ -16,7 +16,7 @@ return array(
 	// application components
 	'components'    => array(
 		'db'=>array(
-			'connectionString'  => 'mysql:host=html5test.db;port=7788;dbname=html5test',
+			'connectionString'  => getenv('MYSQL_DSN_HTML5'),
 			'emulatePrepare'    => true,
 			'username'          => 'html5test',
 			'password'          => 'html5test',

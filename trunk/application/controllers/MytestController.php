@@ -5,7 +5,7 @@ class MytestController extends CController
     //put your code here
     public function actionIndex()
     {
-
+         echo 'sdfsdf';
     }
     
     public function actionGetmap()

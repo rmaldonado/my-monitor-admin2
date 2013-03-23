@@ -17,7 +17,7 @@ class SmartyViewRenderer extends CApplicationComponent implements IViewRenderer
         
     }
     
-    public function renderFile($context, $file, $data = null, $return = null)
+    public function renderFile($context, $file, $data, $return)
     {
         if (is_array($data)) 
         {
