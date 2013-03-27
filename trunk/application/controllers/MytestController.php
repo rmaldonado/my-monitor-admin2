@@ -1,6 +1,6 @@
 <?php
 
-class MytestController extends CController
+class MytestController extends LoomController
 {
     //put your code here
     public function actionIndex()
@@ -21,8 +21,17 @@ class MytestController extends CController
                     'kk' => 'sdfsfds'
                 ),
         );
+        
         $this->render($view, $viewdata);
         
+    }
+    
+    public function actionStatic()
+    {
+        $view = 'static';
+        $viewdata = array();
+
+        $this->render($view, $viewdata);
     }
 }
 
