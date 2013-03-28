@@ -15,6 +15,10 @@ return array(
 
 	// application components
 	'components'    => array(
+        'user'  => array(
+            'allowAutoLogin'    => false,
+            'loginUrl'          => array('luser/login'),
+        ),
 		'db'=>array(
 			'connectionString'  => getenv('MYSQL_DSN_HTML5'),
 			'emulatePrepare'    => true,

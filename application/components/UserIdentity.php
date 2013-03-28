@@ -1,10 +1,4 @@
 <?php
-
-/**
- * UserIdentity represents the data needed to identity a user.
- * It contains the authentication method that checks if the provided
- * data can identity the user.
- */
 class UserIdentity extends CUserIdentity
 {
 	/**
@@ -18,10 +12,11 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		if($this->username==='demo' && $this->password==='demo')
+		if($this->username ==='demo' && $this->password === 'demo')
 			$this->errorCode=self::ERROR_NONE;
 		else
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+        
 		return !$this->errorCode;
 	}
 }
