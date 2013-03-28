@@ -27,11 +27,7 @@
                 <div class="page-header">
                     <?php $this->beginContent('/layouts/bodynav');$this->endContent();?>
                 </div>
-                <div class="row-fluid">
-                    <div class="span12">
-                        <?php echo $content; ?>
-                    </div>
-                </div>  
+                <?php echo $content; ?> 
             </div>            
                 
             </div>

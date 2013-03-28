@@ -33,5 +33,12 @@ class MytestController extends LoomController
 
         $this->render($view, $viewdata);
     }
+    
+    public function actionPlot()
+    {
+        $view = 'plot';
+        $viewdata = array();
+        $this->render($view, $viewdata);
+    }
 }
 
