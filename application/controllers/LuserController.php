@@ -12,6 +12,7 @@ class LuserController extends LoomController {
     }
     
     public function actionLogin() {
+        print_r($_REQUEST);
         var_dump(Yii::app()->user);
     }
 }
