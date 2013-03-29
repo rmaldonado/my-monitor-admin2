@@ -15,6 +15,13 @@ return array(
 
 	// application components
 	'components'    => array(
+        'request'   => array(
+            'baseUrl'   => '/loom',
+        ),
+        'urlManager'=>array(
+            'urlFormat'=>'path',
+            'showScriptName'  => false,
+        ),
         'user'  => array(
             'allowAutoLogin'    => false,
             'loginUrl'          => array('luser/login'),
