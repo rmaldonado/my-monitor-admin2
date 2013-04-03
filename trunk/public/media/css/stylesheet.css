@@ -430,7 +430,7 @@ div.tagsinput div input{line-height: 20px; height: 20px; font-size: 11px; margin
     /* Buttons */    
     .btn, .btn-group .btn,
     .btn-group > .btn:first-child,
-    .btn-group > .btn:last-child{font-size: 11px;}
+    .btn-group > .btn:last-child{font-size: 14px;}
     
         .btn.btn-large{font-size: 12px;}
         .btn [class^='ico']{margin-top: 0px;}
