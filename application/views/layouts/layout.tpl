@@ -6,32 +6,29 @@
     <!--[if gt IE 8]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
     <![endif]-->                
-    <title>SITETITLE_PREFIX</title>
-    <?php $this->beginContent('/layouts/mediascripts');$this->endContent();?>
-    
+    <title>{$SITETITLE_PREFIX}</title>
+    {include file="{$SMARTY_TPL_PATH}/layouts/mediascripts.tpl"}    
 </head>
 <body>    
     <div id="loader"><img src="/media/img/loader.gif"/></div>
     <div class="wrapper">
         
         <div class="sidebar">
-            <?php $this->beginContent('/layouts/sidebar');$this->endContent();?>
+            {include file="{$SMARTY_TPL_PATH}/layouts/sidebar.tpl"}
         </div>
         
         <div class="body">            
             <ul class="navigation">
-                <?php $this->beginContent('/layouts/topnav');$this->endContent();?>
+                {include file="{$SMARTY_TPL_PATH}/layouts/topnav.tpl"}
             </ul>
             
             <div class="content"> 
-                <div class="page-header">
-                    <?php $this->beginContent('/layouts/bodynav');$this->endContent();?>
-                </div>
-                <?php echo $content; ?> 
+                {$content}
             </div>            
                 
             </div>
     </div>        
     <div class="dialog" id="source" style="display: none;" title="Source"></div>
+    <div style="margin-top:8px; text-align: center; color:#999;"> Eweilian Tech. &copy; 2013 - 2014 </div>
 </body>
 </html>

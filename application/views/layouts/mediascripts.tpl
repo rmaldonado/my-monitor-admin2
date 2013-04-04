@@ -11,12 +11,17 @@
 <script type='text/javascript' src='/media/js/plugins/jquery/globalize.js'></script>
 <script type='text/javascript' src='/media/js/plugins/other/excanvas.js'></script>
 
+<script type='text/javascript' src='/media/js/plugins/jflot/jquery.flot.js'></script>    
+<script type='text/javascript' src='/media/js/plugins/jflot/jquery.flot.stack.js'></script>    
+<script type='text/javascript' src='/media/js/plugins/jflot/jquery.flot.pie.js'></script>
+<script type='text/javascript' src='/media/js/plugins/jflot/jquery.flot.resize.js'></script>
 <script type='text/javascript' src='/media/js/plugins/other/jquery.mousewheel.min.js'></script>
 
 <script type='text/javascript' src='/media/js/plugins/bootstrap/bootstrap.min.js'></script>            
 
 <script type='text/javascript' src='/media/js/plugins/cookies/jquery.cookies.2.2.0.min.js'></script>
-
+ <script type='text/javascript' src='/media/js/plugins/sparklines/jquery.sparkline.min.js'></script>
+<script type='text/javascript' src='/media/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
 <script type='text/javascript' src="/media/js/plugins/uniform/jquery.uniform.min.js"></script>
 
 <script type='text/javascript' src='/media/js/plugins/datatables/jquery.dataTables.min.js'></script>
