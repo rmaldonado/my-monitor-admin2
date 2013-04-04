@@ -1,7 +1,7 @@
 <?php
-class UserIdentity extends CUserIdentity
+class LUserIdentity extends CUserIdentity
 {
-        private $_id;
+        private $_fid;
 	/**
 	 * Validates the username and password.
 	 * This method should check the validity of the provided username
@@ -13,16 +13,17 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
+            
 		if($this->username ==='demo' && $this->password === 'demo')
 			$this->errorCode=self::ERROR_NONE;
 		else
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
                 $this->errorCode = self::ERROR_NONE;
-                $this->_id = 33;
+                $this->_fid = 33;
 		return !$this->errorCode;
 	}
         
         public function getId() {
-            return $this->_id;
+            return $this->_fid;
         }
 }
