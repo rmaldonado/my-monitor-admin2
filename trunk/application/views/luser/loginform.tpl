@@ -40,7 +40,7 @@
 </head>
 <body>    
     <div id="loader"><img src="/media/img/loader.gif"/></div>
-       
+    <form method="post" action="">  
     <div class="login">
 
         <div class="page-header">
@@ -53,12 +53,12 @@
         <div class="row-fluid">
             <div class="row-form">
                 <div class="span12">
-                    <input type="text" name="login" placeholder="用户名"/>
+                    <input type="text" name="luserid" placeholder="用户名"/>
                 </div>
             </div>
             <div class="row-form">
                 <div class="span12">
-                    <input type="text" name="password" placeholder="密码"/>
+                    <input type="text" name="lpasswd" placeholder="密码"/>
                 </div>            
             </div>
             {*<div class="row-form">
@@ -73,6 +73,6 @@
             </div>
         </div>
     </div>
-    
+    </form>
 </body>
 </html>
