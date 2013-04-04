@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 <div class="top">
     <a href="index.html" class="logo"></a>
     <div class="search">
@@ -13,24 +9,15 @@
 </div>
 
 <ul class="navigation">
-    <?php
-        $menuStr = '';
-        foreach ($this->menus['items'] as $menuRow) {
-            
-            $menuStr .= '<li><a href="'.$menuRow['url'] . '" class="' . $menuRow['class'] . '">' . $menuRow['label'] . '</a>';
-            if (isset($menuRow['items']) && is_array($menuRow['items']))
-            {
-                $menuStr .= '<div class="open"></div><ul>';
-                foreach ($menuRow['items'] as $subRow)
-                {
-                    $menuStr .= '<li><a href="' . $subRow['url'] . '">' . $subRow['label'] . '</a></li>';
-                }
-                $menuStr .= '</ul>';
-            }
-            $menuStr .= '</li>';
-        }
-        echo $menuStr;
-    ?>
+        {foreach $sidebarMenus.items as $menuRow }
+            {if isset($menuRow.items) && is_array($menuRow.items)}
+                {foreach $menuRow.items as $subRow}
+                    <li><a href="{$subRow.url}">{$subRow.label}</a></li>
+                {/foreach}
+            {else}
+                <li><a href="{$menuRow.url}" class="{$menuRow.class}">{$menuRow.label}</a>    
+            {/if}
+        {/foreach}
     <li>
         <a href="#" class="blgreen">Forms Stuff</a>
         <div class="open"></div>

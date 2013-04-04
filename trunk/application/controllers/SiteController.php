@@ -1,52 +1,43 @@
 <?php
 
-class SiteController extends CController implements IWebServiceProvider
+class SiteController extends LoomController
 {
-	/**
-	 * Declares the 'phonebook' Web service action.
-	 */
-	public function actions()
-	{
-		return array(
-			'phonebook'=>array(
-				'class'=>'CWebServiceAction',
-				'classMap'=>array(
-					'Contact',
-				),
-			),
-		);
-	}
 
 	/**
 	 * This is the default action that displays the phonebook Flex client.
 	 */
 	public function actionIndex()
 	{
-		//$this->render('index');
+            $data = array(
+                'site_page_title'   => 'ffff',
+            );
+            
+            $this->view->testvars = $data;
+            $this->render('index', $data);
 	}
 
-	/**
-	 * This action serves as a SOAP client to test the phonebook Web service.
-	 */
-	public function actionTest()
-	{
-		$wsdlUrl=Yii::app()->request->hostInfo.$this->createUrl('phonebook');
-		$client=new SoapClient($wsdlUrl);
-		echo "<pre>";
-		echo "login...\n";
-		$client->login('demo','demo');
-		echo "fetching all contacts\n";
-		print_r($client->getContacts());
-		echo "\ninserting a new contact...";
-		$contact=new Contact;
-		$contact->name='Tester Name';
-		$contact->phone='123-123-1234';
-		$client->saveContact($contact);
-		echo "done\n\n";
-		echo "fetching all contacts\n";
-		print_r($client->getContacts());
-		echo "</pre>";
-	}
+    /**
+     * This action serves as a SOAP client to test the phonebook Web service.
+     */
+    public function actionTest()
+    {
+            $wsdlUrl=Yii::app()->request->hostInfo.$this->createUrl('phonebook');
+            $client=new SoapClient($wsdlUrl);
+            echo "<pre>";
+            echo "login...\n";
+            $client->login('demo','demo');
+            echo "fetching all contacts\n";
+            print_r($client->getContacts());
+            echo "\ninserting a new contact...";
+            $contact=new Contact;
+            $contact->name='Tester Name';
+            $contact->phone='123-123-1234';
+            $client->saveContact($contact);
+            echo "done\n\n";
+            echo "fetching all contacts\n";
+            print_r($client->getContacts());
+            echo "</pre>";
+    }
 
 	/**
 	 * This method is required by IWebServiceProvider.

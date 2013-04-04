@@ -7,14 +7,21 @@ class SmartyViewRenderer extends CApplicationComponent implements IViewRenderer
     public function init()
     {
         $this->_smarty = new Smarty();
-        $runtimePath = dirname(Yii::app()->getBasePath());
-        $runtimePath .= '/apptemp/runtime';
+        $appBasePath = dirname(Yii::app()->getBasePath());
+        $runtimePath = $appBasePath . '/apptemp/runtime';
         if (!is_dir($runtimePath))
             mkdir($runtimePath);
-
+        
+        $this->_smarty->assign('SMARTY_TPL_PATH', $appBasePath . '/application/views');
+        $this->_smarty->assign('SITETITLE_PREFIX', '');
+        $this->_smarty->template_dir = $appBasePath . '/application/views';
         $this->_smarty->compile_dir = $runtimePath . '/smarty/compile';
         $this->_smarty->cache_dir   = $runtimePath . '/smarty/cache';        
-        
+        //$this->_smarty;
+    }
+    
+    public function __set($name, $value) {     
+        $this->_smarty->assign($name, $value);
     }
     
     public function renderFile($context, $file, $data, $return)
