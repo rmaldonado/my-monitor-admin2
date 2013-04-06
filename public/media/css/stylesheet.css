@@ -1,4 +1,4 @@
-/* Defaults */
+ro/* Defaults */
 .tal{text-align: left !important;} .tar{text-align: right !important;} .tac{text-align: center !important;}
 .fl{float: left !important;} .fl{float: right !important;}
 .nm{margin: 0px !important;} .nmt{margin-top: 0px !important;} .nmb{margin-bottom: 0px !important;} .nmr{margin-right: 0px !important;} .nml{margin-left: 0px !important;}
@@ -10,8 +10,8 @@ form{margin: 0px;}
 .img-polaroid{border-color: #E5E5E5; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;}
 .sourcePosition{top: 20px !important; position: fixed !important; z-index: 999;}
 
-#loader{position: fixed; left: 0px; top: 0px; height: 100%; width: 100%; z-index: 9999; background: url('../img/wpoint.png') left top repeat;}
-    #loader img{position: absolute; left: 50%; top: 50%;}
+#loadercnt{position: fixed; left: 0px; top: 0px; height: 100%; width: 100%; z-index: 9999; background: url('../img/wpoint.png') left top repeat;}
+    #loadercnt img{position: absolute; left: 50%; top: 50%;}
     
 .wrapper{position: relative; margin: 0px 20px 0px 0px;}
 .wrapper.fixed{width: 1280px; margin: 0px auto;}
@@ -560,8 +560,8 @@ div.tagsinput div input{line-height: 20px; height: 20px; font-size: 11px; margin
     .head ul.buttons > li.active > .dropdown-menu li a{color: #333 !important;}
         .head ul.buttons > li.active > .dropdown-menu li a:hover{color: #FFF !important;}
 
-.login{width: 300px; position: absolute; left: 50%; margin-left: -150px; top: 50%; margin-top: -125px;}
-    .login .row-form{padding: 5px 0px; width: 300px;}
+.login{width: 400px; position: absolute; left: 50%; margin-left: -150px; top: 50%; margin-top: -125px;}
+    .login .row-form{padding: 5px 0px; width: 400px;}
     
 .icon-arrow-back{background: url('../img/back_dark.png') left top no-repeat !important;}
     .icon-arrow-back.icon-white{background: url('../img/back.png') left top no-repeat !important;}
