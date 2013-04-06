@@ -27,10 +27,17 @@ class LuserController extends LoomController {
                     'password' =>  $password,
                     'remember' => false,
             );
-
+            $jsonArr = array();
             if($loginObj->validate() && $loginObj->login())
-                $this->redirect(Yii::app()->user->returnUrl);
-            
+            {
+                $jsonArr['url'] = Yii::app()->user->returnUrl;
+                $jsonArr['retcode'] = 0;
+            }
+            else {
+                $jsonArr['url'] = null;
+                $jsonArr['retcode'] = -1;
+            }
+            echo json_encode($jsonArr);
         }
         else {
             $tplFile = 'loginform';

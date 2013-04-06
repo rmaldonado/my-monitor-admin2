@@ -13,14 +13,22 @@ class LUserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-            
-		if($this->username ==='demo' && $this->password === 'demo')
-			$this->errorCode=self::ERROR_NONE;
-		else
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+            $encPass = md5($this->username.$this->password);
+            $userObj = LUserService::model()
+                        ->find('fname = ? AND fpass = ?', 
+                                array($this->username, $encPass));
+            $retCode = false;
+            if ($userObj === null)
+            {
+                $this->errorCode = self::ERROR_USERNAME_INVALID;               
+            }
+            else {
+                $this->_fid = $userObj->fid;
+                $this->username = $userObj->fname;
                 $this->errorCode = self::ERROR_NONE;
-                $this->_fid = 33;
-		return !$this->errorCode;
+                $retCode = true;
+            }
+            return $retCode;
 	}
         
         public function getId() {

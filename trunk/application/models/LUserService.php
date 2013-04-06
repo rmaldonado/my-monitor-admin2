@@ -13,10 +13,10 @@ class LUserService extends LoomBaseModel{
     }
     
     public function login() {
-        if($this->_identity===null)
+        if($this->_identity === null)
         {
-                $this->_identity = new UserIdentity($this->username,$this->password);
-                $this->_identity->authenticate();
+            $this->_identity = new LUserIdentity($this->username, $this->password);
+            $this->_identity->authenticate();
         }        
         Yii::app()->user->login($this->_identity,0);
         return true;
