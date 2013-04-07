@@ -10,7 +10,7 @@
     {include file="{$SMARTY_TPL_PATH}/layouts/mediascripts.tpl"}    
 </head>
 <body>    
-    <div id="loader"><img src="/media/img/loader.gif"/></div>
+    <div id="loadercnt"><img src="/media/img/loader.gif"/></div>
     <div class="wrapper">
         
         <div class="sidebar">
@@ -28,7 +28,7 @@
                 
             </div>
     </div>        
-    <div class="dialog" id="source" style="display: none;" title="Source"></div>
+    <div class="dialog" id="listedialog" style="display: none;" title="#_TITLE_#"></div>
     <div style="margin-top:8px; text-align: center; color:#999;"> Eweilian Tech. &copy; 2013 - 2014 </div>
 </body>
 </html>
