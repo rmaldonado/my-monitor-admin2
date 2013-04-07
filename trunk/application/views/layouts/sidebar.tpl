@@ -8,7 +8,7 @@
     </div>
 </div>
 
-<ul class="navigation">
+<ul class="navigation bordered">
         {foreach $sidebarMenus.items as $menuRow }
             {if isset($menuRow.items) && is_array($menuRow.items)}
                 {foreach $menuRow.items as $subRow}

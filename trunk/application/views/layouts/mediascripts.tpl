@@ -31,7 +31,7 @@
 <script type='text/javascript' src='/media/js/plugins/shbrush/shBrushXml.js'></script>
 <script type='text/javascript' src='/media/js/plugins/shbrush/shBrushJScript.js'></script>
 <script type='text/javascript' src='/media/js/plugins/shbrush/shBrushCss.js'></script>    
-
-<script type='text/javascript' src='/media/js/plugins.js'></script>
+<script type='text/javascript' src='/media/js/lsite.js'></script>
+{*<script type='text/javascript' src='/media/js/plugins.js'></script>
 <script type='text/javascript' src='/media/js/charts.js'></script>
-<script type='text/javascript' src='/media/js/actions.js'></script>
+<script type='text/javascript' src='/media/js/actions.js'></script>*}
