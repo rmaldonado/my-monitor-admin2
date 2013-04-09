@@ -44,6 +44,13 @@ class LuserController extends LoomController {
             $this->render($tplFile);
         }
     }
+    
+    public function ActionLogout() {
+        session_destroy();
+        Yii::app()->user->logout();
+        $url = '/loom/luser/login';
+        Yii::app()->getRequest()->redirect($url);
+    }
 }
 
 ?>

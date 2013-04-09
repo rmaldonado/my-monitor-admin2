@@ -6,6 +6,17 @@ class LoomController extends CController
     public $view        = null;// view render object
     public $breadcrumbs = array();
     public $menus       = array(
+        'items' => array(
+            array(
+                    'label' => 'Overview', 
+                    'url'   => '#',
+                    'class' => 'blblue',
+                    'acss'  => '',
+                    'tcss'  => 'ico-monitor',
+                    'items' => null,
+                ),
+        ),
+        /*
         'items' =>  array(
                 array(
                     'label' => '总览', 
@@ -63,7 +74,7 @@ class LoomController extends CController
                     'url'	=> 'grid_sys.html',
                     'items'     =>  null,
                 ),
-            ),
+            ),*/
     );
     
 

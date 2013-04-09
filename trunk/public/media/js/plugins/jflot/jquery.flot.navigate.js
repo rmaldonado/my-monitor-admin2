@@ -143,7 +143,7 @@ Licensed under the MIT License ~ http://threedubmedia.googlecode.com/files/MIT-L
             panTimeout = null;
 
         function onDragStart(e) {
-            if (e.which != 1)  // only accept left-click
+            if (e.which !== 1)  // only accept left-click
                 return false;
             var c = plot.getPlaceholder().css('cursor');
             if (c)
