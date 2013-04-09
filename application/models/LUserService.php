@@ -9,7 +9,7 @@ class LUserService extends LoomBaseModel{
     }
     
     public function tableName() {
-        return '{{customers}}';
+        return '{{luser}}';
     }
     
     public function login() {

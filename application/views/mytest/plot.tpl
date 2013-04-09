@@ -3,6 +3,14 @@
     <script type='text/javascript' src='/media/js/plugins/jflot/jquery.flot.pie.js'></script>
     <script type='text/javascript' src='/media/js/plugins/jflot/jquery.flot.resize.js'></script>
     <script type='text/javascript' src='/media/js/plugins/jflot/jquery.flot.navigate.js'></script>
+
+<div class="page-header">
+    <div class="icon">
+        <span class="ico-arrow-right"></span>
+    </div>
+    <h2>JPlot test</h2>
+</div>
+    
 <div class="row-fluid">
     <div class="span12">
         <div id="plotdiv" style="height:300px;"></div>
@@ -16,7 +24,7 @@
 <div class="row-fluid">
     <div class="span12">
         <div id="message"></div>
-        <div id="placeholder" style="width:600px;height:300px;"></div>
+        <div id="placeholder" style="width:auto;height:600px;"></div>
         <script>
             {literal}
 		function sumf(f, t, m) {
@@ -27,31 +35,44 @@
 			return res;
 		}
 
-		var d1 = [];
-		for (var t = 1; t <= 8; t++) {
-			d1.push([t, t]);
-		}
-
-		var data = [ d1 ],
+		var maxNum = 24;
+        var data = [];
+        for (var j = 1; j < maxNum; j++) {
+            var dt = [];
+            for (var t= 1; t < maxNum; t++) {
+                dt.push([t, j]);
+            }
+            data.push(dt);
+        }
+        var ticksRow = [];
+        for (var j = 0; j < 200; j++) {
+            ticksRow.push([j, "row" + j]);
+        }
 			placeholder = $("#placeholder");
 
 		var plot = $.plot(placeholder, data, {
 			series: {
 				lines: {
-					show: true
+					show: false
 				},
+                points: {
+                    show : true,
+                    radius: 10
+                },
 				shadowSize: 0
 			},
 			xaxis: {
-				zoomRange: [1, 20],
-				panRange: [0, 20]
+				//zoomRange: [10, 10],
+				panRange: [0, 100],
+                tickDecimals: 2,
+                ticks: ticksRow
 			},
 			yaxis: {
-				zoomRange: [1, 20],
-				panRange: [0, 20]
+				zoomRange: [10, 10],
+				panRange: [0, 100]
 			},
 			zoom: {
-				interactive: true
+				interactive: false
 			},
 			pan: {
 				interactive: true
@@ -62,12 +83,16 @@
             var s = parseInt(axes.xaxis.min.toFixed(0));
             var e = parseInt(axes.xaxis.max.toFixed(0));
             var newdata;
-            var d2 = [];
             
-            for(var t = s; t <= e; t++) {
-                d2.push([t, 3]);
+            for (var j = 1; j < maxNum; j++) {
+                var dt = [];
+                for(var t = s; t <= e; t++) {
+                    dt.push([t, j]);
+                }
+                newdata.push(dt);
             }
-            newdata = [d2];
+            
+            //newdata = [d2];
             plot.setData(newdata);
             plot.draw();
             

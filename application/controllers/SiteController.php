@@ -21,22 +21,11 @@ class SiteController extends LoomController
      */
     public function actionTest()
     {
-            $wsdlUrl=Yii::app()->request->hostInfo.$this->createUrl('phonebook');
-            $client=new SoapClient($wsdlUrl);
-            echo "<pre>";
-            echo "login...\n";
-            $client->login('demo','demo');
-            echo "fetching all contacts\n";
-            print_r($client->getContacts());
-            echo "\ninserting a new contact...";
-            $contact=new Contact;
-            $contact->name='Tester Name';
-            $contact->phone='123-123-1234';
-            $client->saveContact($contact);
-            echo "done\n\n";
-            echo "fetching all contacts\n";
-            print_r($client->getContacts());
-            echo "</pre>";
+        //echo Yii::app()->user->femail;
+        //$name = Yii::app()->user->extinfo;
+        var_dump(Yii::app()->user->fscname);
+        
+        //var_dump(Yii::app()->user);
     }
 
 	/**
