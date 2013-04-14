@@ -33,7 +33,7 @@ create table t5_loominfo_base (
   fstatus tinyint unsigned not null default 0,
   floominfo varchar(128) comment 'loom extension info'
 );
-
+//按分保存数据
 create table t5_loom_secdt_base (
   `floomid` int(11) unsigned NOT NULL,
   `ftmstamp` int(10) unsigned NOT NULL,
@@ -50,4 +50,42 @@ create table t5_loom_secdt_base (
   `fdoflag` int(11) DEFAULT '0',
   `fextcol` int(11) DEFAULT NULL,
   PRIMARY KEY (`floomid`)
+);
+
+//loom status
+create table t5_loom_status_base (
+  frepeatid int(11) unsigned not null  comment 'loom repeater id',
+  flcardid tinyint unsigned not null  comment 'loom collector id',
+  frstatus  int(11) unsigned not null  comment 'loom status',
+  ftimestamp int(11) unsigned not null  comment 'loom status changed time',
+  frlength  int(11) unsigned not null  comment 'lustring length',
+  fpowersec int(11) unsigned not null  comment 'loom powner on elapsed seconds',
+  frunsec   int(11) unsigned not null  comment 'loom run seconds',
+  fwbrknum int(11) unsigned not null  comment 'weft broken times',
+  fsbrknum int(11) unsigned not null  comment 'side silk broken times',
+  fobrknum int(11) unsigned not null  comment 'other silk broken times',
+  frpmnum  int(11) unsigned not null  comment 'electric motor revolutions per minute',
+  ftbrknum int(11) unsigned not null  comment 'silk warp broken times',
+  fextnum  int(11) unsigned not null  comment 'unused extension column',
+  primary key pk_loom_status(frepeatid, fcardid)
+
+);
+///员工刷卡
+create table t5_punchcard_list_base (
+  faddtm int(11) unsigned not null comment 'data insert into timestamp',
+  fcardno int(11) unsigned not null comment 'employee card no',
+  frepeatid int(11) unsigned not null comment 'loom repeater id',
+  flcardid int(11) unsigned not null comment 'loom collector card id',
+  ftimestamp int(11) unsigned not null comment 'punch card timestamp',
+  primary key pk_punchcard_list(fcardno, ftimestamp)
+);
+
+
+create table t5_events_base (  
+  faddtim int(11) unsigned not null comment '',
+  frepeatid int(11) unsigned not null comment 'loom repeater id',
+  flcardid int(11) unsigned not null comment 'loom collector card id',
+  ftimestamp int(11) unsigned not null comment 'punch card timestamp',
+  feventid int(11) unsigned not null comment '',
+  ftimes  int(11) unsigned not null comment 'one event id erase times'
 );
