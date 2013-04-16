@@ -51,6 +51,28 @@ create table t5_loom_secdt_base (
   `fextcol` int(11) DEFAULT NULL,
   PRIMARY KEY (`floomid`)
 );
+/*
+(frepeatid, flcardid, frstatus, ftimestamp, frlength, fpowersec, frunsec, fwbrknum, fsbrknum, fobrknum, frpmnum, ftbrknum, fextnum, faddtm)
+*/
+create table t5_loom_secdt_base (
+  frepeatid int(11) unsigned not null  comment 'loom repeater id',
+  flcardid tinyint unsigned not null  comment 'loom collector id',
+  frstatus  int(11) unsigned not null  comment 'loom status',
+  ftimestamp int(11) unsigned not null  comment 'loom status changed time',
+  frlength  int(11) unsigned not null  comment 'lustring length',
+  fpowersec int(11) unsigned not null  comment 'loom powner on elapsed seconds',
+  frunsec   int(11) unsigned not null  comment 'loom run seconds',
+  fwbrknum int(11) unsigned not null  comment 'weft broken times',
+  fsbrknum int(11) unsigned not null  comment 'side silk broken times',
+  fobrknum int(11) unsigned not null  comment 'other silk broken times',
+  frpmnum  int(11) unsigned not null  comment 'electric motor revolutions per minute',
+  ftbrknum int(11) unsigned not null  comment 'silk warp broken times',
+  fextnum  int(11) unsigned not null  comment 'unused extension column',
+  faddtm   int(11) unsigned not null comment 'data inserted time',
+  fdttype  tinyint unsigned not null comment '1-real data; 2- history data'
+  primary key pk_loom_status(frepeatid, flcardid, ftimestamp)
+
+);
 
 //loom status
 create table t5_loom_status_base (
@@ -67,6 +89,8 @@ create table t5_loom_status_base (
   frpmnum  int(11) unsigned not null  comment 'electric motor revolutions per minute',
   ftbrknum int(11) unsigned not null  comment 'silk warp broken times',
   fextnum  int(11) unsigned not null  comment 'unused extension column',
+  fupdatetm int(11) unsigned not null  comment 'data status changed time',
+  fstatus  tinyint unsigned not null comment 'data status',
   primary key pk_loom_status(frepeatid, fcardid)
 
 );
@@ -77,15 +101,22 @@ create table t5_punchcard_list_base (
   frepeatid int(11) unsigned not null comment 'loom repeater id',
   flcardid int(11) unsigned not null comment 'loom collector card id',
   ftimestamp int(11) unsigned not null comment 'punch card timestamp',
+  fstatus tinyint unsigned not null comment 'data status',
   primary key pk_punchcard_list(fcardno, ftimestamp)
 );
 
 
 create table t5_events_base (  
-  faddtim int(11) unsigned not null comment '',
+  faddtm int(11) unsigned not null comment 'data insert time',
   frepeatid int(11) unsigned not null comment 'loom repeater id',
   flcardid int(11) unsigned not null comment 'loom collector card id',
   ftimestamp int(11) unsigned not null comment 'punch card timestamp',
   feventid int(11) unsigned not null comment '',
-  ftimes  int(11) unsigned not null comment 'one event id erase times'
+  ftimes  int(11) unsigned not null comment 'one event id erase times',
+  fwbrknum int(11) unsigned not null  comment '',
+  fsbrknum int(11) unsigned not null  comment '',
+  fobrknum int(11) unsigned not null  comment '',
+  ftbrknum int(11) unsigned not null  comment '',
+  fstatus int(11) unsigned not null comment 'data status',
+  primary key pk_events(frepeatid, flcardid, ftimestamp, feventid)
 );
