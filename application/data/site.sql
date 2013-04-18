@@ -69,7 +69,7 @@ create table t5_loom_secdt_base (
   ftbrknum int(11) unsigned not null  comment 'silk warp broken times',
   fextnum  int(11) unsigned not null  comment 'unused extension column',
   faddtm   int(11) unsigned not null comment 'data inserted time',
-  fdttype  tinyint unsigned not null comment '1-real data; 2- history data'
+  fdttype  tinyint unsigned not null comment '1-real data; 2- history data',
   primary key pk_loom_status(frepeatid, flcardid, ftimestamp)
 
 );
@@ -91,7 +91,7 @@ create table t5_loom_status_base (
   fextnum  int(11) unsigned not null  comment 'unused extension column',
   fupdatetm int(11) unsigned not null  comment 'data status changed time',
   fstatus  tinyint unsigned not null comment 'data status',
-  primary key pk_loom_status(frepeatid, fcardid)
+  primary key pk_loom_status(frepeatid, flcardid)
 
 );
 ///Ô±¹¤Ë¢¿¨
