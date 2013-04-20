@@ -31,7 +31,17 @@ create table t5_loominfo_base (
   frepeaterid int(11) unsigned not null comment 'repeater address',
   fgatherid int(11) unsigned not null comment 'gather card address',
   fstatus tinyint unsigned not null default 0,
+  frollid   int(11) unsigned not null default 0 comment 'upper spindle primary id',
   floominfo varchar(128) comment 'loom extension info'
+);
+
+create table t5_rollinfo_base (
+   fid int(11) unsigned not null auto_increment primary key,
+   frollno varchar(200) not null comment '织轴号',
+   frollgrp varchar(200) not null comment '并轴组别XXX-XXX-XXX',
+   freednum  tinyint unsigned not null comment '刚筘次数',
+   fhealdnum tinyint unsigned not null comment '综丝次数',
+
 );
 //按分保存数据
 create table t5_loom_secdt_base (
