@@ -41,7 +41,25 @@ create table t5_rollinfo_base (
    frollgrp varchar(200) not null comment '并轴组别XXX-XXX-XXX',
    freednum  tinyint unsigned not null comment '刚筘次数',
    fhealdnum tinyint unsigned not null comment '综丝次数',
-
+   ftension varchar(200) not null comment '设定张力',
+   fsnum   tinyint unsigned not null comment '条（匹）数',
+   frpm	   smallint unsigned not null comment '转/分钟',
+   feffect float not null comment '织机效率(%)',
+   fsilktype int(11) unsigned not null comment '1-双织轴；2-试织；4-三纬；8-提花；16-双纬'，
+   flasttime int(11) unsigned not null comment '上次金机时间',
+   flastoperator int(11) unsigned not null comment '上次尽机人员',
+   frolltime	int(11) unsigned not null comment '本次上轴时间',
+   frolloperator int(11) unsigned not null comment '本次上轴人员',
+   fpltime   int(11) unsigned not null comment '计划尽机时间',
+   frealtime int(11) unsigned not null comment '实际尽机时间',
+   frealoperator int(11) unsigned not null comment '实际尽机人员',
+   fproductid int(11) unsigned not null comment '产品代码',
+   fchaineid  int(11) unsigned not null comment '经纱参数代码',
+   fweftid int(11) unsigned not null comment '纬纱参数代码',
+   forderid varchar(200) not null default '' comment '订单号',
+   fpcardno varchar(200) not null default '' comment '制程卡号',
+   fmemo  varchar(400) comment '备注信息',
+   primary key pk_rollinfo(frollno, frolltime)
 );
 //按分保存数据
 create table t5_loom_secdt_base (
