@@ -112,7 +112,7 @@ create table t5_events_base (
   flcardid int(11) unsigned not null comment 'loom collector card id',
   ftimestamp int(11) unsigned not null comment 'punch card timestamp',
   feventid int(11) unsigned not null comment '',
-  ftimes  int(11) unsigned not null comment 'one event id erase times',
+  frlength  int(11) unsigned not null comment 'product silk length',
   fwbrknum int(11) unsigned not null  comment '',
   fsbrknum int(11) unsigned not null  comment '',
   fobrknum int(11) unsigned not null  comment '',
