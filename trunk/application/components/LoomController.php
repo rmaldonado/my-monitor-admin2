@@ -87,6 +87,7 @@ class LoomController extends CController
     public function renderMenu() {
         $this->view->sidebarMenus = $this->menus;
     }
+    
     public function filters()
     {
             return array(

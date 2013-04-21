@@ -54,16 +54,50 @@ create table t5_rollinfo_base (
    fpltime   int(11) unsigned not null comment '计划尽机时间',
    frealtime int(11) unsigned not null comment '实际尽机时间',
    frealoperator int(11) unsigned not null comment '实际尽机人员',
-   fproductid int(11) unsigned not null comment '产品代码',
-   fchaineid  int(11) unsigned not null comment '经纱参数代码',
-   fweftid int(11) unsigned not null comment '纬纱参数代码',
+   fproductid int(11) unsigned not null comment '产品代码ID(productinfo.fid)',
+   fchaineid  int(11) unsigned not null comment '经纱参数代码ID',
+   fweftid int(11) unsigned not null comment '纬纱参数代码ID',
    forderid varchar(200) not null default '' comment '订单号',
    fpcardno varchar(200) not null default '' comment '制程卡号',
    fmemo  varchar(400) comment '备注信息',
-   UNIQUE  pk_rollinfo(frollno, frolltime)
+   UNIQUE  uk_rollinfo(frollno, frolltime)
+);
+/*
+
+*/
+create table t5_productinfo_base (
+  fid int(11) unsigned not null primary key auto_increment comment '产品代码ID',
+  fprodcutsn varchar(200) not null default '' comment '产品代码',
+  fproductnm varchar(200) not null default '' comment '产品名称',
+  fsilksp varchar(200) not null default '' comment '布匹规格',
+  freedwd int(11) unsigned not null default 0 comment '筘幅',
+  freedsn varchar(32) not null default '' comment '筘号',
+  freedlen smallint unsigned not null default 0 comment '筘长(CM)',
+  ftotallen int(11) unsigned not null default 0 comment '满停长度',
+  fweave varchar(200) not null default '' comment '织法',
+  ftype  varchar(200) not null default '' comment '种类',
+  flevel varchar(200) not null default '' comment '难易程度',
+  fplspeed smallint unsigned not null default 0 comment '计划车速(rpm/min)',
+  fpleffect float not null default 0.00 comment '计划效率',
+   fchaineid  int(11) unsigned not null comment '经纱参数代码ID',
+   fweftid int(11) unsigned not null comment '纬纱参数代码ID',
+   finfo varchar(400) default '' comment '其它备注信息',
+   fstatus tinyint unsigned not null default 1 comment '产品有效状态',
+   UNIQUE uk_productinfo( fprodcutsn)
 );
 
+/*
+经纱参数表
+*/
+create table t5_chaineinfo_base (
 
+);
+/*
+  纬纱参数表
+*/
+create table t5_weftinfo_base (
+
+);
 /*
 --按中继编号分表数据
 */
