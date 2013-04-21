@@ -86,6 +86,10 @@ class LoomController extends CController
     }
     
     public function init() {
+	$uri = Yii::app()->request->requestUri;
+	if (strpos($uri, 'favicon') !== false || strpos($uri, 'robots') !== false) {
+		Yii::app()->end();
+	}
         parent::init();
         $this->view = Yii::app()->getViewRenderer();
         $this->renderMenu();
