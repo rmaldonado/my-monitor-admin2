@@ -5,7 +5,8 @@ create table t5_luser (
   femail varchar(64) not null comment 'user email address', 
   fmobile int(11) unsigned not null comment 'user mobile number',
   fcompanyid  int(11) unsigned not null comment 'user company id',
-  fstatus tinyint not null comment 'user status',
+  fstatus tinyint unsigned default 1 not null comment 'user status',
+  froleid smallint unsigned not null comment 'user role id',
   fcreatetm int(11) unsigned not null comment 'create timestamp',
   primary key(fname)
 );
@@ -45,10 +46,10 @@ create table t5_rollinfo_base (
    fsnum   tinyint unsigned not null comment '条（匹）数',
    frpm	   smallint unsigned not null comment '转/分钟',
    feffect float not null comment '织机效率(%)',
-   fsilktype int(11) unsigned not null comment '1-双织轴；2-试织；4-三纬；8-提花；16-双纬'，
+   fsilktype int(11) unsigned not null comment '1-双织轴；2-试织；4-三纬；8-提花；16-双纬',
    flasttime int(11) unsigned not null comment '上次金机时间',
    flastoperator int(11) unsigned not null comment '上次尽机人员',
-   frolltime	int(11) unsigned not null comment '本次上轴时间',
+   frolltime int(11) unsigned not null comment '本次上轴时间',
    frolloperator int(11) unsigned not null comment '本次上轴人员',
    fpltime   int(11) unsigned not null comment '计划尽机时间',
    frealtime int(11) unsigned not null comment '实际尽机时间',
@@ -59,28 +60,12 @@ create table t5_rollinfo_base (
    forderid varchar(200) not null default '' comment '订单号',
    fpcardno varchar(200) not null default '' comment '制程卡号',
    fmemo  varchar(400) comment '备注信息',
-   primary key pk_rollinfo(frollno, frolltime)
+   UNIQUE  pk_rollinfo(frollno, frolltime)
 );
-//按分保存数据
-create table t5_loom_secdt_base (
-  `floomid` int(11) unsigned NOT NULL,
-  `ftmstamp` int(10) unsigned NOT NULL,
-  `flstop` int(10) unsigned NOT NULL,
-  `flstoptm` int(10) unsigned NOT NULL,
-  `fwstop` int(10) unsigned NOT NULL,
-  `fwstoptm` int(10) unsigned NOT NULL,
-  `fsstop` int(10) unsigned NOT NULL,
-  `fsstoptm` int(10) unsigned NOT NULL,
-  `fotstop` int(10) unsigned NOT NULL,
-  `fotstoptm` int(10) unsigned NOT NULL,
-  `frstatus` int(10) unsigned NOT NULL,
-  `frpmnum` int(10) unsigned NOT NULL,
-  `fdoflag` int(11) DEFAULT '0',
-  `fextcol` int(11) DEFAULT NULL,
-  PRIMARY KEY (`floomid`)
-);
+
+
 /*
-(frepeatid, flcardid, frstatus, ftimestamp, frlength, fpowersec, frunsec, fwbrknum, fsbrknum, fobrknum, frpmnum, ftbrknum, fextnum, faddtm)
+--按中继编号分表数据
 */
 create table t5_loom_secdt_base (
   frepeatid int(11) unsigned not null  comment 'loom repeater id',
@@ -102,7 +87,9 @@ create table t5_loom_secdt_base (
 
 );
 
-//loom status
+/*
+loom status. just update data
+*/
 create table t5_loom_status_base (
   frepeatid int(11) unsigned not null  comment 'loom repeater id',
   flcardid tinyint unsigned not null  comment 'loom collector id',
@@ -122,7 +109,9 @@ create table t5_loom_status_base (
   primary key pk_loom_status(frepeatid, flcardid)
 
 );
-///员工刷卡
+/*
+punch card record
+*/
 create table t5_punchcard_list_base (
   faddtm int(11) unsigned not null comment 'data insert into timestamp',
   fcardno int(11) unsigned not null comment 'employee card no',
