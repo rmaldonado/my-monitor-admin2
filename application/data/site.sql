@@ -67,7 +67,7 @@ create table t5_rollinfo_base (
 /*
 --按中继编号分表数据
 */
-create table t5_loom_secdt_base (
+create table t5_secdt_base (
   frepeatid int(11) unsigned not null  comment 'loom repeater id',
   flcardid tinyint unsigned not null  comment 'loom collector id',
   frstatus  int(11) unsigned not null  comment 'loom status',
@@ -90,7 +90,7 @@ create table t5_loom_secdt_base (
 /*
 loom status. just update data
 */
-create table t5_loom_status_base (
+create table t5_status_base (
   frepeatid int(11) unsigned not null  comment 'loom repeater id',
   flcardid tinyint unsigned not null  comment 'loom collector id',
   frstatus  int(11) unsigned not null  comment 'loom status',
