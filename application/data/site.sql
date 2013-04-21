@@ -90,13 +90,34 @@ create table t5_productinfo_base (
 经纱参数表
 */
 create table t5_chaineinfo_base (
-
+    fid int(11) unsigned not null primary key auto_increment comment '',
+    fnumber int(11) unsigned not null default 0 comment '总经根数',
+    fdensity int(11) unsigned not null default 0 comment '经纱密度',
+    fminirate float not null default 0.00 comment '经缩率（%）',
+    fquota int(11) unsigned not null default 0 comment '经纱定额',
+    fspinfo varchar(200) not null default '' comment '经纱规格',
+    frate  varchar(100) not null default '' comment '经纱比例',
+    flotnum varchar(100) not null default '' comment '经纱号数',
+    fsn varchar(100) not null default '' comment '经纱批号',
+    ffactory varchar(200) not null default '' comment '经纱厂家',
+    UNIQUE uk_chaineinfo(fsn)
 );
 /*
   纬纱参数表
 */
 create table t5_weftinfo_base (
-
+   fid int(11) unsigned not null primary key auto_increment comment '纬纱参数代码ID',
+   fdensity float not null default 0.00 comment '维密（根/inch）',
+   fcycle smallint unsigned not null default 0 comment '周期转数（每转M圈）',
+   fnumber int(11) unsigned not null default 0 comment '周期纬纱（打纬N根）',
+   flnumber varchar(100) not null default '' comment '纬纱编号',
+   fquota int(11) unsigned not null default 0 comment '纬纱定额',
+   fspinfo varchar(200) not null default '' comment '纬纱规格',
+   frate varchar(100) not null default '' comment '纬纱比例',
+   flotnum varchar(100) not null default '' comment '纬纱号数',
+   fsn varchar(100) not null default '' comment '纬纱批号',
+   ffactory varchar(200) not null default '' comment '纬纱厂家',
+   UNIQUE uk_weftinfo(fsn)
 );
 /*
 --按中继编号分表数据
