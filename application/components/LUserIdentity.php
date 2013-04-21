@@ -24,6 +24,7 @@ class LUserIdentity extends CUserIdentity
                     'femail'    => $userObj->femail,
                     'fscname'   => $userObj->fscname,
                     'fcompanyid'    => $userObj->fcompanyid,
+                    'froleid'       => $userObj->froleid,
                 );
                 $retCode = true;
             }
