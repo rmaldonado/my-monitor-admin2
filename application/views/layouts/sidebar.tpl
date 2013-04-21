@@ -1,5 +1,5 @@
 <div class="top">
-    <a href="index.html" class="logo"></a>
+    <a href="/loom/" class="logo"></a>
     <div class="search">
         <div class="input-prepend">
             <span class="add-on orange"><span class="icon-search icon-white"></span></span>
