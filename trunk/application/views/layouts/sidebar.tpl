@@ -9,7 +9,7 @@
 </div>
 
 <ul class="navigation bordered">
-        {foreach $sidebarMenus.items as $menuRow }
+        {foreach $sidebarMenus.items as $menuRow}
             {if isset($menuRow.items) && is_array($menuRow.items)}
                 {foreach $menuRow.items as $subRow}
                     <li><a href="{$subRow.url}">{$subRow.label}</a></li>
