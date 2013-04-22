@@ -1,4 +1,4 @@
-{foreach $sidebarMenus.items as $menuRow }
+{foreach $sidebarMenus.items as $menuRow}
     <li>
         <a href="{$menuRow.url}" class="button {$menuRow.acss}">
             {if isset($menuRow.items) && is_array($menuRow.items)}<div class="arrow"></div>{/if}

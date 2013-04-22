@@ -46,7 +46,7 @@
             <div class="icon">
                 <span class="ico-arrow-right"></span>
             </div>
-            <h1>登录 <small>织机管理系统</small></h1>
+            <h1>登录 <small>管理系统</small></h1>
         </div>        
         
         <div class="row-fluid">

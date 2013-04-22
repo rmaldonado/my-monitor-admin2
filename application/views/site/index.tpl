@@ -72,9 +72,9 @@
         <div class="block">
             <div class="head">
                 <div class="icon"><span class="ico-chart-4"></span></div>
-                <h2>Visitor Statistics</h2>
+                <h2>织机效率趋势图</h2>
                 <ul class="buttons">
-                    <li><a href="#" class="ublock"><div class="icon"><span class="ico-undo"></span></div></a></li>
+                    <li><a href="#" data="/loom/site/charteffect" class="ublock"><div class="icon"><span class="ico-undo"></span></div></a></li>
                     <li><a href="#" class="cblock"><div class="icon"><span class="ico-sort"></span></div></a></li>
                 </ul>
             </div>
@@ -201,10 +201,10 @@
         <div class="block">
             <div class="head">
                 <div class="icon"><span class="ico-tag"></span></div>
-                <h2>Tickets</h2>
+                <h2>新增上轴信息</h2>
                 <ul class="buttons">             
                     <li><a href="#" onClick="source('tickets'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
-                    <li><a href="#" class="ublock"><div class="icon"><span class="ico-undo"></span></div></a></li>
+                    <li><a href="#" data="/loom/site/rollinfo" class="ublock"><div class="icon"><span class="ico-undo"></span></div></a></li>
                     <li><a href="#" class="cblock"><div class="icon"><span class="ico-sort"></span></div></a></li>
                 </ul>                                
             </div>
