@@ -9,56 +9,25 @@
     <div class="span12">
         <div class="widgets">
             <div class="widget blue value">
-                <div class="left">60%</div>
-                <div class="right">
-                    $1,530 amount paid<br/>
-                    $2,102 in queue<br/>
-                    $11,100 total taxes
-                </div>
+                <div class="both">367.89</div>
                 <div class="bottom">
-                    <a href="#">Invoices statistics</a>
+                    <a href="#">当班总产量（单位：米）</a>
                 </div>
             </div>
-            <div class="widget green icon">
-                <div class="left">
-                    <div class="icon">
-                        <span class="ico-download"></span>
-                    </div>
-                </div>
-                <div class="right">
-                    <table cellpadding="0" cellspacing="0" width="100%">
-                        <tr>
-                            <td>HDD</td><td>4.5 / 250 GB</td>
-                        </tr>
-                        <tr>
-                            <td>MySQL</td><td>1.8 / 10 GB</td>
-                        </tr>
-                        <tr>
-                            <td>Databases</td><td>1 / 5</td> 
-                        </tr>
-                        <tr>
-                            <td>E-mails</td><td>5 / 15</td> 
-                        </tr>
-                        <tr>
-                            <td>Tickets</td><td>2</td>
-                        </tr>
-                    </table>
+            <div class="widget green value">
+                <div class="both">
+                    1213.78
                 </div>
                 <div class="bottom">
-                    <a href="#">Server information</a>
+                    <a href="#">当天总产量（单位：米）</a>
                 </div>                            
             </div>
-            <div class="widget orange chart nmr">
-                <div class="left">                                    
-                    <span class="mChartBar" sparkWidth="90" sparkHeight="90" sparkType="bar" sparkBarColor="#FFFFFF" sparkBarWidth="10">10,9,8.5,8,9,8,7,7.5</span>
-                </div>
-                <div class="right">
-                    65% New<br/>
-                    35% Returning<br/>
-                    00:05:12 Average time on site
-                </div>
+            <div class="widget orange value">
+                <div class="both">                                    
+                    34768.45
+                </div>                
                 <div class="bottom">
-                    <a href="#">List visits</a>
+                    <a href="#">当月总产量（单位：米）</a>
                 </div>                            
             </div>                        
         </div>
@@ -84,17 +53,17 @@
             <div class="row-fluid">
                 <div class="span4">
                     <div class="stat">
-                        <span class="cdblue">2,350</span> PAGE<br/> VIEWS
+                        <span class="cdblue">2,350</span>(台)<br/> 总织机
                     </div>
                 </div>
                 <div class="span4">
                     <div class="stat">
-                        <span class="cblue">1,120</span> UNIQUE<br/> PAGE VIEWS
+                        <span class="cblue">1,120</span>(台)<br/>运转
                     </div>                                                                        
                 </div>
                 <div class="span4">
                     <div class="stat">
-                        <span class="corange">720</span> SALES<br/> PER PERIOD
+                        <span class="corange">720</span>(台)<br/> 运转
                     </div>                                                
                 </div>               
             </div>
