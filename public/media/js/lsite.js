@@ -2,7 +2,8 @@ $(window).load(function() {
     fixBodyWidth();
     $("#loadercnt").hide();//hidden load image
     bindRefreshEvents();
-    plotEffectChart();
+    //plotEffectChart();
+    plotEffectChartH();
     //$(".sidebar .navigation").addClass('bordered');  
     //$(".cNav[value='default']").attr('checked',true).parent('span').addClass('checked');
     //$(".cCont[value='']").attr('checked',true).parent('span').addClass('checked');
@@ -12,7 +13,7 @@ $(window).load(function() {
 function addLoader(block){
     var bW = $(block).width();
     var bH = $(block).height();    
-    $(block).append('<div class="loader" style="width: '+bW+'px; height: '+bH+'px;"><img src="img/loader.gif"/></div>');
+    $(block).append('<div class="loader" style="width: '+bW+'px; height: '+bH+'px;"><img src="/media/img/loader.gif"/></div>');
 }
 function removeLoader(block){
     $(block).find('.loader').remove();
@@ -52,6 +53,25 @@ function bindRefreshEvents() {
         return false;
     });
     
+}
+
+function plotEffectChartH() {
+    var visits = [[1, 1235], [2, 1245], [3, 1590], [4, 1420], [5,1713], [6,1921], [7,1869], [8, 1790], [9,2314], [10,2490], [11,2175], [12,1989]];
+    var unique = [[1, 140], [2, 246], [3, 530], [4, 788], [5,832], [6,962], [7,1280], [8, 1299], [9,1410], [10,1569], [11,1492], [12,1350]];
+    var sales = [[1, 50], [2, 100], [3, 140], [4, 190], [5,250], [6,360], [7,440], [8, 650], [9,750], [10,810], [11,980], [12,1102]];
+    var hiconfig = {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'ddddd'
+        },
+        series: [{
+            name: '按天统计',
+            data: [1235, 1245, 1590]
+        }]
+    };
+    $('#main_chart').highcharts(hiconfig);
 }
 
 function plotEffectChart() {
