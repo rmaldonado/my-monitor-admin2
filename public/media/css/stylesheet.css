@@ -131,11 +131,11 @@ form{margin: 0px;}
             .body .content .widgets{text-align: center; position: relative;}
                 .body .content .widget{padding: 10px; height: 110px; width: 280px; margin-bottom: 20px; margin-right: 20px; display: inline-block;}                
                     .body .content .widget .left, .body .content .widget .right{height: 90px; width: 50%; float: left; color: #fff;}
-                    
-
+                     .body .content .widget .both {height: 90px; width: 50%; float: left; color: #fff;}
+                        .body .content .widget.value .both{width: 98%; font-size: 72px; line-height: 75px; text-align: left; font-weight: lighter;}
                         .body .content .widget.value .left{width: 60%; font-size: 80px; line-height: 75px; text-align: left; font-weight: lighter;}
                         .body .content .widget.value .right{width: 40%; font-size: 12px; text-align: left; line-height: 15px;}
-
+                        
                         .body .content .widget.icon .left{width: 35%; line-height: 90px;}
                         .body .content .widget.icon .right{width: 65%; font-size: 12px; color: #FFF; color: #fff;}
 
@@ -207,9 +207,9 @@ form{margin: 0px;}
             .loader{position: absolute; left: 0px; top: 0px; z-index: 100; background: url('../img/wpoint.png') left top repeat;}
                 .loader img{position: absolute; left: 50%; top: 50%; margin-left: -50px;}            
 
-            .body .content .stat{position: relative; text-align: left; font-size: 11px; color: #666; line-height: 16px; margin: 10px ;}
+            .body .content .stat{position: relative; text-align: left; font-size: 12px; color: #444; line-height: 16px; margin: 10px ; vertical-align: central;}
                 .body .content .stat span{font-size: 40px; display: block; float: left; margin-right: 5px; line-height: 32px;}                
-                
+                .body .content .stat label{ vertical-align: central; font-size:12px;}
             /* toolbar */
             .toolbar, .toolbar-fluid{padding: 10px; position: relative;}
             .toolbar-fluid{padding: 0px;}                

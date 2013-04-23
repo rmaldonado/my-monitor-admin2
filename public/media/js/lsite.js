@@ -64,68 +64,48 @@ function plotEffectChartH() {
             type: 'line'
         },
         title: {
-            text: 'ddddd'
+            text: '织机效率趋势图'
+        },
+        yAxis: {
+            title: {
+                text: '效率 (单位：%)'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        legend: {
+            enabled: false
+        },
+        lang: {
+            printChart: '打印',
+            downloadPNG: '导出图片',
+            downloadJPEG: null,
+            downloadPDF: null,
+            downloadSVG: null,
+            contextButtonTitle: '导出图片菜单'
+        },
+        navigation: {
+            menuItemStyle: {
+                padding: '0 8px',
+                color: '#303030',
+                fontSize:  '12px' 
+            }       
         },
         series: [{
-            name: '按天统计',
-            data: [1235, 1245, 1590]
+            name: '平均效率',
+            data: [98.2, 96.6, 97.2, 99.1, 98.5, 97.0]
+        }, {
+            name: '最高效率',
+            data: [99.2, 99.6, 99.3, 99.1, 99.5, 99.0]
+        }, {
+            name: '最低效率',
+            data: [96.2, 95.6, 94.3, 95.1, 93.5, 93.9]
         }]
     };
     $('#main_chart').highcharts(hiconfig);
 }
 
-function plotEffectChart() {
-    var visits = [[1, 1235], [2, 1245], [3, 1590], [4, 1420], [5,1713], [6,1921], [7,1869], [8, 1790], [9,2314], [10,2490], [11,2175], [12,1989]];
-    var unique = [[1, 140], [2, 246], [3, 530], [4, 788], [5,832], [6,962], [7,1280], [8, 1299], [9,1410], [10,1569], [11,1492], [12,1350]];
-    var sales = [[1, 50], [2, 100], [3, 140], [4, 190], [5,250], [6,360], [7,440], [8, 650], [9,750], [10,810], [11,980], [12,1102]];
-    var showTooltip = function (x, y, contents) {
-        $('<div class="ct">' + contents + '</div>').css( {
-            position: 'absolute',
-            display: 'none',
-            top: y,
-            left: x + 10,
-            border: '1px solid #000',
-            padding: '3px',
-            opacity: '0.7',
-            'background-color': '#000',            
-            color: '#fff'            
-        }).appendTo("body").fadeIn(200);
-    };
-    
-    var plotobj = $.plot($("#main_chart"), [ 
-                { data: visits, label: "在线织机"}, 
-                { data: unique, label: "离线织机"}, 
-                {data: sales, label: "故障织机"} 
-            ], {
-                series: {lines: { show: true }, points: { show: true }},
-                grid: { hoverable: true, clickable: true },
-                yaxis: { min: 1, max: 3000, tickLength: 0 },
-                xaxis: { labelWidth: 30, tickLength: 0 }
-        });
-        
-        $("#main_chart").bind("plothover", function (event, pos, item) {
-        
-        $("#x").text(pos.x.toFixed(2));
-        $("#y").text(pos.y.toFixed(2));
-
-        if (item) {
-            if (previousPoint != item.dataIndex) {
-                previousPoint = item.dataIndex;
-
-                $(".ct").remove();
-                var x = item.datapoint[0].toFixed(2),
-                    y = item.datapoint[1].toFixed(2);
-
-                showTooltip(item.pageX, item.pageY,
-                            item.series.label + " of " + Math.round(x) + " = " + Math.round(y));
-            }
-        }else {
-            $(".ct").remove();
-            previousPoint = null;            
-        }
-
-    });        
-}
 function fixBodyWidth(){
     
     fixItemsWidth('.input-prepend', ['.add-on','button'], 'input');
