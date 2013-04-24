@@ -1,4 +1,5 @@
 <?php
+Yii::setPathOfAlias('bootstrap', dirname(dirname(__FILE__)) . '/extensions/bootstrap');
 return array(
     'basePath'  => dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR,
     'name'      => 'Yii Framework: Phone Book Demo',
@@ -8,6 +9,14 @@ return array(
             'application.models.*',
             'application.components.*',
     ),
+	'theme'		=> 'media/css/bootstrap',
+	'modules'	=> array (
+		'gii'	=> array(
+			'generatorPaths'	=> array(
+				'bootstrap.gii',
+			),
+		),
+	),
     // application components
     'components'    => array(
         'request'   => array(
@@ -35,7 +44,10 @@ return array(
         'viewRenderer'=>array(
             'class'=>'SmartyViewRenderer',
             'fileExtension' => '.tpl',
-        ),        
+        ),
+		'bootstrap'	=> array (
+			'class'	=>	'bootstrap.components.Bootstrap'
+		),
     ),
     'params'    => require(dirname(__FILE__).'/params.php'),
 );

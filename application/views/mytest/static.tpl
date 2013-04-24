@@ -9,6 +9,7 @@
                 </ul>
             </div>                
                 <div class="data-fluid">
+			{$btgroup}
                     <table class="table dtable lcnp" cellpadding="0" cellspacing="0" width="100%">
                         <thead>
                             <tr>
@@ -28,6 +29,7 @@
                                 <td><span class="label label-important">New</span></td>
                                 <td>24/11/2012</td>
                                 <td>
+					{$tbutton}
                                     <a href="#" class="button green">
                                         <div class="icon"><span class="ico-pencil"></span></div>
                                     </a>
