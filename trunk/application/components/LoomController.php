@@ -105,7 +105,8 @@ class LoomController extends CController
                             'users'=>array('*'),
                     ),
             );
-    }    
+    }
+
 }
 
 ?>
