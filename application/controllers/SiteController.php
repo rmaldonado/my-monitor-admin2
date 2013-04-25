@@ -5,6 +5,8 @@ class SiteController extends LoomController {
         $data = array(
             'site_page_title'   => 'ffff',
         );
+        //echo Yii::app()->user->fscname;
+        //echo '<pre>';print_r($_SESSION);
         $this->view->testvars = $data;
         $this->render('index', $data);
     }

@@ -20,8 +20,8 @@
     <div class="user">
         <img src="/media/img/examples/users/dmitry_m.jpg" align="left"/>
         <a href="#" class="name">
-            <span>Dmitry Ivaniuk</span>
-            <span class="sm">Administrator</span>
+            <span>{$userinfo.fscname}</span>
+            <span class="sm">万科丝织有限公司</span>
         </a>
     </div>
     <div class="buttons">
