@@ -1,3 +1,75 @@
+
+<p class="note">Fields with <span class="required">*</span> are required.</p>
+<?php /** @var BootActiveForm $form */
+
+$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+    //'id'=>'horizontalForm',
+    'type'=>'horizontal',
+)); 
+
+?>
+
+<div class="row-fluid">
+	<div class="span6">
+		
+	</div>
+	<div class="span6">
+		
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span6">
+<fieldset>
+<legend>Chaineinfo</legend>
+<?php
+echo $form->textFieldRow($model->fchaine, 'fnumber');
+echo $form->textFieldRow($model->fchaine, 'fdensity');
+echo $form->textFieldRow($model->fchaine, 'fminirate');
+echo $form->textFieldRow($model->fchaine, 'fquota');
+echo $form->textFieldRow($model->fchaine, 'fspinfo');
+echo $form->textFieldRow($model->fchaine, 'frate');
+echo $form->textFieldRow($model->fchaine, 'flotnum');
+echo $form->textFieldRow($model->fchaine, 'fsn');
+echo $form->textFieldRow($model->fchaine, 'ffactory');
+?>
+</fieldset>		
+	</div>
+	<div class="span6">
+<fieldset>
+<legend>Weftinfo</legend>
+<?php
+echo $form->textFieldRow($model->fweft, 'fdensity');
+echo $form->textFieldRow($model->fweft, 'fcycle');
+echo $form->textFieldRow($model->fweft, 'fnumber');
+echo $form->textFieldRow($model->fweft, 'flnumber');
+echo $form->textFieldRow($model->fweft, 'fquota');
+echo $form->textFieldRow($model->fweft, 'fspinfo');
+echo $form->textFieldRow($model->fweft, 'frate');
+echo $form->textFieldRow($model->fweft, 'flotnum');
+echo $form->textFieldRow($model->fweft, 'fsn');
+echo $form->textFieldRow($model->fweft, 'ffactory');
+?>
+</fieldset>		
+	</div>
+</div>
+
+<div class="form-actions">
+<?php
+$this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=> ($model->isNewRecord ? 'Create' : 'Save'))); 
+$this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Reset'));
+?>
+</div>
+
+<?php
+$this->endWidget();
+
+?>
+
+
+
+
+
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
