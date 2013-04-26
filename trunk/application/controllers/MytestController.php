@@ -9,9 +9,10 @@ class MytestController extends LoomController
     
     public function actionIndex()
     {
+        MytestService::setCompanyId(1);
         $mod = new MytestService();
-        
-        
+        $ret = $mod->find('fid = 2');
+        var_dump($ret);
     }
     
     public function actionGetmap()

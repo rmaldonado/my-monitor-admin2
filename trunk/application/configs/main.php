@@ -31,6 +31,7 @@ return array(
             'loginUrl'          => array('luser/login'),
         ),
         'db'=>array(
+            'class'             => 'LoomDbConnection',
             'connectionString'  => getenv('MYSQL_DSN_HTML5'),
             'emulatePrepare'    => true,
             'username'          => 'html5test',
