@@ -1,12 +1,22 @@
 <?php
 class LoomComBaseModel extends LoomBaseModel{
-    //put your code here
+    private $_comid;
+    private static $companyid;
+    
+    public static function setCompanyId($comid) {
+        self::$companyid = $comid;
+    }
     public function getDbConnection() {
-        parent::getDbConnection();
-        return new TComMysqlSchema();
+        $conn = parent::getDbConnection();
+        $this->_comid = self::$companyid;
+        $conn->setCompanyId($this->_comid);
+        return $conn;
     }
     
     
+    public function getCompanyId() {
+        return $this->_comid;
+    }
 }
 
 ?>
