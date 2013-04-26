@@ -1,7 +1,7 @@
-@import "bootstrap/bootstrap.min.css";
-@import "bootstrap/bootstrap-responsive.min.css";
+@import "bootstrap/bootstrap.src.css";
+@import "bootstrap/bootstrap-responsive.src.css";
 @import "bootstrap/bootstrap-fileupload.css";
-@import "jquery/ui.css";
+@import "jquery/ui.min.css";
 @import "epiechart/jquery.easy-pie-chart.css";
 @import "fancybox/jquery.fancybox.css";
 @import "uniform/uniform.css";

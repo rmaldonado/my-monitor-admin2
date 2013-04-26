@@ -1,7 +1,4 @@
 $(window).load(function() {
-    fixBodyWidth();
-    $("#loadercnt").hide();//hidden load image
-    bindRefreshEvents();
     //plotEffectChart();
     plotEffectChartH();
     //$(".sidebar .navigation").addClass('bordered');  
@@ -9,51 +6,6 @@ $(window).load(function() {
     //$(".cCont[value='']").attr('checked',true).parent('span').addClass('checked');
 });
 
-
-function addLoader(block){
-    var bW = $(block).width();
-    var bH = $(block).height();    
-    $(block).append('<div class="loader" style="width: '+bW+'px; height: '+bH+'px;"><img src="/media/img/loader.gif"/></div>');
-}
-function removeLoader(block){
-    $(block).find('.loader').remove();
-}
-
-function bindRefreshEvents() {
-    //ublock
-    $(".ublock").click(function(){
-        var block = $(this).parents('[class^=block]');
-        var srcurl = $(this).attr('data');
-        srcurl = srcurl === undefined ? '/loom/site/missed' : srcurl;
-        $.ajax({
-                url: srcurl,
-                beforeSend: function ( xhr ) {
-                    //xhr.overrideMimeType("text/plain; charset=x-user-defined");
-                    addLoader(block);
-                }
-            })
-            .done(function(e) {
-                removeLoader(block);
-            })
-            .fail(function(e) {
-                window.alert(e);
-            });
-        ///////////////////////////
-        return false;
-    });
-    
-    $(".cblock").click(function(){
-        var block = $(this).parents('.block').find("[class^=data]");
-        if(block.is(':visible')){
-            block.fadeOut();            
-        }else{
-            block.fadeIn();            
-        }
-
-        return false;
-    });
-    
-}
 
 function plotEffectChartH() {
     var visits = [[1, 1235], [2, 1245], [3, 1590], [4, 1420], [5,1713], [6,1921], [7,1869], [8, 1790], [9,2314], [10,2490], [11,2175], [12,1989]];
@@ -104,31 +56,4 @@ function plotEffectChartH() {
         }]
     };
     $('#main_chart').highcharts(hiconfig);
-}
-
-function fixBodyWidth(){
-    
-    fixItemsWidth('.input-prepend', ['.add-on','button'], 'input');
-    fixItemsWidth('.input-append',  ['.add-on','button'], 'input');     
-    var bodySelecter = '.wrapper > .body';
-    
-    if ($(bodySelecter).height() < window.innerHeight)
-        $(bodySelecter).height(window.innerHeight+10);        
-    else
-        $(bodySelecter).removeAttr('style');
-}
-
-function fixItemsWidth(block, what, to) { 
-    $(block).each(function(){        
-        var iWidth = $(this).width();        
-        if(what.length > 0){            
-            for(var i=0; i < what.length; i++){
-                $(this).find(what[i]).each(function(){
-                    iWidth -= $(this).width()+(parseInt($(this).css('padding-left')) * 2);
-                });
-            }
-            $(this).find(to).width(iWidth-14);            
-        }
-    });    
-    
 }

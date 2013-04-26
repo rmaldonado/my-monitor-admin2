@@ -3,6 +3,10 @@
 class MytestController extends LoomController
 {
     //put your code here
+    public $menus = array(
+        'items' => array(),
+    );
+    
     public function actionIndex()
     {
          echo 'sdfsdf';         
@@ -51,6 +55,26 @@ class MytestController extends LoomController
             ), true);         
 		//$cnt->run();
         //var_dump($cnt);
+        $this->view->media = array(
+                'scripts' => array(
+                    'mytest/static.js',
+                ),
+            ); 
+        $infoRows = array();
+        $num = 1;
+        for($i = 1; $i < 10; $i++) {
+            $row = array();
+            for($j = 1; $j < 20; $j++) {
+                $row[] = array(
+                    'sid'   => sprintf('A%03d', $num++),
+                );
+            }
+            $infoRows[] = $row;
+        }
+
+        $this->view->looms = array(
+            'info'  => $infoRows,
+        );
         $this->view->tbutton = $tbutton;
         $this->view->btgroup = $btgroup;
         $this->render($view, $viewdata);

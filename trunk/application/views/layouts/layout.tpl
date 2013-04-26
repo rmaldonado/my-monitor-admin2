@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{assign var="jssuffix" value="src"}<!DOCTYPE html>
 <html lang="en">
 <head>        
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -6,8 +6,7 @@
     <!--[if gt IE 8]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
     <![endif]-->                
-    <title>{$SITETITLE_PREFIX}</title>
-    {include file="{$SMARTY_TPL_PATH}/layouts/mediascripts.tpl"}    
+    <title>{$SITETITLE_PREFIX}</title>    
 </head>
 <body>    
     <div id="loadercnt"><img src="/media/img/loader.gif"/></div>
@@ -30,5 +29,6 @@
     </div>        
     <div class="dialog" id="listedialog" style="display: none;" title="#_TITLE_#"></div>
     <div style="margin-top:8px; text-align: center; color:#999;"> Eweilian Tech. &copy; 2013 - 2014 </div>
+    {include file="{$SMARTY_TPL_PATH}/layouts/mediascripts.tpl"}    
 </body>
 </html>
