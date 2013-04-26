@@ -75,9 +75,9 @@ class Rollinfo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'fproduct' => array(self::HAS_ONE, 'Productinfo', array('fproductid' => 'fproductid')),
-			'fchaine' => array(self::HAS_ONE, 'Chaineinfo', array('fchaineid' => 'fchaineid')),
-			'fweft' => array(self::HAS_ONE, 'Weftinfo', array('fweftid' => 'fweftid')),
+			'fproduct' => array(self::HAS_ONE, 'Productinfo', 'fproductid' ),
+			'fchaine' => array(self::HAS_ONE, 'Chaineinfo', 'fchaineid'),
+			'fweft' => array(self::HAS_ONE, 'Weftinfo', 'fweftid'),
 		);
 	}
 
@@ -88,28 +88,28 @@ class Rollinfo extends CActiveRecord
 	{
 		return array(
 			'fid' => 'Fid',
-			'frollno' => 'Frollno',
-			'frollgrp' => 'Frollgrp',
-			'freednum' => 'Freednum',
-			'fhealdnum' => 'Fhealdnum',
-			'ftension' => 'Ftension',
-			'fsnum' => 'Fsnum',
-			'frpm' => 'Frpm',
-			'feffect' => 'Feffect',
+			'frollno' => '织轴号',
+			'frollgrp' => '并轴组别',
+			'freednum' => '刚筘次数',
+			'fhealdnum' => '综丝次数',
+			'ftension' => '设定张力',
+			'fsnum' => '条（匹）数',
+			'frpm' => '转/分钟',
+			'feffect' => '织机效率(%)',
 			'fsilktype' => 'Fsilktype',
-			'flasttime' => 'Flasttime',
-			'flastoperator' => 'Flastoperator',
-			'frolltime' => 'Frolltime',
-			'frolloperator' => 'Frolloperator',
-			'fpltime' => 'Fpltime',
-			'frealtime' => 'Frealtime',
-			'frealoperator' => 'Frealoperator',
-			'fproductid' => 'Fproductid',
-			'fchaineid' => 'Fchaineid',
-			'fweftid' => 'Fweftid',
-			'forderid' => 'Forderid',
-			'fpcardno' => 'Fpcardno',
-			'fmemo' => 'Fmemo',
+			'flasttime' => '上次金机时间',
+			'flastoperator' => '上次尽机人员',
+			'frolltime' => '本次上轴时间',
+			'frolloperator' => '本次上轴人员',
+			'fpltime' => '计划尽机时间',
+			'frealtime' => '实际尽机时间',
+			'frealoperator' => '实际尽机人员',
+			'fproductid' => '产品代码ID',
+			'fchaineid' => '经纱参数代码ID',
+			'fweftid' => '纬纱参数代码ID',
+			'forderid' => '订单号',
+			'fpcardno' => '制程卡号',
+			'fmemo' => '备注信息',
 		);
 	}
 

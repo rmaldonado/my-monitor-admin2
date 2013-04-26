@@ -11,7 +11,20 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 
 <div class="row-fluid">
 	<div class="span6">
-		
+<fieldset>
+<legend>Rollinfo</legend>
+<?php
+echo $form->textFieldRow($model, 'frollno');
+echo $form->textFieldRow($model, 'frollgrp');
+echo $form->textFieldRow($model, 'freednum');
+echo $form->textFieldRow($model, 'fhealdnum');
+echo $form->textFieldRow($model, 'ftension');
+echo $form->textFieldRow($model, 'fsnum');
+echo $form->textFieldRow($model, 'frpm');
+echo $form->textFieldRow($model, 'feffect');
+echo $form->textFieldRow($model, 'fsilktype');
+?>
+</fieldset>			
 	</div>
 	<div class="span6">
 		
@@ -22,7 +35,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 <fieldset>
 <legend>Chaineinfo</legend>
 <?php
-echo $form->textFieldRow($model->fchaine, 'fnumber');
+echo $form->textFieldRow($model->asa('fchaine'), 'fnumber');
 echo $form->textFieldRow($model->fchaine, 'fdensity');
 echo $form->textFieldRow($model->fchaine, 'fminirate');
 echo $form->textFieldRow($model->fchaine, 'fquota');

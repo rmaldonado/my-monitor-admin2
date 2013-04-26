@@ -12,6 +12,7 @@ class RollinfoController extends LoomController
 	 * @var CActiveRecord the currently loaded data model instance.
 	 */
 	private $_model;
+	public $menu;
 
 	/**
 	 * @return array action filters
@@ -66,7 +67,8 @@ class RollinfoController extends LoomController
 	public function actionCreate()
 	{
 		$model=new Rollinfo;
-
+		$model->with('fchaine,fweft');
+//var_dump($model);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
