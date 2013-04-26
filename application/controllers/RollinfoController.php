@@ -1,6 +1,6 @@
 <?php
 
-class RollinfoController extends Controller
+class RollinfoController extends LoomController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning

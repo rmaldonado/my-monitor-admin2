@@ -75,6 +75,9 @@ class Rollinfo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'fproduct' => array(self::HAS_ONE, 'Productinfo', array('fproductid' => 'fproductid')),
+			'fchaine' => array(self::HAS_ONE, 'Chaineinfo', array('fchaineid' => 'fchaineid')),
+			'fweft' => array(self::HAS_ONE, 'Weftinfo', array('fweftid' => 'fweftid')),
 		);
 	}
 
