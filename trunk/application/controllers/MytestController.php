@@ -9,7 +9,9 @@ class MytestController extends LoomController
     
     public function actionIndex()
     {
-         echo 'sdfsdf';         
+        $mod = new MytestService();
+        
+        
     }
     
     public function actionGetmap()
