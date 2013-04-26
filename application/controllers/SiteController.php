@@ -3,11 +3,14 @@ class SiteController extends LoomController {
 
     public function actionIndex() {
         $data = array(
-            'site_page_title'   => 'ffff',
+            'site_page_title'   => 'index',
         );
-        //echo Yii::app()->user->fscname;
-        //echo '<pre>';print_r($_SESSION);
-        $this->view->testvars = $data;
+        
+        $this->view->media = array(
+            'scripts'   => array(
+                'lsite.js',
+            ),
+        );
         $this->render('index', $data);
     }
 
