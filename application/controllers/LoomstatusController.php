@@ -1,6 +1,25 @@
 <?php
 class LoomstatusController extends LoomController {
     
+    public function actionIndex() {
+        $viewName = 'index';
+        $infoRows = array();
+        $num = 1;
+        for($i = 1; $i < 10; $i++) {
+            $row = array();
+            for($j = 1; $j < 20; $j++) {
+                $row[] = array(
+                    'sid'   => sprintf('A%03d', $num++),
+                );
+            }
+            $infoRows[] = $row;
+        }
+
+        $this->view->looms = array(
+            'info'  => $infoRows,
+        );        
+        $this->render($viewName);
+    }
     
     public function actionRender() {
      
