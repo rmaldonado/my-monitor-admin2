@@ -4,9 +4,10 @@
     border-radius: 3px 3px 3px 3px;
     line-height: 40px;
     min-height: 40px;
+
     text-align: center;
 }
-.alert .close {
+/*.alert .close {
     opacity: 1;
     -text-shadow: 0 1px 0 #FFFFFF;
     text-decoration: none;
@@ -30,20 +31,40 @@
     text-decoration: none;
     -opacity: 1;
     -text-shadow: 0 1px 0 #FFFFFF;
-}
-  .show-grid [class*="span"] {
-    margin-bottom: 5px;
+}*/
+  .show-grid [class *= "rbtn"] {
+    
+    margin:12px 12px 12px 12px;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 16px; 
+    border-width:2px;
+    border-style:solid;    
   }
-	#feedback { font-size: 1.4em; }
+  .show-grid .checked {
+      border: 1px solid #f00;
+  }
 	#selectable .ui-selecting { background: #FECA40; }
 	#selectable .ui-selected { 
        /* background: #F39814; color: white; */
-       border: 1px solid #f00;
-    }
-	#selectable { list-style-type: none; margin: 0; padding: 0;  }
-	#selectable li { margin: 6px; padding: 1px; float: left; width: 80px; height: 60px; font-size: 16px; text-align: center; }
-    .ui-selectable .ui-state-default .loomsn {
+       border: 2px solid #f00;
 
+    }
+	.ui-selectings { 
+       /* background: #F39814; color: white; */
+       border: 1px;
+    }    
+	#selectable { list-style-type: none; margin: 0; padding: 0;  }
+	#selectable li { 
+        border:1px;
+        margin: 6px 6px 6px 6px; 
+        padding: 4px 12px; 
+        float: left;  
+        font-size: 16px; 
+        text-align: center; 
+        border-radius: 4px 4px 4px 4px;
+    }
+    .ui-selectable .ui-state-default .loomsn {
+        padding: 4px;
         cursor:pointer;
     }
 </style>    
@@ -51,9 +72,7 @@
     <div class="span12">
         <div class="block">
             <div class="head orange"><h2>test</h2></div>
-          
- 
-                
+
                 <div class="alert alert-block alert-error fade in">
                     <button class="close " data-dismiss="alert" type="button">
                         <div class="icon">
@@ -69,48 +88,59 @@
                      <div class="msg"></div>
                  </div>
 
-     <div class="container">
-    <div class="row show-grid">
-      <div class="span4">Span 4</div>
-      <div class="span8">Span 8</div>
-    </div>
-</div>                       
-  <div class="row-fluid">          
-<ol id="selectable" class="ui-selectable">
-    {foreach $looms.info as $row}
-        {foreach $row as $col}
-    <li class=" ui-state-default " ><div class="loomsn">{$col.sid} </div></li>
-    {/foreach}
-    {/foreach}
-	{*<li class="ui-state-default">2</li>
-	<li class="ui-state-default">3</li>
-	<li class="ui-state-default">4</li>
-	<li class="ui-state-default">5</li>
-	<li class="ui-state-default">6</li>
-	<li class="ui-state-default">7</li>
-	<li class="ui-state-default">8</li>
-	<li class="ui-state-default">9</li>
-	<li class="ui-state-default">10</li>
-	<li class="ui-state-default">11</li>
-	<li class="ui-state-default">12</li>*}
-</ol>
-      </div>
-                <table class="table dtable lcnp" cellpadding="0" cellspacing="0" width="100%">
-                    <tbody>
-                        {foreach $looms.info as $row}
-                        <tr>
-                            {foreach $row as $col}
-                            <td>
-                                <button class="btn btn-success" href="#">{$col.sid}</button>
-                            </td>          
-                            {/foreach}
-                        </tr>
-                        {/foreach}
-                    </tbody>
-                </table>
-            </div>
+            <div class="span11 container">
+                <div class="row show-grid" id="loomstatus">
+
+                {foreach $looms.info as $row}
+                    {foreach $row as $col}
+                        <div class="btn disabled rbtn">{$col.sid}</div>
+                    {/foreach}
+                {/foreach}
+                </div>
+            </div>                       
+
+
         </div>
-        
+                
+        <div class="block">
+            <div class="head blue">
+                <div class="icon"><i class="ico-layout-9"></i></div>
+                <h2>详细信息</h2>
+                <ul class="buttons">
+                    <li><a href="#" onClick="source('table_sort'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
+                </ul>
+            </div>   
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li class=""><a data-toggle="tab" href="#profile">Profile</a></li>
+                <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a data-toggle="tab" href="#dropdown1">@fat</a></li>
+                    <li><a data-toggle="tab" href="#dropdown2">@mdo</a></li>
+                  </ul>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="myTabContent">
+                <div id="home" class="tab-pane fade in active">
+                    <p id="mytimer"></p>
+                    <p id="loomcnt"></p>
+                  <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                </div>
+                <div id="profile" class="tab-pane fade">
+                  <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                </div>
+                <div id="dropdown1" class="tab-pane fade">
+                  <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                </div>
+                <div id="dropdown2" class="tab-pane fade">
+                  <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                </div>
+            </div>            
+            
+        </div>
+                
         <div class="block">
             <div class="head blue">
                 <div class="icon"><i class="ico-layout-9"></i></div>
@@ -589,3 +619,12 @@
         </div>
     </div>
 </div>  
+{* --------------------------------- *}
+<div id="statustips" style="display:none;">
+    <div id="sWidget_4" class="block" style="position: relative; left: 0px; top: 0px;">
+
+        <div class="data">
+            Sed leo orci, placerat consectetur gravida a, varius in purus. Cras scelerisque lorem a lorem rutrum molestie. Nulla tincidunt diam at orci ultrices eleifend. Vestibulum metus elit, mollis sed blandit non, adipiscing ornare magna. Suspendisse eget tincidunt enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec vel lobortis felis.
+        </div>
+    </div>
+</div>

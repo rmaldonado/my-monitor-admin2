@@ -526,7 +526,7 @@ div.tagsinput div input{line-height: 20px; height: 20px; font-size: 11px; margin
     /* eof progress */    
     
     /* popover */
-    .popover{border-color: #CCC; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;}
+    .popover{border-color: #888; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 10px;}
     .popover-title{background: #FFF; color: #333; font-size: 14px; font-weight: normal; line-height: 20px;}
     /* popover */    
     
