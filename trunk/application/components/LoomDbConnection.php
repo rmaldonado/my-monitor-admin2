@@ -10,7 +10,7 @@ class LoomDbConnection extends CDbConnection {
         {
             $this->_schema = Yii::createComponent('LoomDbSchema', $this);
         }
-        
+
         $this->_schema->setDbName($this->getDbName());
         
         return $this->_schema;
