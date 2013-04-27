@@ -81,10 +81,17 @@ class LoomController extends CController
         }
         parent::init();
         $this->view = Yii::app()->getViewRenderer();
-        $this->view->userinfo = array(
-            'fscname'   =>  Yii::app()->user->fscname,
-        );
-        $this->renderMenu();
+
+        $fscname = null;//
+        if (Yii::app()->user->getId() !== null)
+            $fscname = Yii::app()->user->fscname;
+        if ($fscname) {
+            $this->view->userinfo = array(
+                'fscname'   =>  $fscname,
+            );
+            $this->renderMenu();
+        }
+
     }
     
     public function renderMenu() {
