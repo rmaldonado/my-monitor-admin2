@@ -18,7 +18,7 @@ class LoomController extends CController
                 array(
                     'label'	=> '织机管理',
                     'class'	=> 'blyellow',
-                    'url'       => '#',
+                    'url'       => '/loom/loomstatus',
                     'acss'      => 'yellow',
                     'tcss'      => 'ico-cog-2',
                     'items'	=> null,
