@@ -40,6 +40,6 @@ class LUserIdentity extends CUserIdentity
     }
     
     public function getExtinfo() {
-        return 'sdd';
+
     }
 }

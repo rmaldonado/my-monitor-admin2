@@ -46,6 +46,7 @@ class MytestController extends LoomComController
         //var_dump($cnt);
         $this->view->media = array(
                 'scripts' => array(
+                    'plugins/jquery/jquery.timer.js',
                     'mytest/static.js',
                 ),
             ); 
