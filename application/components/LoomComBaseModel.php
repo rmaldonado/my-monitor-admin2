@@ -1,14 +1,16 @@
 <?php
-class LoomComBaseModel extends LoomBaseModel{
-    private $_comid;
-    private static $companyid;
+abstract class LoomComBaseModel extends LoomBaseModel{
+    protected $_comid;
     
-    public static function setCompanyId($comid) {
-        self::$companyid = $comid;
+    abstract function initCompanyId();
+    
+    public  function setCompanyId($comid) {
+        $this->_comid = $comid;
     }
+    
     public function getDbConnection() {
+        $this->initCompanyId();
         $conn = parent::getDbConnection();
-        $this->_comid = self::$companyid;
         $conn->setCompanyId($this->_comid);
         return $conn;
     }

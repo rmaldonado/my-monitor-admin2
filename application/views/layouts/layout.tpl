@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />    
     <!--[if gt IE 8]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
-    <![endif]-->                
+    <![endif]-->
+    {include file="{$SMARTY_TPL_PATH}/layouts/mediastyle.tpl"} 
     <title>{$SITETITLE_PREFIX}</title>    
 </head>
 <body>    
