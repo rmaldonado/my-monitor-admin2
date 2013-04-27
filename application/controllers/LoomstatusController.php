@@ -7,7 +7,7 @@ class LoomstatusController extends LoomController {
         $num = 1;
         for($i = 1; $i < 10; $i++) {
             $row = array();
-            for($j = 1; $j < 20; $j++) {
+            for($j = 1; $j < 10; $j++) {
                 $row[] = array(
                     'sid'   => sprintf('A%03d', $num++),
                 );

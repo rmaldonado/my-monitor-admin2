@@ -61,10 +61,10 @@
                 </ul>
             </div>   
             <ul class="nav nav-tabs" id="myTab">
-                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-                <li class=""><a data-toggle="tab" href="#profile">Profile</a></li>
+                <li class="active"><a data-toggle="tab" href="#home">在织信息</a></li>
+                <li class=""><a data-toggle="tab" href="#profile">经纬纱信息</a></li>
                 <li class="dropdown">
-                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">织机信息 <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a data-toggle="tab" href="#dropdown1">@fat</a></li>
                     <li><a data-toggle="tab" href="#dropdown2">@mdo</a></li>
@@ -80,24 +80,22 @@
 
            <div class="row-fluid">
 
-                    <div class="span6">                
+                    <div class="span7">                
 
                         <div class="block">
-                            <div class="head">                                
-                                <h2>Default form elements</h2>
-                                <ul class="buttons">             
-                                    <li><a onclick="source('form_default'); return false;" href="#"><div class="icon"><span class="ico-info"></span></div></a></li>
-                                </ul>                                  
-                            </div>                                        
+                                                                   
                             <div class="data-fluid">
                                 
                                 <div class="row-form">
-                                    <div class="span3">Input Text:</div>
-                                    <div class="span9"><input type="text" placeholder="Placeholder example"></div>
+                                    <div class="span2">品名:</div>
+                                    <div class="span3"><input type="text" placeholder="Placeholder example"></div>
+                                    
                                 </div>
                                 <div class="row-form">
-                                    <div class="span3">Input Password:</div>
-                                    <div class="span9"><input type="password" value="inputpassword"></div>
+                                    <div class="span2">并轴组别:</div>
+                                    <div class="span3"><input type="password" value="inputpassword"></div>
+                                    <div class="span2">织轴号：</div>
+                                    <div class="span3"><input type="password" value="inputpassword"></div>
                                 </div>
                                 <div class="row-form">
                                     <div class="span3">Readonly:</div>
@@ -117,7 +115,7 @@
 
                     </div>
 
-                    <div class="span6">                
+                    <div class="span5">                
 
                         <div class="block">
                             <div class="head">                                
@@ -128,63 +126,7 @@
                             </div>                                    
                             <div class="data-fluid">
 
-                                <div class="row-form">
-                                    <div class="span3">Prepend:</div>
-                                    <div class="span9">
-                                        <div class="input-prepend">
-                                            <span class="add-on"><i class="icon-envelope icon-white"></i></span>
-                                            <input type="text" style="width: 530px;">                               
-                                        </div>                  
-                                        <span class="bottom">Controlled by JavaScript</span>
-                                    </div>
-                                </div>
-                                <div class="row-form">
-                                    <div class="span3">Append:</div>
-                                    <div class="span9">
-                                        <div class="input-append">
-                                            <input type="text" style="width: 530px;">
-                                            <span class="add-on orange"><i class="icon-user icon-white"></i></span>
-                                        </div>                                                        
-                                    </div>
-                                </div>
-                                <div class="row-form">
-                                    <div class="span3">Both:</div>
-                                    <div class="span9">                            
-                                        <div class="input-append input-prepend">                                
-                                            <span class="add-on"><i class="icon-fire icon-white"></i></span>
-                                            <input type="text" style="width: 499px;">
-                                            <span class="add-on purple"><i class="icon-magnet icon-white"></i></span>
-                                        </div>                                                        
-                                    </div>
-                                </div>   
-                                <div class="row-form">
-                                    <div class="span3">Prepend button:</div>
-                                    <div class="span9">
-                                        <div class="input-prepend">
-                                            <button type="button" class="btn btn-primary">Left</button>
-                                            <input type="text" style="width: 517px;">                                
-                                        </div>                            
-                                    </div>
-                                </div>
-                                <div class="row-form">
-                                    <div class="span3">Append button:</div>
-                                    <div class="span9">
-                                        <div class="input-append">
-                                            <input type="text" style="width: 512px;">
-                                            <button type="button" class="btn btn-warning">Right</button>
-                                        </div>                            
-                                    </div>
-                                </div>                                     
-                                <div class="row-form">
-                                    <div class="span3">Both:</div>
-                                    <div class="span9">
-                                        <div class="input-prepend input-append">
-                                            <button type="button" class="btn">Left</button>
-                                            <input type="text" style="width: 468px;">                              
-                                            <button type="button" class="btn btn-info">Right</button>
-                                        </div>                            
-                                    </div>
-                                </div>
+                                
                                 
                             </div>                
                         </div>
