@@ -1,5 +1,3 @@
-@import "bootstrap/bootstrap.src.css";
-@import "bootstrap/bootstrap-responsive.src.css";
 @import "bootstrap/bootstrap-fileupload.css";
 @import "jquery/ui.min.css";
 @import "epiechart/jquery.easy-pie-chart.css";
@@ -15,7 +13,6 @@
 @import "shbrush/shCoreDefault.css";
 @import "shbrush/shThemeDefault.css";
 @import "../js/plugins/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css";
-@import "icons.css";
 @import "styling.css";
 @import "stylesheet.css";
 @import "opera.css";

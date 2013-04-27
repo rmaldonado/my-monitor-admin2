@@ -1,4 +1,5 @@
 <?php
 return array(
-    'param' => '',
+    'mediasuffix'   => 'src',
+    'mediauri'      => getenv('SITE_MEDIA_URI'),
 );    

@@ -41,14 +41,9 @@
     border-style:solid;    
   }
   .show-grid .checked {
-      border: 1px solid #f00;
+      border: 2px solid #f00;
   }
-	#selectable .ui-selecting { background: #FECA40; }
-	#selectable .ui-selected { 
-       /* background: #F39814; color: white; */
-       border: 2px solid #f00;
 
-    }
 	.ui-selectings { 
        /* background: #F39814; color: white; */
        border: 1px;
@@ -126,7 +121,124 @@
                 <div id="home" class="tab-pane fade in active">
                     <p id="mytimer"></p>
                     <p id="loomcnt"></p>
-                  <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                  <p>
+
+           <div class="row-fluid">
+
+                    <div class="span6">                
+
+                        <div class="block">
+                            <div class="head">                                
+                                <h2>Default form elements</h2>
+                                <ul class="buttons">             
+                                    <li><a onclick="source('form_default'); return false;" href="#"><div class="icon"><span class="ico-info"></span></div></a></li>
+                                </ul>                                  
+                            </div>                                        
+                            <div class="data-fluid">
+                                
+                                <div class="row-form">
+                                    <div class="span3">Input Text:</div>
+                                    <div class="span9"><input type="text" placeholder="Placeholder example"></div>
+                                </div>
+                                <div class="row-form">
+                                    <div class="span3">Input Password:</div>
+                                    <div class="span9"><input type="password" value="inputpassword"></div>
+                                </div>
+                                <div class="row-form">
+                                    <div class="span3">Readonly:</div>
+                                    <div class="span9"><input type="text" readonly="readonly" value="Readonly value"></div>
+                                </div>
+                                <div class="row-form">
+                                    <div class="span3">Disabled:</div>
+                                    <div class="span9"><input type="text" disabled="disabled" value="Disabled value"></div>
+                                </div>                    
+                                <div class="row-form">
+                                    <div class="span3">Textarea:</div>
+                                    <div class="span9"><textarea placeholder="Placeholder example"></textarea></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="span6">                
+
+                        <div class="block">
+                            <div class="head">                                
+                                <h2>Inputs with pre/appends</h2>
+                                <ul class="buttons">             
+                                    <li><a onclick="source('form_pa'); return false;" href="#"><div class="icon"><span class="ico-info"></span></div></a></li>
+                                </ul>                                                                  
+                            </div>                                    
+                            <div class="data-fluid">
+
+                                <div class="row-form">
+                                    <div class="span3">Prepend:</div>
+                                    <div class="span9">
+                                        <div class="input-prepend">
+                                            <span class="add-on"><i class="icon-envelope icon-white"></i></span>
+                                            <input type="text" style="width: 530px;">                               
+                                        </div>                  
+                                        <span class="bottom">Controlled by JavaScript</span>
+                                    </div>
+                                </div>
+                                <div class="row-form">
+                                    <div class="span3">Append:</div>
+                                    <div class="span9">
+                                        <div class="input-append">
+                                            <input type="text" style="width: 530px;">
+                                            <span class="add-on orange"><i class="icon-user icon-white"></i></span>
+                                        </div>                                                        
+                                    </div>
+                                </div>
+                                <div class="row-form">
+                                    <div class="span3">Both:</div>
+                                    <div class="span9">                            
+                                        <div class="input-append input-prepend">                                
+                                            <span class="add-on"><i class="icon-fire icon-white"></i></span>
+                                            <input type="text" style="width: 499px;">
+                                            <span class="add-on purple"><i class="icon-magnet icon-white"></i></span>
+                                        </div>                                                        
+                                    </div>
+                                </div>   
+                                <div class="row-form">
+                                    <div class="span3">Prepend button:</div>
+                                    <div class="span9">
+                                        <div class="input-prepend">
+                                            <button type="button" class="btn btn-primary">Left</button>
+                                            <input type="text" style="width: 517px;">                                
+                                        </div>                            
+                                    </div>
+                                </div>
+                                <div class="row-form">
+                                    <div class="span3">Append button:</div>
+                                    <div class="span9">
+                                        <div class="input-append">
+                                            <input type="text" style="width: 512px;">
+                                            <button type="button" class="btn btn-warning">Right</button>
+                                        </div>                            
+                                    </div>
+                                </div>                                     
+                                <div class="row-form">
+                                    <div class="span3">Both:</div>
+                                    <div class="span9">
+                                        <div class="input-prepend input-append">
+                                            <button type="button" class="btn">Left</button>
+                                            <input type="text" style="width: 468px;">                              
+                                            <button type="button" class="btn btn-info">Right</button>
+                                        </div>                            
+                                    </div>
+                                </div>
+                                
+                            </div>                
+                        </div>
+
+                    </div>            
+
+                </div>
+                      
+                  </p>
                 </div>
                 <div id="profile" class="tab-pane fade">
                   <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>

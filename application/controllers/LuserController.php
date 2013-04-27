@@ -41,7 +41,17 @@ class LuserController extends LoomController {
         }
         else {
             $tplFile = 'loginform';
-            $this->render($tplFile);
+            $this->view->sitemedia = array(
+                'uri'   => Yii::app()->params['mediauri'],
+            );
+            $datas = array(
+                'sitemedia' => array(
+                    'uri'   => Yii::app()->params['mediauri'],
+                    'jssuffix' => Yii::app()->params['mediasuffix'],
+                ),
+               
+            );
+            $this->render($tplFile, $datas);
         }
     }
     

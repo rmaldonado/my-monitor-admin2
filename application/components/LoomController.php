@@ -83,8 +83,14 @@ class LoomController extends CController
         $this->view = Yii::app()->getViewRenderer();
 
         $fscname = null;//
-        if (Yii::app()->user->getId() !== null)
+        if (Yii::app()->user->getId() !== null) {
             $fscname = Yii::app()->user->fscname;
+            $this->view->sitemedia = array(
+                    'uri'   => Yii::app()->params['mediauri'],
+                    'jssuffix'  => Yii::app()->params['mediasuffix'],
+                );
+        }
+        
         if ($fscname) {
             $this->view->userinfo = array(
                 'fscname'   =>  $fscname,
