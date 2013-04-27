@@ -13,9 +13,10 @@ class LoomDbSchema extends CMysqlSchema {
     
     public function loadTable($name) {
         $conn = $this->getDbConnection();
-        $this->_dbname = $conn->getDbName();
-        $name = $this->_dbname . '.' . $name;
-        
+		if ($conn->getCompanyId() > 0) {
+			$this->_dbname = $conn->getDbName();
+			$name = $this->_dbname . '.' . $name;
+        }
         return parent::loadTable($name);
     }
 }
