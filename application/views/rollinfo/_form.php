@@ -35,15 +35,21 @@ echo $form->textFieldRow($model, 'fsilktype');
 <fieldset>
 <legend>Chaineinfo</legend>
 <?php
-echo $form->textFieldRow($model->asa('fchaine'), 'fnumber');
-echo $form->textFieldRow($model->fchaine, 'fdensity');
-echo $form->textFieldRow($model->fchaine, 'fminirate');
-echo $form->textFieldRow($model->fchaine, 'fquota');
-echo $form->textFieldRow($model->fchaine, 'fspinfo');
-echo $form->textFieldRow($model->fchaine, 'frate');
-echo $form->textFieldRow($model->fchaine, 'flotnum');
-echo $form->textFieldRow($model->fchaine, 'fsn');
-echo $form->textFieldRow($model->fchaine, 'ffactory');
+$this->widget('bootstrap.widgets.TbButton', array(
+		'buttonType'=>'button', 
+		'label' => 'Select Chaineinfo',
+		'htmlOptions' => array(
+			'id' => 'select-chaineinfo'
+		)));
+// echo $form->textFieldRow($fchaine, 'fnumber');
+// echo $form->textFieldRow($fchaine, 'fdensity');
+// echo $form->textFieldRow($fchaine, 'fminirate');
+// echo $form->textFieldRow($fchaine, 'fquota');
+// echo $form->textFieldRow($fchaine, 'fspinfo');
+// echo $form->textFieldRow($fchaine, 'frate');
+// echo $form->textFieldRow($fchaine, 'flotnum');
+// echo $form->textFieldRow($fchaine, 'fsn');
+// echo $form->textFieldRow($fchaine, 'ffactory');
 ?>
 </fieldset>		
 	</div>
@@ -51,16 +57,22 @@ echo $form->textFieldRow($model->fchaine, 'ffactory');
 <fieldset>
 <legend>Weftinfo</legend>
 <?php
-echo $form->textFieldRow($model->fweft, 'fdensity');
-echo $form->textFieldRow($model->fweft, 'fcycle');
-echo $form->textFieldRow($model->fweft, 'fnumber');
-echo $form->textFieldRow($model->fweft, 'flnumber');
-echo $form->textFieldRow($model->fweft, 'fquota');
-echo $form->textFieldRow($model->fweft, 'fspinfo');
-echo $form->textFieldRow($model->fweft, 'frate');
-echo $form->textFieldRow($model->fweft, 'flotnum');
-echo $form->textFieldRow($model->fweft, 'fsn');
-echo $form->textFieldRow($model->fweft, 'ffactory');
+$this->widget('bootstrap.widgets.TbButton', array(
+		'buttonType'=>'button', 
+		'label' => 'Select Weftinfo',
+		'htmlOptions' => array(
+			'id' => 'select-weftinfo'
+		)));
+// echo $form->textFieldRow($fweft, 'fdensity');
+// echo $form->textFieldRow($fweft, 'fcycle');
+// echo $form->textFieldRow($fweft, 'fnumber');
+// echo $form->textFieldRow($fweft, 'flnumber');
+// echo $form->textFieldRow($fweft, 'fquota');
+// echo $form->textFieldRow($fweft, 'fspinfo');
+// echo $form->textFieldRow($fweft, 'frate');
+// echo $form->textFieldRow($fweft, 'flotnum');
+// echo $form->textFieldRow($fweft, 'fsn');
+// echo $form->textFieldRow($fweft, 'ffactory');
 ?>
 </fieldset>		
 	</div>
@@ -78,158 +90,70 @@ $this->endWidget();
 
 ?>
 
+<div id="dialog-select-chaineinfo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>selectChaineinfo</h3>
+  </div>
+  <div class="modal-body">
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" id="btn-chaineinfo">发布</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+  </div>  
+</div>
+
+
+<div id="dialog-select-weftinfo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>select weftinfo</h3>
+  </div>
+  <div class="modal-body">
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" id="btn-weftinfo">发布</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+  </div>  
+</div>
 
 
 
+<?php
+
+$weft_index = $this->createUrl('weftinfo/index');
+$chaine_index = $this->createUrl('chaineinfo/index');
+$code = '
+	$("#select-weftinfo").click(function (e) {
+		console.log("#select-weftinfo");
+		var url = "'.$weft_index.'";
+		var d = $("#dialog-select-weftinfo");
+		var b = $(".modal-body", d).load(url);
+		d.modal();
+	});
+
+	$("#select-chaineinfo").click(function(e) {
+		var url = "'.$chaine_index.'";
+		var d = $("#dialog-select-chaineinfo");
+		var b = $(".modal-body", d).load(url);
+		d.modal();
+	});
+
+	$(".chaine-item", "#select-chaineinfo").live(function (e) {
+		$this = $(this);
+		$("#dialog-select-chaineinfo").modal("hide");
+	});
+';
+$cs=Yii::app()->clientScript;  
+$cs->registerScript('rollinfo-select', $code, CClientScript::POS_READY);
 
 
-<div class="form">
+?>
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'rollinfo-form',
-	'enableAjaxValidation'=>false,
-)); ?>
+<script type="text/javascript">
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->errorSummary($model); ?>
+</script>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'frollno'); ?>
-		<?php echo $form->textField($model,'frollno',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'frollno'); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'frollgrp'); ?>
-		<?php echo $form->textField($model,'frollgrp',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'frollgrp'); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'freednum'); ?>
-		<?php echo $form->textField($model,'freednum'); ?>
-		<?php echo $form->error($model,'freednum'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fhealdnum'); ?>
-		<?php echo $form->textField($model,'fhealdnum'); ?>
-		<?php echo $form->error($model,'fhealdnum'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ftension'); ?>
-		<?php echo $form->textField($model,'ftension',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'ftension'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fsnum'); ?>
-		<?php echo $form->textField($model,'fsnum'); ?>
-		<?php echo $form->error($model,'fsnum'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'frpm'); ?>
-		<?php echo $form->textField($model,'frpm'); ?>
-		<?php echo $form->error($model,'frpm'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'feffect'); ?>
-		<?php echo $form->textField($model,'feffect'); ?>
-		<?php echo $form->error($model,'feffect'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fsilktype'); ?>
-		<?php echo $form->textField($model,'fsilktype',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'fsilktype'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'flasttime'); ?>
-		<?php echo $form->textField($model,'flasttime',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'flasttime'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'flastoperator'); ?>
-		<?php echo $form->textField($model,'flastoperator',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'flastoperator'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'frolltime'); ?>
-		<?php echo $form->textField($model,'frolltime',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'frolltime'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'frolloperator'); ?>
-		<?php echo $form->textField($model,'frolloperator',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'frolloperator'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fpltime'); ?>
-		<?php echo $form->textField($model,'fpltime',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'fpltime'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'frealtime'); ?>
-		<?php echo $form->textField($model,'frealtime',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'frealtime'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'frealoperator'); ?>
-		<?php echo $form->textField($model,'frealoperator',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'frealoperator'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fproductid'); ?>
-		<?php echo $form->textField($model,'fproductid',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'fproductid'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fchaineid'); ?>
-		<?php echo $form->textField($model,'fchaineid',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'fchaineid'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fweftid'); ?>
-		<?php echo $form->textField($model,'fweftid',array('size'=>11,'maxlength'=>11)); ?>
-		<?php echo $form->error($model,'fweftid'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'forderid'); ?>
-		<?php echo $form->textField($model,'forderid',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'forderid'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fpcardno'); ?>
-		<?php echo $form->textField($model,'fpcardno',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'fpcardno'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fmemo'); ?>
-		<?php echo $form->textField($model,'fmemo',array('size'=>60,'maxlength'=>400)); ?>
-		<?php echo $form->error($model,'fmemo'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->

@@ -130,10 +130,17 @@ class ChaineinfoController extends LoomController
 	 */
 	public function actionIndex()
 	{
+		if(Yii::app()->request->isAjaxRequest){  
+		    //$this->layout='//layouts/column2';
+			$this->layout = '//layouts/ajax';
+		}
+
 		$dataProvider=new CActiveDataProvider('Chaineinfo');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+
+
 	}
 
 	/**
