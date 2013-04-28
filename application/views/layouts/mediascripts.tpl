@@ -17,6 +17,7 @@
  <script type='text/javascript' src='{$sitemedia.uri}/media/js/plugins/sparklines/jquery.sparkline.min.js'></script>
 <script type='text/javascript' src='{$sitemedia.uri}/media/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
 <script type='text/javascript' src="{$sitemedia.uri}/media/js/plugins/uniform/jquery.uniform.min.js"></script>
+<script type='text/javascript' src="{$sitemedia.uri}/media/js/plugins/jquery/jquery.timer.{$jssuffix}.js"></script>
 
 <script type='text/javascript' src='{$sitemedia.uri}/media/js/plugins/datatables/jtables.{$jssuffix}.js'></script>
 <script type='text/javascript' src='{$sitemedia.uri}/media/js/plugins/datatables/jkeytable.{$jssuffix}.js'></script>

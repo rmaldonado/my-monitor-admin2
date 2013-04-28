@@ -18,6 +18,7 @@
                 <li><a href="{$menuRow.url}" class="{$menuRow.class}">{$menuRow.label}</a>    
             {/if}
         {/foreach}
+{if isset($showExt)}         
     <li>
         <a href="#" class="blgreen">Forms Stuff</a>
         <div class="open"></div>
@@ -28,7 +29,7 @@
             <li><a href="editor.html">Editors</a></li>  
             <li><a href="wizard.html">Wizard</a></li>
         </ul>
-    </li>
+    </li>   
     <li><a href="statistic.html" class="blred">Statistic</a></li>                
     <li class="active">
         <a href="#" class="bldblue">Tables</a>
@@ -57,6 +58,7 @@
             <li><a href="404.html">Error 404</a></li>
         </ul>
     </li>
+{/if}    
 </ul>
 
 <div class="widget">
