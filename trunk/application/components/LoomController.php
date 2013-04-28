@@ -9,7 +9,7 @@ class LoomController extends CController
         'items' =>  array(
                 array(
                     'label' => '总览', 
-                    'url'   => '#',
+                    'url'   => '/loom/',
                     'class' => 'blblue',
                     'acss'  => '',
                     'tcss'  => 'ico-monitor',

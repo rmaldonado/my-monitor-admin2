@@ -1,0 +1,13 @@
+.show-grid [class *= "rbtn"] {
+    
+    margin:12px 12px 12px 12px;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 16px; 
+    border-width:2px;
+    border-style:solid;
+    /*background-image: url(/media/img/rwbg.gif);*/
+  }
+  .show-grid .checked {
+      border: 2px solid #f00;
+  }
+

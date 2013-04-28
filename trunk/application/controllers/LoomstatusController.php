@@ -15,9 +15,18 @@ class LoomstatusController extends LoomController {
             $infoRows[] = $row;
         }
 
+        $this->view->media = array(
+            'scripts'   =>  array(
+                'loomstatus/index.js',
+            ),
+            'styles'    =>  array(
+                'loomstatus/index.css',
+            )
+        );
         $this->view->looms = array(
             'info'  => $infoRows,
-        );        
+        );
+        
         $this->render($viewName);
     }
     
