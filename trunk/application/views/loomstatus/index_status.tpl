@@ -17,7 +17,9 @@
         <div class="span12 container">
             <div class="rows show-grid" id="loomstatus">
 {foreach $looms.info as $row}{foreach $row as $col}
-               <div class="btn disabled rbtn">{$col.sid}</div>
+               <div class="btn {if $col.st == 'run'}  btn-success 
+                    {else if $col.st == 'low'} btn-warning
+                    {else}disabled{/if} rbtn">{$col.sid}</div>
 {/foreach}{/foreach}
             </div>
         </div>

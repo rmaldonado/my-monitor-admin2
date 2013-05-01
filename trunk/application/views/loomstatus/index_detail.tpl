@@ -18,12 +18,8 @@
         </li>
     </ul>
 
-            <div class="tab-content" id="myTabContent">
-                <div id="home" class="tab-pane fade in active">
-                    <p id="mytimer"></p>
-                    <p id="loomcnt"></p>
-                  <p>
-
+       <div class="tab-content" id="myTabContent">
+           <div id="home" class="tab-pane fade in active">
            <div class="row-fluid">
 
                     <div class="span7">                
@@ -65,13 +61,13 @@
 
                         <div class="block">
                             <div class="head">                                
-                                <h2>Inputs with pre/appends</h2>
+                                <h2>汇总统计</h2>
                                 <ul class="buttons">             
                                     <li><a onclick="source('form_pa'); return false;" href="#"><div class="icon"><span class="ico-info"></span></div></a></li>
                                 </ul>                                                                  
                             </div>                                    
                             <div class="data-fluid">
-
+                                <div class="row-form"><h3>共有织机：81台</h3></div>
 
 
                             </div>                

@@ -25,7 +25,7 @@
             </div>
             <div class="span4">
                 <div class="stat">
-                    <span class="corange">720</span>(台)<br/> 运转
+                    <span class="corange">720</span>(台)<br/> 停机
                 </div>                                                
             </div>               
         </div>
@@ -36,7 +36,7 @@
             <h2>最近生产的产品</h2>
             <ul class="buttons">
                 <li><a href="#" onClick="source('table_main'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
-                <li><a href="#" class="ublock"><div class="icon"><span class="ico-undo"></span></div></a></li>
+                <li><a href="#" data="/loom/site/product" class="ublock"><div class="icon"><span class="ico-undo"></span></div></a></li>
                 <li><a href="#" class="cblock"><div class="icon"><span class="ico-sort"></span></div></a></li>
             </ul>
         </div>
@@ -45,18 +45,23 @@
                 <thead>
                     <tr>
                         <th width="16"><input type="checkbox" class="checkall"/></th>                                        
-                        <th>Name</th>
-                        <th>E-mail</th>
-                        <th>Phone</th>                       
-                        <th width="78">Actions</th>
+                        <th>产品代码</th>
+                        <th>产品名称</th>
+                        <th>布种规格</th>
+                        <th>幅宽(厘米)</th>
+                        <th>满停长度(米)</th>
+                        <th width="78">操作</th>
                     </tr>
                 </thead>
                 <tbody>
+                {foreach $product as $row}    
                     <tr>
                         <td><input type="checkbox" name="checkbox"/></td>                                        
-                        <td>Dmitry</td>
-                        <td>dmitry@domain.com</td>
-                        <td>+98(765) 432-10-98</td>                      
+                        <td>{$row.code}</td>
+                        <td>{$row.name}</td>
+                        <td>{$row.spec}</td>  
+                        <td>{$row.width}</td> 
+                        <td>{$row.tlength}</td>
                         <td>
                             <a href="#" class="button green">
                                 <div class="icon"><span class="ico-pencil"></span></div>
@@ -66,62 +71,7 @@
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td><input type="checkbox" name="checkbox"/></td>                                        
-                        <td>Alex</td>
-                        <td>alex@domain.com</td>
-                        <td>+98(765) 432-10-99</td>                      
-                        <td>
-                            <a href="#" class="button green">
-                                <div class="icon"><span class="ico-pencil"></span></div>
-                            </a>
-                            <a href="#" class="button red">
-                                <div class="icon"><span class="ico-remove"></span></div>
-                            </a>                                              
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="checkbox"/></td>
-                        <td>John</td>
-                        <td>john@domain.com</td>
-                        <td>+98(765) 432-10-97</td>                      
-                        <td>
-                            <a href="#" class="button green">
-                                <div class="icon"><span class="ico-pencil"></span></div>
-                            </a>
-                            <a href="#" class="button red">
-                                <div class="icon"><span class="ico-remove"></span></div>
-                            </a>                                              
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="checkbox"/></td>                                        
-                        <td>Angelina</td>
-                        <td>angelina@domain.com</td>
-                        <td>+98(765) 432-10-90</td>                      
-                        <td>
-                            <a href="#" class="button green">
-                                <div class="icon"><span class="ico-pencil"></span></div>
-                            </a>
-                            <a href="#" class="button red">
-                                <div class="icon"><span class="ico-remove"></span></div>
-                            </a>                                              
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="checkbox"/></td>
-                        <td>Tom</td>
-                        <td>tom@domain.com</td>
-                        <td>+98(765) 432-10-92</td>                      
-                        <td>
-                            <a href="#" class="button green">
-                                <div class="icon"><span class="ico-pencil"></span></div>
-                            </a>
-                            <a href="#" class="button red">
-                                <div class="icon"><span class="ico-remove"></span></div>
-                            </a>                                                
-                        </td>                                        
-                    </tr>                                
+                {/foreach}
                 </tbody>
             </table>
         </div>                            
