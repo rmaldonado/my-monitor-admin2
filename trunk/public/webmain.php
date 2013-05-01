@@ -1,8 +1,8 @@
 <?php
 
 $phpIncludePath = ini_get('include_path');
-$phpIncludePath .= ':' . dirname(dirname(__FILE__)) . '/library/yii1.1.13';
-$phpIncludePath .= ':' . dirname(dirname(__FILE__)) . '/library/smarty3.1.13';
+$phpIncludePath .= PATH_SEPARATOR . dirname(dirname(__FILE__)) . '/library/yii1.1.13';
+$phpIncludePath .= PATH_SEPARATOR . dirname(dirname(__FILE__)) . '/library/smarty3.1.13';
 $yiiConfigPath = dirname(dirname(__FILE__)) . '/application/configs';
 
 ini_set('include_path', $phpIncludePath);
