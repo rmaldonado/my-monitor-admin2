@@ -6,7 +6,7 @@ class RollinfoController extends LoomController
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	//public $layout='//layouts/column2';
 
 	/**
 	 * @var CActiveRecord the currently loaded data model instance.
@@ -67,7 +67,7 @@ class RollinfoController extends LoomController
 	public function actionCreate()
 	{
 		$model=new Rollinfo;
-		$model->with('fchaine,fweft');
+		//$model->with('fchaine,fweft');
 //var_dump($model);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);

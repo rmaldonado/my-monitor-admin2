@@ -8,6 +8,13 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'type'=>'horizontal',
 )); 
 
+?>
+
+<div class="row-fluid">
+	<div class="span6">
+<fieldset>
+<legend>产品信息</legend>
+<?php
 echo $form->textFieldRow($model, 'fprodcutsn');
 echo $form->textFieldRow($model, 'fproductnm');
 echo $form->textFieldRow($model, 'fsilksp');
@@ -20,11 +27,58 @@ echo $form->textFieldRow($model, 'ftype');
 echo $form->textFieldRow($model, 'flevel');
 echo $form->textFieldRow($model, 'fplspeed');
 echo $form->textFieldRow($model, 'fpleffect');
-echo $form->textFieldRow($model, 'fchaineid');
-echo $form->textFieldRow($model, 'fweftid');
-echo $form->textFieldRow($model, 'finfo');
-echo $form->textFieldRow($model, 'fstatus');
 ?>
+</fieldset>			
+	</div>
+	<div class="span6">
+		<fieldset>
+		<legend>其他信息</legend>
+<?php
+echo $form->textFieldRow($model, 'finfo');
+echo $form->dropDownListRow($model, 'fstatus', array('关闭', '启用' ));
+?>
+		</fieldset>
+	</div>
+</div>
+
+<div class="row-fluid">
+	<div class="span6">
+<fieldset>
+<legend>Chaineinfo</legend>
+<?php
+$this->widget('bootstrap.widgets.TbButton', array(
+		'buttonType'=>'button', 
+		'label'=>'Select Chaineinfo',
+		'htmlOptions' => array(
+			'id'=>'btn-select-chaineinfo'
+		)));
+echo $form->hiddenField($model, 'fchaineid', array('id'=>'fchaineid'));
+
+?>
+<div id="chaineinfo_detail"></div>
+</fieldset>		
+	</div>
+	<div class="span6">
+<fieldset>
+<legend>Weftinfo</legend>
+<?php
+$this->widget('bootstrap.widgets.TbButton', array(
+		'buttonType'=>'button', 
+		'label'=>'Select Weftinfo',
+		'htmlOptions' => array(
+			'id'=>'btn-select-weftinfo'
+		)));
+echo $form->hiddenField($model, 'fweftid', array('id'=>'fweftid'));
+
+?>
+<div id="weftinfo_detail"></div>
+</fieldset>		
+	</div>
+
+</div>
+
+
+
 <div class="form-actions">
 <?php
 $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=> ($model->isNewRecord ? 'Create' : 'Save'))); 
@@ -35,5 +89,94 @@ $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'
 $this->endWidget();
 
 ?>
+<div id="dialog-select-chaineinfo"></div>
+<div id="dialog-select-weftinfo"></div>
 
+
+<?php
+
+$weft_index = $this->createUrl('weftinfo/select');
+$chaine_index = $this->createUrl('chaineinfo/select');
+$code = '
+
+	$("#btn-select-weftinfo").click(function (e) {
+		console.log("#select-weftinfo");
+		var url = "'.$weft_index.'";
+		var d = $("#dialog-select-weftinfo");
+		//var b = $(".modal-body", d).load(url);
+		d.empty();
+		d.load(url);
+		d.dialog({autoOpen: false, modal: true}).dialog("open");
+	});
+
+	$("#btn-select-chaineinfo").click(function(e) {
+		var url = "'.$chaine_index.'";
+		var d = $("#dialog-select-chaineinfo");
+		//var b = $(".modal-body", d).load(url);
+		//d.modal();
+		d.empty();
+		d.load(url);
+		d.dialog({autoOpen: false, modal: true}).dialog("open");
+	});
+	
+
+	$(".chaine-item", "#dialog-select-chaineinfo").live("click", function (e) {
+		var $this = $(this);
+		var data = JSON.parse($this.attr("data-row"));
+		console.log(data);
+		$("#fchaineid").val(data["fid"]);
+		var html = "";
+		
+		var fsm = {
+			"fnumber":"总经根数",
+			"fdensity":"经纱密度",
+			"fminirate":"经缩率（%）",
+			"fquota":"经纱定额",
+			"fspinfo":"经纱规格",
+			"frate":"经纱比例",
+			"flotnum":"经纱号数",
+			"fsn":"经纱批号",
+			"ffactory":"经纱厂家"
+		};
+
+		for(var key in fsm) {
+			html += fsm[key] + " : " + data[key] + "<br/>";
+		}
+		$("#chaineinfo_detail").html(html);
+
+		$("#dialog-select-chaineinfo").dialog("close");
+	});	
+	$(".weft-item", "#dialog-select-weftinfo").live("click", function (e) {
+		var $this = $(this);
+		var data = JSON.parse($this.attr("data-row"));
+		console.log(data);
+		$("#fweftid").val(data["fid"]);
+		var html = "";
+		
+		var fsm = {
+			"fdensity": "维密",
+			"fcycle": "周期转数",
+			"fnumber": "周期纬纱",
+			"flnumber": "纬纱编号",
+			"fquota": "纬纱定额",
+			"fspinfo": "纬纱规格",
+			"frate": "纬纱比例",
+			"flotnum": "纬纱号数",
+			"fsn": "纬纱批号",
+			"ffactory": "纬纱厂家"
+		};
+
+		for(var key in fsm) {
+			html += fsm[key] + " : " + data[key] + "<br/>";
+		}
+		$("#weftinfo_detail").html(html);
+		$("#dialog-select-weftinfo").dialog("close");
+	});
+
+';
+$cs=Yii::app()->clientScript;  
+$cs->registerScript('productinfo-select', $code, CClientScript::POS_READY);
+
+
+?>
 
