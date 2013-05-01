@@ -78,11 +78,10 @@ $(function() {
 	});
     
     $('.rbtn').bind('click', function(event) {
-        
         if(event.preobj !== undefined) {
             $(event.preobj).removeClass('checked');
         }
-        //$(event.target).addClass('checked');
+        $(event.target).addClass('checked');
         jQuery.Event.prototype.preobj = event.target;
         //window.Event.preobj = event.target;
     });

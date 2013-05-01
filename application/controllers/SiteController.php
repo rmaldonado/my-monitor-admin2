@@ -11,7 +11,23 @@ class SiteController extends LoomController {
                 'lsite.js',
             ),
         );
+        $productRows = array();
+        for($i =0; $i < 7; $i++) {
+            $productRows[] = array(
+                'code'  =>  '1515花瑶绉',
+                'name'  =>  '1515花瑶绉',
+                'spec'  =>  '2013尼达丝',
+                'width' =>  '150',
+                'tlength'   =>  '3880',
+            );
+        }
+        $this->view->product = $productRows;
         $this->render('index', $data);
+    }
+    
+    public function actionCharteffect() {
+        //TODO
+        echo json_encode(array());
     }
 
     public function actionInfo() {
@@ -20,33 +36,11 @@ class SiteController extends LoomController {
         echo json_encode(array());
     }
     
-    public function ActionRollinfo() {
+    public function actionRollinfo() {
         //TODO
         echo json_encode(array());
         
     }
-    
-    public function actionCharteffect() {
-        //TODO
-        echo json_encode(array());
-    }
-    public function beforeWebMethod($service) {
-        $safeMethods=array(
-            'login',
-            'getContacts',
-        );
-        $pattern='/^('.implode('|',$safeMethods).')$/i';
-        if(!Yii::app()->user->isGuest || preg_match($pattern,$service->methodName))
-            return true;
-        else
-            throw new CException('Login required.');
-    }
-
-
-    public function afterWebMethod($service) {
-        
-    }
-
 
     public function login($username,$password) {
         $identity = new UserIdentity($username,$password);
@@ -56,9 +50,15 @@ class SiteController extends LoomController {
         return $identity->isAuthenticated;
     }
 
-    public function getContacts()
-    {
-            return Contact::model()->findAll();
+    public function ActionProduct() {
+        
+        //TODO
+        echo json_encode(array());
     }
-
+    
+    public function ActionEvents() {
+        //TODO
+        echo json_encode(array());
+    }
+            
 }
