@@ -174,4 +174,45 @@ class Rollinfo extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	public function init() {
+		//$this->fsilktype = 16;
+	}
+
+	public function getFmemo() {
+		return "explode('-', $this->frollgrp)";
+	}
+	public function setFmemo($memo) {
+		$this->fmemo = $memo;
+	}
+
+	public function getFrollgrp() {
+		return explode('-', $this->frollgrp);
+	}
+	public function setFrollgrp($grp) {
+		$this->frollgrp = implode('-', $grp);
+	}
+
+	public function getFsilktype() {
+		$this->fsilktype = 16;
+		$t = array();
+		$i = 0;
+		$n = pow(2, $i);
+		while ($n < $this->fsilktype) {
+			if ($n & $this->fsilktype == $n) {
+				$t[] = $n;
+			}
+			$i++;
+			$n = pow(2, $i);
+		}
+		return $t;
+	}
+	public function setFsilktype ($grp) {
+		$this->fsilktype  = 0;
+		$n = count($grp);
+		for ($i=0; $i < $n; $i++) { 
+			$this->fsilktype |= $grp[$i];
+		}
+	}
+
 }

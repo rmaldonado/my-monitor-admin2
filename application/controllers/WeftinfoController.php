@@ -6,7 +6,7 @@ class WeftinfoController extends LoomController
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	//public $layout='//layouts/column2';
 
 	/**
 	 * @var CActiveRecord the currently loaded data model instance.
@@ -16,19 +16,19 @@ class WeftinfoController extends LoomController
 	/**
 	 * @return array action filters
 	 */
-	public function filters()
+	/*public function filters()
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
 		);
-	}
+	}*/
 
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
+	/*public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -47,7 +47,7 @@ class WeftinfoController extends LoomController
 				'users'=>array('*'),
 			),
 		);
-	}
+	}*/
 
 	/**
 	 * Displays a particular model.
@@ -133,6 +133,20 @@ class WeftinfoController extends LoomController
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+	}
+
+
+	public function actionSelect()
+	{
+		$this->layout = '//layouts/ajax';
+		$dataProvider=new CActiveDataProvider('Weftinfo');
+		//print_r($dataProvider->getData());
+		//echo CJSON::encode($dataProvider->getData());
+		//Yii::app()->end(); 
+		$this->render('select',array(
+			'dataProvider'=>$dataProvider,
+		));
+
 	}
 
 	/**
