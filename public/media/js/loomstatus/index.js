@@ -85,5 +85,10 @@ $(function() {
         jQuery.Event.prototype.preobj = event.target;
         //window.Event.preobj = event.target;
     });
+    
+    $('.btninfo').bind('click', function(event) {
+       //href="#myModal" role="button" class="btn" data-toggle="modal" 
+    });
+    $('#myModal').show();
 });
 
