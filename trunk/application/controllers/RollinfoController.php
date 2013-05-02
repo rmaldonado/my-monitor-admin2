@@ -75,6 +75,7 @@ class RollinfoController extends LoomController
 		if(isset($_POST['Rollinfo']))
 		{
 			$model->attributes=$_POST['Rollinfo'];
+			$model->fsilktype1 = $_POST['Rollinfo']['fsilktype1'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->fid));
 		}
