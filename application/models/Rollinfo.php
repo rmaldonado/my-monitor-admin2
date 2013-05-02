@@ -75,9 +75,9 @@ class Rollinfo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'fproduct' => array(self::HAS_ONE, 'Productinfo', 'fproductid' ),
-			'fchaine' => array(self::HAS_ONE, 'Chaineinfo', 'fchaineid'),
-			'fweft' => array(self::HAS_ONE, 'Weftinfo', 'fweftid'),
+			'fproduct' => array(self::HAS_ONE, 'Productinfo', array('fid'=>'fproductid')),
+			'fchaine' => array(self::HAS_ONE, 'Chaineinfo', array('fid'=>'fchaineid')),
+			'fweft' => array(self::HAS_ONE, 'Weftinfo', array('fid'=>'fweftid')),
 		);
 	}
 
@@ -179,35 +179,36 @@ class Rollinfo extends CActiveRecord
 		//$this->fsilktype = 16;
 	}
 
-	public function getFmemo() {
+	public function getFmemo1() {
 		return "explode('-', $this->frollgrp)";
 	}
-	public function setFmemo($memo) {
+	public function setFmemo1($memo) {
 		$this->fmemo = $memo;
 	}
 
-	public function getFrollgrp() {
+	public function getFrollgrp1() {
 		return explode('-', $this->frollgrp);
 	}
-	public function setFrollgrp($grp) {
+	public function setFrollgrp1($grp) {
 		$this->frollgrp = implode('-', $grp);
 	}
 
-	public function getFsilktype() {
-		$this->fsilktype = 16;
+	public function getFsilktype1() {
 		$t = array();
 		$i = 0;
 		$n = pow(2, $i);
-		while ($n < $this->fsilktype) {
-			if ($n & $this->fsilktype == $n) {
+		$m = intval($this->fsilktype);
+		while ($n <= $m) {
+			if (($n & $m) == $n) {
 				$t[] = $n;
 			}
 			$i++;
 			$n = pow(2, $i);
 		}
+
 		return $t;
 	}
-	public function setFsilktype ($grp) {
+	public function setFsilktype1 ($grp) {
 		$this->fsilktype  = 0;
 		$n = count($grp);
 		for ($i=0; $i < $n; $i++) { 
