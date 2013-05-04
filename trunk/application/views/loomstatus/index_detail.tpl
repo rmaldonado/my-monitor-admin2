@@ -7,13 +7,13 @@
         </ul>
     </div>
     <ul class="nav nav-tabs" id="myTab">
-        <li class="active"><a data-toggle="tab" href="#home">在织信息</a></li>
+        <li class="active"><a data-toggle="tab" href="#home">生产情况</a></li>
         <li class=""><a data-toggle="tab" href="#profile">经纬纱信息</a></li>
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">织机信息 <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#dropdown1">@fat</a></li>
-                <li><a data-toggle="tab" href="#dropdown2">@mdo</a></li>
+                <li><a data-toggle="tab" href="#dropdown1">按班次</a></li>
+                <li><a data-toggle="tab" href="#dropdown2">按挡车工</a></li>
             </ul>
         </li>
     </ul>
@@ -30,8 +30,14 @@
 
                              <div class="row-form">
                                  <div class="span2">品名:</div>
-                                 <div class="span3"><input type="text" placeholder="Placeholder example"></div>
-
+                                 <div class="span3">
+                                     <!--input type="text" class="validate[required] datepicker" id="datepick_1" placeholder="Placeholder example"-->
+                                     <input type="text" readonly="readonly" value="RMPFF-1244-CM">
+                                 </div>
+                                 <div class="span2">产量:</div>
+                                 <div class="span3">                                     
+                                     <input type="text" readonly="readonly" value="356 码">
+                                 </div>                                 
                              </div>
                              <div class="row-form">
                                  <div class="span2">并轴组别:</div>
@@ -40,18 +46,26 @@
                                  <div class="span3"><input type="password" value="inputpassword"></div>
                              </div>
                              <div class="row-form">
-                                 <div class="span3">Readonly:</div>
-                                 <div class="span9"><input type="text" readonly="readonly" value="Readonly value"></div>
+                                 <table class="table">
+                                     <tr><td colspan="6"></td></tr>
+                                     <tr>
+                                         <td><span>运&nbsp;转</span></td>
+                                         <td>纬&nbsp;停</td>
+                                         <td>边丝停</td>
+                                         <td>耳丝停</td>
+                                         <td>其它停</td>
+                                         <td>效&nbsp;率</td>
+                                     </tr>
+                                     <tr>
+                                         <td><span style="min-width: 36px;" class="label label-success">32423 </span></td>
+                                         <td><span style="min-width: 36px;" class="label label-warning">2</span></td>
+                                         <td><span style="min-width: 36px;" class="label label-important">3 </span></td>
+                                         <td><span style="min-width: 36px;" class="label label-important">3 </span></td>
+                                         <td><span style="min-width: 36px;" class="label label-important">3 </span></td>
+                                         <td><span style="min-width: 36px;" class="label label-info">98% </span></td>                                     
+                                     </tr>
+                                 </table>                                        
                              </div>
-                             <div class="row-form">
-                                 <div class="span3">Disabled:</div>
-                                 <div class="span9"><input type="text" disabled="disabled" value="Disabled value"></div>
-                             </div>                    
-                             <div class="row-form">
-                                 <div class="span3">Textarea:</div>
-                                 <div class="span9"><textarea placeholder="Placeholder example"></textarea></div>
-                             </div>
-
                          </div>
                      </div>
 
@@ -61,7 +75,13 @@
 
                      <div class="block">                               
                          <div class="data-fluid">
-                             <div class="row-form"><h3>共有织机：81台</h3></div>
+                             <div class="row-form">
+                                 <h3>在织：80台；尽机：3台；故障：1台</h3>
+                                 <h3>当前效率：98.56%</h3>
+                                 <h3>本班效率：99%</h3>
+                                 <h3>本周效率：</h3>
+                                 <h3>本月效率：</h3>
+                             </div>
                          </div>                
                      </div>
 
@@ -70,11 +90,51 @@
              </div>
         </div>
         
-        <div id="profile" class="tab-pane fade">
-          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-        </div>
-        <div id="dropdown1" class="tab-pane fade">
-          <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+        <div id="profile" class="tab-pane fade">          
+            <div class="block">
+
+                <div class="data-fluid">
+
+                    <div class="row-form">
+                        <div class="span2">品名:</div>
+                        <div class="span3">
+                            <!--input type="text" class="validate[required] datepicker" id="datepick_1" placeholder="Placeholder example"-->
+                            <input type="text" readonly="readonly" value="RMPFF-1244-CM">
+                        </div>
+                        <div class="span2">产量:</div>
+                        <div class="span3">                                     
+                            <input type="text" readonly="readonly" value="356 码">
+                        </div>                                 
+                    </div>
+                    <div class="row-form">
+                        <div class="span2">并轴组别:</div>
+                        <div class="span3"><input type="password" value="inputpassword"></div>
+                        <div class="span2">织轴号：</div>
+                        <div class="span3"><input type="password" value="inputpassword"></div>
+                    </div>
+                    <div class="row-form">
+                        <table class="table">
+                            <tr><td colspan="6"></td></tr>
+                            <tr>
+                                <td><span>运&nbsp;转</span></td>
+                                <td>纬&nbsp;停</td>
+                                <td>边丝停</td>
+                                <td>耳丝停</td>
+                                <td>其它停</td>
+                                <td>效&nbsp;率</td>
+                            </tr>
+                            <tr>
+                                <td><span style="min-width: 36px;" class="label label-success">32423 </span></td>
+                                <td><span style="min-width: 36px;" class="label label-warning">2</span></td>
+                                <td><span style="min-width: 36px;" class="label label-important">3 </span></td>
+                                <td><span style="min-width: 36px;" class="label label-important">3 </span></td>
+                                <td><span style="min-width: 36px;" class="label label-important">3 </span></td>
+                                <td><span style="min-width: 36px;" class="label label-info">98% </span></td>                                     
+                            </tr>
+                        </table>                                        
+                    </div>
+                </div>
+            </div>            
         </div>
         <div id="dropdown2" class="tab-pane fade">
           <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
@@ -92,11 +152,11 @@
       </div>
   </div>
   <div class="modal-body">
-    <p>织机状态：红色表示停机</p>
-    <p>织机状态：红色表示停机</p>
-    <p>织机状态：红色表示停机</p>
-    <p>织机状态：红色表示停机</p>
-    <p>织机状态：红色表示停机</p>
+    <h4>织机状态：停机 <a class="btn btn-danger" >0000</a></h4>
+    <h4>织机状态：在织 <a class="btn btn-success" >0000</a></h4>
+    <h4>织机状态：满停 <a class="btn btn-primary">0000</a></h4>
+    <h4>织机状态：故障 <a class="btn btn-spark"  >0000</a></h4>
+    <h4>织机状态：离线 <a class="btn disabled">0000</a> </h4>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">确定</button>    

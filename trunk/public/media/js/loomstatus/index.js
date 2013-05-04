@@ -1,41 +1,48 @@
 $(function() {
     var loomsObj = $('#loomstatus').find('.rbtn');
-    var outdata = {
-        dd: 'sdfsfs'
+    var loomRealurl = '/loom/loomstatus/updatest';
+    var curloomdata = {
+        id: 0
     };
+    var loomdatas = {};
     $('.rbtn').popover({
         html  : true,
         trigger: 'hover',
         color : "yellow",
         placement: function(tip, element) {
             var offset = $(element).offset();
-            height = $(document).outerHeight();
-            width = $(document).outerWidth();
-            vert = 0.5 * height - offset.top;
-            vertPlacement = vert > 0 ? 'bottom' : 'top';
-            horiz = 0.5 * width - offset.left;
-            horizPlacement = horiz > 0 ? 'right' : 'left';
-            placement = Math.abs(horiz) > Math.abs(vert) ?  horizPlacement : vertPlacement;
+            var height = $(document).outerHeight();
+            var width = $(document).outerWidth();
+            var vert = 0.5 * height - offset.top;
+            var vertPlacement = vert > 0 ? 'bottom' : 'top';
+            var horiz = 0.5 * width - offset.left;
+            var horizPlacement = horiz > 0 ? 'right' : 'left';
+            var placement = Math.abs(horiz) > Math.abs(vert) ?  horizPlacement : vertPlacement;
             return placement;
         },
         title:    function() { 
             var html = $('#statustips>.title').html();
             var pt = /#([a-zA-Z0-9_]+)#/ig;
             var data = {
-                loomid: outdata.dd
+                loomid: curloomdata.id
             };
             //window.alert(outdata.dd);
             return html.replace(pt, function(word) {
                 return data[word.replace(/#/g, '')];
-                //return data[word.replace(/#/g)];
             });
         },
         content: function() {
             var html = $('#statustips>.content').html();
+            var loomid = curloomdata.id;
+            var iteminfo = loomdatas[loomid] ? loomdatas[loomid] : {
+                rpm         : '-',
+                effect      : '-',
+                'runtime'   : '-'
+            };
             var data = {
-                currpm: 600,
-                effect: '98.6%',
-                runtime: 34243
+                currpm  : iteminfo.rpm,
+                effect  : iteminfo.effect,
+                runtime : iteminfo.runtime
             };
             var pt = /#([a-zA-Z0-9_]+)#/ig;
             return html.replace(pt, function(word) {                
@@ -43,20 +50,30 @@ $(function() {
             });
         },
         delay: 400
-    }).mouseenter(function(event){
-        outdata.dd = $(event.target).html();
-        //$(this).popover('show');
+    }).mouseenter(function(event){        
+        curloomdata.id = $(event.target).html();
     }).mouseleave(function(event){
         //$(this).popover('hide');
     });
     
     $('#loomstatus').timer({
         delay:1000,
-        repeat: 171,
-        autostart:false,
+        repeat: true,
+        autostart:true,
         trigger: 'manual',
         callback: function(index) {
-            //window.alert(loomsObj.length());
+            var sturl = loomRealurl;
+            $.get(sturl, {}, function(json) {
+                loomdatas = json;
+                /*
+                $('.rbtn').each(function(item) {
+                    loomdatas['A015'] = {
+                        'rpm' : 600,
+                        'effect' : '98.56%',
+                        'runtime' : 23423
+                    };
+                });*/
+            }, 'json');
             var num = parseInt(Math.random() * 10);            
             $(loomsObj[index-1]).removeClass('disabled');
             if (num / 2 === 0) {
@@ -65,17 +82,6 @@ $(function() {
             //window.alert(loomsObj[index]);
         }
     });
-    
-    $('#mytimer').timer({
-		delay: 1000,
-		repeat: 15,
-		autostart: true,
-		callback: function( index ) {
-			html = "My timer has fired " + index + " times&lt;br /&gt;";
-			html += "Current client date time is: " + new Date();
-			$(this).html(html);
-		}
-	});
     
     $('.rbtn').bind('click', function(event) {
         if(event.preobj !== undefined) {
@@ -89,6 +95,12 @@ $(function() {
     $('.btninfo').bind('click', function(event) {
        //href="#myModal" role="button" class="btn" data-toggle="modal" 
     });
-    $('#myModal').show();
+    
+    $('#datepick_1').datepicker({
+        dateFormat: 'yyyy-mm-dd',
+        onSelect: function(date){
+             
+        }
+    });
 });
 
