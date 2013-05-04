@@ -27,7 +27,7 @@
 .block .head.dblue h2, .block .head.purple h2, .block .head.orange h2{text-shadow: 0px 0px 1px rgba(0,0,0,0.2);}*/
 .block .head.blue *, .block .head.yellow *, .block .head.green *, .block .head.red *,
 .block .head.dblue *, .block .head.purple *, .block .head.orange *{color: #FFF !important; border-color: #FFF !important;}
-
+/*
 .btn{-moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px; border: 0px; background: #009AD7; color: #F9F9F9; text-shadow: none; margin-bottom: 3px;}
     .btn:hover,.btn-primary:active,.btn[disabled],.btn.disabled{background: #008DC4; color: #FFF;}
     
@@ -54,3 +54,13 @@
 .btn.btn-danger.disabled,.open .btn-danger.dropdown-toggle{background-color: #AA2031 !important;}
 .btn.btn-inverse.disabled,.open .btn-inverse.dropdown-toggle{background-color: #1A1A1D !important;}
 .btn.btn-link.disabled,.open .btn-link.dropdown-toggle{background-color: transparent !important;}
+*/
+.btn.btn-spark {
+    background-image: url(/media/img/backgrounds/spark.gif);
+    background-color: #DA4F49;
+    /*background-image: linear-gradient(to bottom, #EE5F5B, #BD362F);*/
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)    
+}

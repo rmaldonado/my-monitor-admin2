@@ -1,5 +1,5 @@
 <?php
-class LoomstatusController extends LoomController {
+class LoomstatusController extends LoomComController {
     
     public function actionIndex() {
         $viewName = 'index';
@@ -41,19 +41,21 @@ class LoomstatusController extends LoomController {
     }
     
     public function actionShowinfo() {
-        echo '<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                  <h3 id="myModalLabel">Modal header</h3>
-                </div>
-                <div class="modal-body">
-                  <p>One fine body…</p>
-                </div>
-                <div class="modal-footer">
-                  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                  <button class="btn btn-primary">Save changes</button>
-                </div>
-              </div>';
+
+    }
+    
+    public function actionUpdatest() {
+        //TODO
+        $arr = array();
+        for ($i = 1; $i <= 200; $i++) {
+            $key = sprintf("A%03d", $i);
+            $arr[$key] = array(
+                'rpm'       => 600,
+                'effect'    => sprintf('%.0d.%0d%%', rand() % 100, rand() % 100),
+                'runtime'   => 32423
+            );
+        }
+        echo json_encode($arr);
     }
 }
 

@@ -26,7 +26,7 @@ class LoomController extends CController
                 array(
                     'label'	=> '统计信息',
                     'class'	=> null,
-                    'url'	=> 'ui.html',
+                    'url'	=> '/loom/statistic',
                     'acss'      =>  'green',
                     'tcss'      =>  'ico-chart-4',
                     'items'     => null,
