@@ -70,6 +70,8 @@ class Productinfo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'fchaine' => array(self::HAS_ONE, 'Chaineinfo', array('fid'=>'fchaineid')),
+			'fweft' => array(self::HAS_ONE, 'Weftinfo', array('fid'=>'fweftid')),
 		);
 	}
 

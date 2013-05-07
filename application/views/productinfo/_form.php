@@ -55,7 +55,27 @@ $this->widget('bootstrap.widgets.TbButton', array(
 echo $form->hiddenField($model, 'fchaineid', array('id'=>'fchaineid'));
 
 ?>
-<div id="chaineinfo_detail"></div>
+<div id="chaineinfo_detail">
+<?php
+$fc = array("fnumber"=>"总经根数",
+			"fdensity"=>"经纱密度",
+			"fminirate"=>"经缩率（%）",
+			"fquota"=>"经纱定额",
+			"fspinfo"=>"经纱规格",
+			"frate"=>"经纱比例",
+			"flotnum"=>"经纱号数",
+			"fsn"=>"经纱批号",
+			"ffactory"=>"经纱厂家");
+if ($model->fchaine) {
+	foreach ($fc as $key => $name) {
+		echo $name;
+		echo ' : ';
+		echo $model->fchaine->{$key};
+		echo '<br/>';
+	}
+}
+?>			
+</div>
 </fieldset>		
 	</div>
 	<div class="span6">
@@ -71,7 +91,28 @@ $this->widget('bootstrap.widgets.TbButton', array(
 echo $form->hiddenField($model, 'fweftid', array('id'=>'fweftid'));
 
 ?>
-<div id="weftinfo_detail"></div>
+<div id="weftinfo_detail">
+<?php
+$fw = array("fdensity" => "维密",
+			"fcycle" => "周期转数",
+			"fnumber" => "周期纬纱",
+			"flnumber" => "纬纱编号",
+			"fquota" => "纬纱定额",
+			"fspinfo" => "纬纱规格",
+			"frate" => "纬纱比例",
+			"flotnum" => "纬纱号数",
+			"fsn" => "纬纱批号",
+			"ffactory" => "纬纱厂家");
+if ($model->fweft) {
+	foreach ($fw as $key => $name) {
+		echo $name;
+		echo ' : ';
+		echo $model->fweft->{$key};
+		echo '<br/>';
+	}
+}
+?>	
+</div>
 </fieldset>		
 	</div>
 

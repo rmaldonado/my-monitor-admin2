@@ -46,7 +46,7 @@ echo $form->textFieldRow($model, 'frealoperator');
 <?php
 echo $form->textFieldRow($model, 'forderid');
 echo $form->textFieldRow($model, 'fpcardno');
-echo $form->textFieldRow($model, 'fmemo1');
+echo $form->textFieldRow($model, 'fmemo');
 ?>
 		</fieldset>
 	</div>
@@ -182,7 +182,7 @@ if ($model->fweft) {
 		echo '<br/>';
 	}
 }
-?>	
+?>
 </div>
 </fieldset>
 	</div>

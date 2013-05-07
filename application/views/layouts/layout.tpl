@@ -17,11 +17,12 @@
             {include file="{$SMARTY_TPL_PATH}/layouts/sidebar.tpl"}
         </div>
         
-        <div class="body">            
+        <div class="body">  
+            <div class="clearfix">          
             <ul class="navigation">
                 {include file="{$SMARTY_TPL_PATH}/layouts/topnav.tpl"}
             </ul>
-            
+            </div>
             <div class="content"> 
                 {$content}
             </div>            

@@ -179,12 +179,6 @@ class Rollinfo extends CActiveRecord
 		//$this->fsilktype = 16;
 	}
 
-	public function getFmemo1() {
-		return "explode('-', $this->frollgrp)";
-	}
-	public function setFmemo1($memo) {
-		$this->fmemo = $memo;
-	}
 
 	public function getFrollgrp1() {
 		return explode('-', $this->frollgrp);
