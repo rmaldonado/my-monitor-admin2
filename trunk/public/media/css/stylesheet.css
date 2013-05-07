@@ -173,28 +173,28 @@ form{margin: 0px;}
         /* eof widgets */                        
         
         /* blocks */                
-        .body .content .block{position: relative; margin-bottom: 20px; width: 100%; float: left;}
-            .body .content .block .head{padding: 7px 0px; -moz-border-radius: 3px 3px 0px 0px; -webkit-border-radius: 3px 3px 0px 0px; border-radius: 3px 3px 0px 0px;}
-            .body .content .block .head.blue, .body .content .block .head.dblue, .body .content .block .head.yellow, .body .content .block .head.red, 
-            .body .content .block .head.purple, .body .content .block .head.green, .body .content .block .head.orange{padding: 7px 6px 7px 6px;}
+        /*.body .content*/ .block{position: relative; margin-bottom: 20px; width: 100%; float: left;}
+            /*.body .content*/ .block .head{padding: 7px 0px; -moz-border-radius: 3px 3px 0px 0px; -webkit-border-radius: 3px 3px 0px 0px; border-radius: 3px 3px 0px 0px;}
+            /*.body .content*/ .block .head.blue, .body .content .block .head.dblue, .body .content .block .head.yellow, .body .content .block .head.red, 
+            /*.body .content*/ .block .head.purple, .body .content .block .head.green, .body .content .block .head.orange{padding: 7px 6px 7px 6px;}
                 
-                .body .content .block .head .icon{height: 20px; width: 23px; border: 1px solid #444; text-align: center; display: inline-block;
+                /*.body .content*/ .block .head .icon{height: 20px; width: 23px; border: 1px solid #444; text-align: center; display: inline-block;
                                                   -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; padding-top: 3px; line-height: 19px;}
-                .body .content .block .head .icon [class^="ico-"]{font-size: 16px; color: #444;}
-                .body .content .block .head > .icon{margin-right: 3px;}
+                /*.body .content*/ .block .head .icon [class^="ico-"]{font-size: 16px; color: #444;}
+                /*.body .content*/ .block .head > .icon{margin-right: 3px;}
                 
-                .body .content .block .head h2{font-size: 20px; color: #4C4C4C; line-height: 20px; font-weight: normal; display: inline-block; margin: 0px; padding: 0px;}
-                .body .content .block .head .buttons{list-style: none; display: block; float: right; margin: 0px; padding: 0px;}
-                    .body .content .block .head .buttons > li{display: block; float: left; margin-left: 5px; position: relative;} 
+                /*.body .content*/ .block .head h2{font-size: 20px; color: #4C4C4C; line-height: 20px; font-weight: normal; display: inline-block; margin: 0px; padding: 0px;}
+                /*.body .content*/ .block .head .buttons{list-style: none; display: block; float: right; margin: 0px; padding: 0px;}
+                    /*.body .content*/ .block .head .buttons > li{display: block; float: left; margin-left: 5px; position: relative;} 
                 
-                .body .content .block .head  .items{position: relative; float: right; padding: 1px 5px 5px 5px;}
-                    .body .content .block .head .items .progress.small{margin-top: 8px !important;}
+                /*.body .content*/ .block .head  .items{position: relative; float: right; padding: 1px 5px 5px 5px;}
+                    /*.body .content*/ .block .head .items .progress.small{margin-top: 8px !important;}
                 
-                .body .content .block.title .head{border-bottom: 1px solid #e0e0e0;}
+                /*.body .content*/ .block.title .head{border-bottom: 1px solid #e0e0e0;}
                     
-            .body .content .block .data{padding: 10px;}
-            .body .content .block .data-fluid{padding: 0px;}
-            .body .content .block .data.dark, .body .content .block .data-fluid.dark,
+            /*.body .content*/ .block .data{padding: 10px;}
+            /*.body .content*/ .block .data-fluid{padding: 0px;}
+            /*.body .content*/ .block .data.dark, .body .content .block .data-fluid.dark,
             .toolbar.dark, .toolbar-fluid.dark{background: #EAEAEA; }
             
             * html .block .data, * html .block .data-fluid, * html .toolbar, * html .toolbar-fluid, * html .wrapper > .body{ height: 1%; overflow: visible; } /* ie 6 */

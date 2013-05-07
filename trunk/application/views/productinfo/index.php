@@ -9,8 +9,17 @@ $this->menu=array(
 );
 ?>
 
-<h1>Productinfos</h1>
 
+<div class="block">
+<div class="head orange">
+    <h2>Productinfos</h2>
+    <ul class="buttons">
+                <li><a onclick="source('table_main'); return false;" href="#"><div class="icon"><span class="ico-info"></span></div></a></li>
+                <li><a class="ublock" data="/loom/site/product" href="#"><div class="icon"><span class="ico-undo"></span></div></a></li>
+                <li><a class="cblock" href="#"><div class="icon"><span class="ico-sort"></span></div></a></li>
+    </ul>   
+</div>
+<div class="data-fluid">
 <?php 
 
 $this->widget('bootstrap.widgets.TbGridView', array(
@@ -19,15 +28,18 @@ $this->widget('bootstrap.widgets.TbGridView', array(
     'template'=>"{items}",
     'columns'=>array(
         array('name'=>'fid', 'header'=>'#'),
-        array('name'=>'fnumber', 'header'=>'总经根数'),
-        array('name'=>'fdensity', 'header'=>'经纱密度'),
-        array('name'=>'fminirate', 'header'=>'经缩率（%）'),
-        array('name'=>'fquota', 'header'=>'经纱定额'),
-        array('name'=>'fspinfo', 'header'=>'经纱规格'),
-        array('name'=>'frate', 'header'=>'经纱比例'),
-        array('name'=>'flotnum', 'header'=>'经纱号数'),
-        array('name'=>'fsn', 'header'=>'经纱批号'),
-        array('name'=>'ffactory', 'header'=>'经纱厂家'),
+        array('name'=>'fprodcutsn'),
+        array('name'=>'fproductnm'),
+        array('name'=>'fsilksp'),
+        array('name'=>'freedwd'),
+        array('name'=>'freedsn'),
+        array('name'=>'freedlen'),
+        array('name'=>'ftotallen'),
+        array('name'=>'fweave'),
+        array('name'=>'ftype'),
+        array('name'=>'flevel'),
+        array('name'=>'fplspeed'),
+        array('name'=>'fpleffect'),        
         array(
             'class'=>'bootstrap.widgets.TbButtonColumn',
             'htmlOptions'=>array('style'=>'width: 50px'),
@@ -36,3 +48,4 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 )); 
 
 ?>
+</div>
