@@ -7,6 +7,11 @@ class MytestService extends LoomComBaseModel {
         $this->setCompanyId($comid);
     }
     
+    public function setInfo($info) {
+    
+        $this->floominfo = $info;
+    }
+    
     public function tableName() {
 
         return '{{loominfo}}';
