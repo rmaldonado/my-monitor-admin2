@@ -16,7 +16,7 @@
  * @property string $frollid
  * @property string $floominfo
  */
-class Loominfo extends CActiveRecord
+class Loominfo extends LoomComBaseModel
 {
 	/**
 	 * Returns the static model of the specified AR class.

@@ -15,7 +15,7 @@
  * @property string $fsn
  * @property string $ffactory
  */
-class Chaineinfo extends CActiveRecord
+class Chaineinfo extends LoomComBaseModel
 {
 	/**
 	 * Returns the static model of the specified AR class.

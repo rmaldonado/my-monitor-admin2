@@ -28,7 +28,7 @@
  * @property string $fpcardno
  * @property string $fmemo
  */
-class Rollinfo extends CActiveRecord
+class Rollinfo extends LoomComBaseModel
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -176,6 +176,7 @@ class Rollinfo extends CActiveRecord
 	}
 
 	public function init() {
+		parent::init();
 		//$this->fsilktype = 16;
 	}
 

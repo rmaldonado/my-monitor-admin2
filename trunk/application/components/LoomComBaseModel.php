@@ -2,7 +2,9 @@
 abstract class LoomComBaseModel extends LoomBaseModel{
     protected $_comid;
     
-    abstract function initCompanyId();
+    protected function initCompanyId() {
+        $this->_comid = Yii:app()->user->fcompanyid;
+    }
     
     public  function setCompanyId($comid) {
         $this->_comid = $comid;
