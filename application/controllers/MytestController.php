@@ -10,8 +10,10 @@ class MytestController extends LoomComController
     public function actionIndex()
     {
         $mod = new MytestService();
+        $mod->setInfo('sdfsf');
+        var_dump($mod);
         $ret = $mod->find('fid = 2');
-        var_dump($ret);
+        
     }
     
     public function actionGetmap()
