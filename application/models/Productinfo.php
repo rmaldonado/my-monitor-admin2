@@ -22,7 +22,7 @@
  * @property string $finfo
  * @property integer $fstatus
  */
-class Productinfo extends CActiveRecord
+class Productinfo extends LoomComBaseModel
 {
 	/**
 	 * Returns the static model of the specified AR class.

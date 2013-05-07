@@ -16,7 +16,7 @@
  * @property string $fsn
  * @property string $ffactory
  */
-class Weftinfo extends CActiveRecord
+class Weftinfo extends LoomComBaseModel
 {
 	/**
 	 * Returns the static model of the specified AR class.
