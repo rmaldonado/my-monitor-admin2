@@ -1,6 +1,6 @@
 <?php
 
-class RollinfoController extends LoomController
+class CompanyinfoController extends LoomController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -66,17 +66,14 @@ class RollinfoController extends LoomController
 	 */
 	public function actionCreate()
 	{
-		$model=new Rollinfo;
-		//$model->with('fchaine,fweft');
-//var_dump($model);
+		$model=new Companyinfo;
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Rollinfo']))
+		if(isset($_POST['Companyinfo']))
 		{
-			$model->attributes=$_POST['Rollinfo'];
-			$model->fsilktype1 = $_POST['Rollinfo']['fsilktype1'];
-			//$model->
+			$model->attributes=$_POST['Companyinfo'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->fid));
 		}
@@ -97,9 +94,9 @@ class RollinfoController extends LoomController
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Rollinfo']))
+		if(isset($_POST['Companyinfo']))
 		{
-			$model->attributes=$_POST['Rollinfo'];
+			$model->attributes=$_POST['Companyinfo'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->fid));
 		}
@@ -133,7 +130,7 @@ class RollinfoController extends LoomController
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Rollinfo');
+		$dataProvider=new CActiveDataProvider('Companyinfo');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -144,10 +141,10 @@ class RollinfoController extends LoomController
 	 */
 	public function actionAdmin()
 	{
-		$model=new Rollinfo('search');
+		$model=new Companyinfo('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Rollinfo']))
-			$model->attributes=$_GET['Rollinfo'];
+		if(isset($_GET['Companyinfo']))
+			$model->attributes=$_GET['Companyinfo'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -163,7 +160,7 @@ class RollinfoController extends LoomController
 		if($this->_model===null)
 		{
 			if(isset($_GET['id']))
-				$this->_model=Rollinfo::model()->findbyPk($_GET['id']);
+				$this->_model=Companyinfo::model()->findbyPk($_GET['id']);
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -176,7 +173,7 @@ class RollinfoController extends LoomController
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='rollinfo-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='companyinfo-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

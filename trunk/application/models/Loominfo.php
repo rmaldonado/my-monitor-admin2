@@ -16,7 +16,7 @@
  * @property string $frollid
  * @property string $floominfo
  */
-class Loominfo extends LoomComBaseModel
+class Loominfo extends  LoomComBaseModel
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -63,6 +63,7 @@ class Loominfo extends LoomComBaseModel
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'fcompany' => array(self::BELONGS_TO, 'Companyinfo', array('fid'=>'fcompanyid')),
 		);
 	}
 
@@ -73,16 +74,16 @@ class Loominfo extends LoomComBaseModel
 	{
 		return array(
 			'fid' => 'Fid',
-			'floomsn' => 'Floomsn',
+			'floomsn' => '序号',
 			'floomid' => 'Floomid',
 			'floomx' => 'Floomx',
 			'floomy' => 'Floomy',
-			'fcompanyid' => 'Fcompanyid',
+			'fcompanyid' => '所属公司',
 			'frepeaterid' => 'Frepeaterid',
 			'fgatherid' => 'Fgatherid',
 			'fstatus' => 'Fstatus',
 			'frollid' => 'Frollid',
-			'floominfo' => 'Floominfo',
+			'floominfo' => '备注',
 		);
 	}
 
