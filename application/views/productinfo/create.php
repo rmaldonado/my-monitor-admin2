@@ -1,15 +1,8 @@
-<?php
-$this->breadcrumbs=array(
-	'Productinfos'=>array('index'),
-	'Create',
-);
 
-$this->menu=array(
-	array('label'=>'List Productinfo', 'url'=>array('index')),
-	array('label'=>'Manage Productinfo', 'url'=>array('admin')),
-);
-?>
-
-<h1>Create Productinfo</h1>
-
+<div class="page-header">
+    <div class="icon">
+        <span class="ico-arrow-right"></span>
+    </div>
+    <h1>创建产品</h1>    
+</div>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

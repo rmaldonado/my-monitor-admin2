@@ -55,7 +55,8 @@ class Rollinfo extends LoomComBaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('frollno, frollgrp, freednum, fhealdnum, ftension, fsnum, frpm, feffect, fsilktype, flasttime, flastoperator, frolltime, frolloperator, fpltime, frealtime, frealoperator, fproductid, fchaineid, fweftid', 'required'),
+			array('frollno, frollgrp, freednum, fhealdnum, ftension, fsnum, frpm, feffect, fsilktype, flasttime, flastoperator, frolltime, frolloperator, fpltime, frealtime, frealoperator', 'required', 'message' => '{attribute}:不能为空'),
+			array('fproductid, fchaineid, fweftid', 'required', 'message' => '请选择 {attribute}'),
 			array('freednum, fhealdnum, fsnum, frpm', 'numerical', 'integerOnly'=>true),
 			array('feffect', 'numerical'),
 			array('frollno, frollgrp, ftension, forderid, fpcardno', 'length', 'max'=>200),
@@ -205,6 +206,9 @@ class Rollinfo extends LoomComBaseModel
 	}
 	public function setFsilktype1 ($grp) {
 		$this->fsilktype  = 0;
+		if (empty($grp)) {
+			return;
+		}
 		$n = count($grp);
 		for ($i=0; $i < $n; $i++) { 
 			$this->fsilktype |= $grp[$i];

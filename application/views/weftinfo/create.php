@@ -1,15 +1,9 @@
-<?php
-$this->breadcrumbs=array(
-	'Weftinfos'=>array('index'),
-	'Create',
-);
+<div class="page-header">
+    <div class="icon">
+        <span class="ico-arrow-right"></span>
+    </div>
+    <h1>新建纬纱信息</h1>    
+</div>
 
-$this->menu=array(
-	array('label'=>'List Weftinfo', 'url'=>array('index')),
-	array('label'=>'Manage Weftinfo', 'url'=>array('admin')),
-);
-?>
-
-<h1>Create Weftinfo</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

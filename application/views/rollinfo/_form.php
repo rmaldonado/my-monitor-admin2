@@ -54,11 +54,11 @@ echo $form->textFieldRow($model, 'fmemo');
 <div class="row-fluid">
 	<div class="span4">
 		<fieldset>
-		<legend>Product info</legend>
+		<legend>产品信息</legend>
 <?php
 $this->widget('bootstrap.widgets.TbButton', array(
 		'buttonType'=>'button',
-		'label'=>'Select Product',
+		'label'=>'选择产品',
 		'htmlOptions' => array(
 			'id'=>'btn-select-productinfo'
 		)));
@@ -97,11 +97,11 @@ if ($model->fproduct) {
 	</div>
 	<div class="span4">
 <fieldset>
-<legend>Chaineinfo</legend>
+<legend>经纱信息</legend>
 <?php
 $this->widget('bootstrap.widgets.TbButton', array(
 		'buttonType'=>'button',
-		'label'=>'Select Chaineinfo',
+		'label'=>'选择经纱',
 		'htmlOptions' => array(
 			'id'=>'btn-select-chaineinfo'
 		)));
@@ -141,11 +141,11 @@ if ($model->fchaine) {
 	</div>
 	<div class="span4">
 <fieldset>
-<legend>Weftinfo</legend>
+<legend>纬纱信息</legend>
 <?php
 $this->widget('bootstrap.widgets.TbButton', array(
 		'buttonType'=>'button',
-		'label'=>'Select Weftinfo',
+		'label'=>'选择纬纱',
 		'htmlOptions' => array(
 			'id'=>'btn-select-weftinfo'
 		)));
@@ -191,7 +191,7 @@ if ($model->fweft) {
 
 <div class="form-actions">
 <?php
-$this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=> ($model->isNewRecord ? 'Create' : 'Save')));
+$this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=> ($model->isNewRecord ? '新建' : '保存')));
 $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Reset'));
 ?>
 </div>

@@ -23,7 +23,7 @@
             <div class="clearfix ">                      
                 {include file="{$SMARTY_TPL_PATH}/layouts/topnav.tpl"}
             </div>
-            <div class="content"> 
+            <div class="content clearfix"> 
                 {$content}
             </div>            
                 

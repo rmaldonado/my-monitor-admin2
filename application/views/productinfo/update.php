@@ -1,18 +1,11 @@
-<?php
-$this->breadcrumbs=array(
-	'Productinfos'=>array('index'),
-	$model->fid=>array('view','id'=>$model->fid),
-	'Update',
-);
 
-$this->menu=array(
-	array('label'=>'List Productinfo', 'url'=>array('index')),
-	array('label'=>'Create Productinfo', 'url'=>array('create')),
-	array('label'=>'View Productinfo', 'url'=>array('view', 'id'=>$model->fid)),
-	array('label'=>'Manage Productinfo', 'url'=>array('admin')),
-);
-?>
 
-<h1>Update Productinfo <?php echo $model->fid; ?></h1>
+<div class="page-header">
+    <div class="icon">
+        <span class="ico-arrow-right"></span>
+    </div>
+    <h1>编辑产品 <?php echo $model->fproductnm; ?></h1>    
+</div>
+
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

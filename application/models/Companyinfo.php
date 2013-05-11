@@ -70,13 +70,13 @@ class Companyinfo extends CActiveRecord
 	{
 		return array(
 			'fid' => 'Fid',
-			'fname' => 'Fname',
-			'faddress' => 'Faddress',
-			'floomnum' => 'Floomnum',
-			'fdepartnum' => 'Fdepartnum',
-			'finfo' => 'Finfo',
-			'fcreatetm' => 'Fcreatetm',
-			'fstatus' => 'Fstatus',
+			'fname' => '名称',
+			'faddress' => '地址',
+			'floomnum' => '纺织机数量',
+			'fdepartnum' => '部门数量',
+			'finfo' => '备注',
+			'fcreatetm' => '创建时间',
+			'fstatus' => '状态',
 		);
 	}
 

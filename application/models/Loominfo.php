@@ -79,9 +79,9 @@ class Loominfo extends  LoomComBaseModel
 			'floomx' => 'Floomx',
 			'floomy' => 'Floomy',
 			'fcompanyid' => '所属公司',
-			'frepeaterid' => 'Frepeaterid',
-			'fgatherid' => 'Fgatherid',
-			'fstatus' => 'Fstatus',
+			'frepeaterid' => '中继器ID',
+			'fgatherid' => '收集器ID',
+			'fstatus' => '状态',
 			'frollid' => 'Frollid',
 			'floominfo' => '备注',
 		);
