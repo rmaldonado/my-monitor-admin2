@@ -69,3 +69,13 @@ function bindRefreshEvents() {
     });
     
 }
+
+function disableBackSpace() {
+    $(document).keydown(function (event) {        
+        if (event.keyCode === 8) {
+            if (event.target.nodeName === 'BODY') {
+                event.preventDefault();
+            }
+        }
+    });
+}

@@ -36,6 +36,7 @@
     fixBodyWidth();
     $("#loadercnt").hide();//hidden load image
     bindRefreshEvents();
+    disableBackSpace();
 </script>
 {if isset($media.scripts)}
 {foreach $media.scripts as $script}<script type='text/javascript' src='/media/js/{$script}'></script>{/foreach}   
