@@ -9,9 +9,9 @@
     <div class="span12">
         <div class="widgets">
             <div class="widget blue value">
-                <div class="both">367.89</div>
+                <div class="both">93.56%</div>
                 <div class="bottom">
-                    <a href="#">当班总产量（单位：米）</a>
+                    <a href="#">织机平均效率</a>
                 </div>
             </div>
             <div class="widget green value">

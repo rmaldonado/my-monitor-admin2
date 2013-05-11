@@ -10,8 +10,6 @@
             </ul>
         </div>
         <div class="data">
-            <div id="main_chart" style="height: 300px;"></div>                                
-        </div>       
         <div class="row-fluid">
             <div class="span4">
                 <div class="stat">
@@ -28,7 +26,11 @@
                     <span class="corange">720</span>(台)<br/> 停机
                 </div>                                                
             </div>               
+        </div> 
         </div>
+        <div class="data">
+            <div id="main_chart" style="height: 300px;"></div>                                
+        </div>       
     </div>
 
     <div class="block">

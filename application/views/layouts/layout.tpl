@@ -6,11 +6,13 @@
     <!--[if gt IE 8]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
     <![endif]-->
-    {include file="{$SMARTY_TPL_PATH}/layouts/mediastyle.tpl"} 
+    {include file="{$SMARTY_TPL_PATH}/layouts/mediastyle.tpl"}
+    
     <title>{$SITETITLE_PREFIX}</title>    
 </head>
 <body>    
     <div id="loadercnt"><img src="/media/img/loader.gif"/></div>
+    
     <div class="wrapper">
         
         <div class="sidebar">
@@ -18,10 +20,8 @@
         </div>
         
         <div class="body">  
-            <div class="clearfix">          
-            <ul class="navigation">
+            <div class="clearfix ">                      
                 {include file="{$SMARTY_TPL_PATH}/layouts/topnav.tpl"}
-            </ul>
             </div>
             <div class="content"> 
                 {$content}
