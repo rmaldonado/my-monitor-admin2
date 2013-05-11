@@ -28,7 +28,7 @@
             </div>
             <div class="span3">
                 <div class="stat">
-                    <span class="corange">720</span>(台)<br/> 停机
+                    <span class="cyellow">20</span>(台)<br/> 尽机
                 </div>                                                
             </div>             
         </div> 
