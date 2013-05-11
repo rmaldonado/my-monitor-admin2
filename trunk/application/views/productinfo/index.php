@@ -1,22 +1,18 @@
-<?php
-$this->breadcrumbs=array(
-	'Productinfos',
-);
 
-$this->menu=array(
-	array('label'=>'Create Productinfo', 'url'=>array('create')),
-	array('label'=>'Manage Productinfo', 'url'=>array('admin')),
-);
-?>
-
+<div class="page-header">
+    <div class="icon">
+        <span class="ico-arrow-right"></span>
+    </div>
+    <h1>产品管理 </h1>    
+</div>
 
 <div class="block">
 <div class="head orange">
-    <h2>Productinfos</h2>
+    <h2>&nbsp;</h2>
     <ul class="buttons">
-                <li><a onclick="source('table_main'); return false;" href="#"><div class="icon"><span class="ico-info"></span></div></a></li>
-                <li><a class="ublock" data="/loom/site/product" href="#"><div class="icon"><span class="ico-undo"></span></div></a></li>
-                <li><a class="cblock" href="#"><div class="icon"><span class="ico-sort"></span></div></a></li>
+        <li><a href="<?php echo $this->createUrl('create'); ?>"><div class="icon"><span class="ico-plus"></span></div></a></li>
+                <!--li><a class="ublock" data="/loom/site/product" href="#"><div class="icon"><span class="ico-undo"></span></div></a></li>
+                <li><a class="cblock" href="#"><div class="icon"><span class="ico-sort"></span></div></a></li-->
     </ul>   
 </div>
 <div class="data-fluid">
@@ -48,4 +44,5 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 )); 
 
 ?>
+</div>
 </div>

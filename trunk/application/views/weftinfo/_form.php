@@ -7,6 +7,8 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'type'=>'horizontal',
 )); 
 
+echo $form->errorSummary($model); 
+
 echo $form->textFieldRow($model, 'fdensity');
 echo $form->textFieldRow($model, 'fcycle');
 echo $form->textFieldRow($model, 'fnumber');

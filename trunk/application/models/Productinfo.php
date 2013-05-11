@@ -49,7 +49,7 @@ class Productinfo extends LoomComBaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fchaineid, fweftid', 'required'),
+			array('fchaineid, fweftid', 'required', 'message' => '请选择 {attribute}'),
 			array('freedlen, fplspeed, fstatus', 'numerical', 'integerOnly'=>true),
 			array('fpleffect', 'numerical'),
 			array('fprodcutsn, fproductnm, fsilksp, fweave, ftype, flevel', 'length', 'max'=>200),

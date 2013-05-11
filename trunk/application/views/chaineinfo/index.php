@@ -1,17 +1,21 @@
-<?php
-$this->breadcrumbs=array(
-	'Chaineinfos',
-);
 
-$this->menu=array(
-	array('label'=>'Create Chaineinfo', 'url'=>array('create')),
-	array('label'=>'Manage Chaineinfo', 'url'=>array('admin')),
-);
-?>
+<div class="page-header">
+    <div class="icon">
+        <span class="ico-arrow-right"></span>
+    </div>
+    <h1>经纱管理</h1>    
+</div>
 
-<h1>Chaineinfos</h1>
-
-
+<div class="block">
+<div class="head orange">
+    <h2>&nbsp;</h2>
+    <ul class="buttons">
+        <li><a href="<?php echo $this->createUrl('create'); ?>"><div class="icon"><span class="ico-plus"></span></div></a></li>
+                <!--li><a class="ublock" data="/loom/site/product" href="#"><div class="icon"><span class="ico-undo"></span></div></a></li>
+                <li><a class="cblock" href="#"><div class="icon"><span class="ico-sort"></span></div></a></li-->
+    </ul>   
+</div>
+<div class="data-fluid">
 <?php 
 
 $this->widget('bootstrap.widgets.TbGridView', array(
@@ -37,3 +41,5 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 )); 
 
 ?>
+</div>
+</div>

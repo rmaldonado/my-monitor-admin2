@@ -1,18 +1,9 @@
-<?php
-$this->breadcrumbs=array(
-	'Chaineinfos'=>array('index'),
-	$model->fid=>array('view','id'=>$model->fid),
-	'Update',
-);
+<div class="page-header">
+    <div class="icon">
+        <span class="ico-arrow-right"></span>
+    </div>
+    <h1>编辑经纱 <?php echo $model->fid; ?></h1>    
+</div>
 
-$this->menu=array(
-	array('label'=>'List Chaineinfo', 'url'=>array('index')),
-	array('label'=>'Create Chaineinfo', 'url'=>array('create')),
-	array('label'=>'View Chaineinfo', 'url'=>array('view', 'id'=>$model->fid)),
-	array('label'=>'Manage Chaineinfo', 'url'=>array('admin')),
-);
-?>
-
-<h1>Update Chaineinfo <?php echo $model->fid; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -9,7 +9,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 )); 
 
 ?>
-
+<?php echo $form->errorSummary($model); ?>
 <div class="row-fluid">
 	<div class="span6">
 <fieldset>
@@ -44,11 +44,11 @@ echo $form->dropDownListRow($model, 'fstatus', array('关闭', '启用' ));
 <div class="row-fluid">
 	<div class="span6">
 <fieldset>
-<legend>Chaineinfo</legend>
+<legend>经纱信息</legend>
 <?php
 $this->widget('bootstrap.widgets.TbButton', array(
 		'buttonType'=>'button', 
-		'label'=>'Select Chaineinfo',
+		'label'=>'选择经纱',
 		'htmlOptions' => array(
 			'id'=>'btn-select-chaineinfo'
 		)));
@@ -80,11 +80,11 @@ if ($model->fchaine) {
 	</div>
 	<div class="span6">
 <fieldset>
-<legend>Weftinfo</legend>
+<legend>纬纱信息</legend>
 <?php
 $this->widget('bootstrap.widgets.TbButton', array(
 		'buttonType'=>'button', 
-		'label'=>'Select Weftinfo',
+		'label'=>'选择纬纱',
 		'htmlOptions' => array(
 			'id'=>'btn-select-weftinfo'
 		)));

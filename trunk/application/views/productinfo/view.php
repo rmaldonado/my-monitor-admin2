@@ -12,8 +12,12 @@ $this->menu=array(
 	array('label'=>'Manage Productinfo', 'url'=>array('admin')),
 );
 ?>
-
-<h1>View Productinfo #<?php echo $model->fid; ?></h1>
+<div class="page-header">
+    <div class="icon">
+        <span class="ico-arrow-right"></span>
+    </div>
+    <h1>查看产品 <?php echo $model->fproductnm; ?></h1>    
+</div>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
