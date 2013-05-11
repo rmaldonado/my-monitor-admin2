@@ -11,21 +11,26 @@
         </div>
         <div class="data">
         <div class="row-fluid">
-            <div class="span4">
+            <div class="span3">
                 <div class="stat">
                     <span class="cdblue">2,350</span>(台)<br/> 总织机
                 </div>
             </div>
-            <div class="span4">
+            <div class="span3">
                 <div class="stat">
                     <span class="cblue">1,120</span>(台)<br/>运转
                 </div>                                                                        
             </div>
-            <div class="span4">
+            <div class="span3">
                 <div class="stat">
                     <span class="corange">720</span>(台)<br/> 停机
                 </div>                                                
-            </div>               
+            </div>
+            <div class="span3">
+                <div class="stat">
+                    <span class="corange">720</span>(台)<br/> 停机
+                </div>                                                
+            </div>             
         </div> 
         </div>
         <div class="data">
