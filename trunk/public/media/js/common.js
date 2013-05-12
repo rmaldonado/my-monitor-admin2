@@ -1,4 +1,17 @@
 function fixBodyWidth(){
+    $(window).resize(function(){
+        if($('body').width() <= 1024){
+           $('.navigation').addClass('narrow');    
+           if($('.navigation').hasClass('bordered'))
+              $('.navigation').removeClass('bordered').addClass('btemp');
+        }else{
+           $(".sidebar").removeAttr('style');
+           $('.navigation').removeClass('narrow');
+
+           if($('.navigation').hasClass('btemp'))
+              $('.navigation').removeClass('btemp').addClass('bordered');            
+        }
+    });
     
     fixItemsWidth('.input-prepend', ['.add-on','button'], 'input');
     fixItemsWidth('.input-append',  ['.add-on','button'], 'input');     
@@ -35,6 +48,12 @@ function removeLoader(block){
 }
 
 function bindRefreshEvents() {
+    $(".navButton a, .sidebar .close").click(function(){        
+        if($(".sidebar").is(":visible"))
+            $(".sidebar").slideUp();
+        else
+            $(".sidebar").slideDown();        
+    });
     //ublock
     $(".ublock").click(function(){
         var block = $(this).parents('[class^=block]');

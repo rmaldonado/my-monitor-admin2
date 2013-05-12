@@ -46,15 +46,16 @@
                                             </a>
                                     </li>
                                     <li>
-                                            <a class="more-messages" href="#">
-                                                事件记录中心 
-                                                <i class="icon-arrow-right"></i>
-                                            </a>
+                                        <a class="more-messages" href="#">
+                                            事件记录中心 
+                                            <i class="icon-arrow-right"></i>
+                                        </a>
                                     </li>
                             </ul>
                     </li>
                     <li class="dropdown sett">
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="ico-cog"></i></a>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#" title="报表及下载"><i class="ico-cog"></i></a>
+                            
                             <ul class="dropdown-menu pull-right theme-settings">
                                     <li>
                                             <span>报表下载</span>
@@ -72,8 +73,8 @@
                                     </li>
                             </ul>
                     </li>
-                    <li class="" class="dropdown sett button  navButton">
-                        <a href="#"><i class="ico-align-justify"></i></a>
+                    <li class="dropdown sett sbutton navButton">
+                         <a href="#" title="显示下拉菜单"><i class="ico-align-justify"></i></a>
                     </li>
             </ul>
 

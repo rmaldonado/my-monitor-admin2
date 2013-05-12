@@ -20,7 +20,7 @@ form{margin: 0px;}
     /* sidebar */
     .sidebar{min-height: 100%; position: absolute; z-index: 10; left: 0px; top: 0px; width: 220px; padding: 0px 20px 0px 10px; background: url('../img/nav_line.jpg') right top repeat-y #191818;}
     
-        .sidebar .top{float: left; width: 220px; margin: 30px 0px;}
+        .sidebar .top{float: left; width: 220px; margin: 0px 0px;}
             .sidebar .top .logo{width: 220px; height: 50px; float: left; display: block; background: url('../img/logon.png') left top no-repeat; margin-bottom: 20px;}
             .sidebar .top .search{width: 220px; float: left;}
 
@@ -105,6 +105,7 @@ form{margin: 0px;}
                         .body .navigation .buttons .sbutton a [class^="ico-"]{font-size: 16px; color: #FFF; line-height: 16px;}
                         
             .body .navigation .buttons .sbutton.navButton{display: none;}
+            .body .user .sbutton.navButton{display: none}
         /* eof body navigation */
             
         /* body navigation popup */
