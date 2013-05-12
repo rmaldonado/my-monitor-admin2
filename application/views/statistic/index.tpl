@@ -1,6 +1,6 @@
 <div class="page-header">
     <div class="icon">
-        <span class="ico-arrow-right"></span>
+        <span class="ico-chart-2"></span>
     </div>
     <h1>生产统计 {*<small>METRO STYLE ADMIN PANEL</small>*}</h1>    
 </div>

@@ -1,11 +1,11 @@
 <div class="top">
     <a href="/loom/" class="logo"></a>
-    <div class="search">
+    {*<div class="search">
         <div class="input-prepend">
             <span class="add-on orange"><span class="icon-search icon-white"></span></span>
             <input type="text"/>                                                      
         </div>            
-    </div>
+    </div>*}
 </div>
 
 <ul class="navigation bordered">
@@ -15,9 +15,12 @@
                     <li><a href="{$subRow.url}">{$subRow.label}</a></li>
                 {/foreach}
             {else}
-                <li><a href="{$menuRow.url}" class="{$menuRow.class}">{$menuRow.label}</a>    
+                <li><a href="{$menuRow.url}" class="{$menuRow.class}">{$menuRow.label}</a></li>
             {/if}
         {/foreach}
+        <a class="close">
+            <span class="ico-remove"></span>
+        </a>
 {if isset($showExt)}         
     <li>
         <a href="#" class="blgreen">Forms Stuff</a>

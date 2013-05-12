@@ -1,6 +1,6 @@
 <div class="page-header">
     <div class="icon">
-        <span class="ico-arrow-right"></span>
+        <span class="ico-eye-open"></span>
     </div>
     <h1>织机状态 {*<small>METRO STYLE ADMIN PANEL</small>*}</h1>    
 </div>
