@@ -60,6 +60,7 @@ create table t5_rollinfo_base (
    forderid varchar(200) not null default '' comment '订单号',
    fpcardno varchar(200) not null default '' comment '制程卡号',
    fmemo  varchar(400) comment '备注信息',
+   frefloomid varchar(400) not null default '' comment '织机编号关联 t5_loominfo.fid 用逗号分割',
    UNIQUE  uk_rollinfo(frollno, frolltime)
 );
 /*
@@ -167,7 +168,7 @@ create table t5_status_base (
 /*
 punch card record
 */
-create table t5_punchcard_list_base (
+create table t5_punchcard_base (
   faddtm int(11) unsigned not null comment 'data insert into timestamp',
   fcardno int(11) unsigned not null comment 'employee card no',
   frepeatid int(11) unsigned not null comment 'loom repeater id',
@@ -191,4 +192,15 @@ create table t5_events_base (
   ftbrknum int(11) unsigned not null  comment '',
   fstatus int(11) unsigned not null comment 'data status',
   primary key pk_events(frepeatid, flcardid, ftimestamp, feventid)
+);
+
+/* 挡车工信息*/
+create table t5_events_base (
+   fcardno int(11) not null unsigned  primary key,
+   fgroupid smallint not null unsigned comment '操作工的组编号',
+   fteamid smallint not null unsigned comment '操作工的班次编号',
+   fname varchar(100) not null default '操作工姓名',
+   ftype varchar(100) not null default '操作工是早班还是中班，晚班的类型',
+   flooms varchar(400) not null default ',' comment '管理的织机编号用逗号分割',
+   fstatus tinyint unsigned not null default 1 comment '数据有效性默认1-有效'
 );
