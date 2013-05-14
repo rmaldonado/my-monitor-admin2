@@ -11,6 +11,20 @@ class StatisticController extends LoomComController{
         );
         $this->render($viewName);
     }
+    
+    public function ActionEffect() {
+        
+        //TODO
+        $viewName = 'effect';
+        $this->render($viewName);
+    }
+    
+    public function ActionProduct() {
+        
+        //TODO
+        $viewName = 'product';
+        $this->render($viewName);
+    }
 }
 
 ?>

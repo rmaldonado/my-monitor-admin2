@@ -1,11 +1,12 @@
-<div class="block">
+<div class="row-fluid">
     <div class="head blue">
-        <div class="icon"><i class="ico-layout-9"></i></div>
+        <div class="icon"><i class="icon-bar-chart"></i></div>
         <h2>详细信息</h2>
         <ul class="buttons">
-            <li><a href="#myModal" role="button" data-toggle="modal"><div class="icon"><span class="ico-info"></span></div></a></li>
+            <li><a href="#myModal" role="button" data-toggle="modal"><div class="icon"><span class="icon-info-sign"></span></div></a></li>
         </ul>
     </div>
+    
     <ul class="nav nav-tabs" id="myTab">
         <li class="active"><a data-toggle="tab" href="#home">生产情况</a></li>
         <li class=""><a data-toggle="tab" href="#profile">经纬纱信息</a></li>
@@ -17,7 +18,6 @@
             </ul>
         </li>
     </ul>
-
     <div class="tab-content" id="myTabContent">
         <div id="home" class="tab-pane fade in active">
             <div class="row-fluid">
@@ -30,13 +30,13 @@
 
                              <div class="row-form">
                                  <div class="span2">品名:</div>
-                                 <div class="span3">
+                                 <div class="span4">
                                      <!--input type="text" class="validate[required] datepicker" id="datepick_1" placeholder="Placeholder example"-->
-                                     <input type="text" readonly="readonly" value="RMPFF-1244-CM">
+                                     <input type="text" class="input-medium" readonly="readonly" value="RMPFF-1244-CM">
                                  </div>
                                  <div class="span2">产量:</div>
                                  <div class="span3">                                     
-                                     <input type="text" readonly="readonly" value="356 码">
+                                     <input type="text" class="input-small" readonly="readonly" value="356 码">
                                  </div>                                 
                              </div>
                              <div class="row-form">
@@ -45,7 +45,7 @@
                                  <div class="span2">织轴号：</div>
                                  <div class="span3"><input type="password" value="inputpassword"></div>
                              </div>
-                             <div class="row-form">
+                             <div class="row-fluid">
                                  <table class="table">
                                      <tr><td colspan="6"></td></tr>
                                      <tr>

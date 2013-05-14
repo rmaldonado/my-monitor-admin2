@@ -41,6 +41,7 @@ class LuserController extends LoomController {
         }
         else {
             $tplFile = 'loginform';
+            $tplFile = 'sp_loginform';
             if ($this->view === null) {
                 $this->view = Yii::app()->getViewRenderer();
             }

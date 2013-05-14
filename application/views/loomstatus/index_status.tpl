@@ -13,7 +13,7 @@
      <button class="close" data-dismiss="alert" type="button">×</button>
      <div class="msg"></div>
  </div>*}
-    <div class="data-fluid">
+    <div class="row-fluid">
         <div class="span12 container">
             <div class="rows show-grid" id="loomstatus">
 {foreach $looms.info as $row}{foreach $row as $col}
