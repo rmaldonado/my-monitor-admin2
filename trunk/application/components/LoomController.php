@@ -2,22 +2,22 @@
 
 class LoomController extends CController 
 {
-    public $layout      = 'layout';
+    public $layout      = '//themes/smarttheme/layout';
     public $view        = null;// view render object
     public $breadcrumbs = array();
     public $menus       = array(
         'items' =>  array(
-                array(
+                '/loom/'    => array(
                     'label' => '总览', 
                     'url'   => '/loom/',
-                    'class' => 'blblue',
+                    'class' => 'icon-dashboard',
                     'acss'  => '',
                     'tcss'  => 'ico-monitor',
                     'items' => null,
                 ),
-                array(
+                '/loom/loomstatus' => array(
                     'label'	=> '织机管理',
-                    'class'	=> 'blyellow',
+                    'class'	=> 'icon-desktop',
                     'url'       => '/loom/loomstatus',
                     'acss'      => 'yellow',
                     'tcss'      => 'ico-cog-2',
@@ -25,39 +25,54 @@ class LoomController extends CController
                 ),
                 array(
                     'label'	=> '统计信息',
-                    'class'	=> null,
+                    'class'	=> 'icon-edit',
                     'url'	=> '/loom/statistic',
                     'acss'      =>  'green',
                     'tcss'      =>  'ico-chart-4',
-                    'items'     => null,
+                    'items'     => array (
+                        '/loom/statistic/effect' => array(
+                            'label'	=> '效率统计',
+                            'class'	=> 'icon-edit',
+                            'url'	=> '/loom/statistic/effect',
+                            'acss'      =>  'green',
+                            'tcss'      =>  'ico-chart-4',
+                        ),
+                        '/loom/statistic/product' => array(
+                            'label'	=> '产量统计',
+                            'class'	=> 'icon-edit',
+                            'url'	=> '/loom/statistic/product',
+                            'acss'      =>  'green',
+                            'tcss'      =>  'ico-chart-4',
+                        ),                        
+                    ),
                 ),
-                array(
+               '/loom/rollinfo' => array(
                     'label'	=> '上轴管理',
-                    'class'	=> null,
+                    'class'	=> 'icon-edit',
                     'acss'      =>  'red',
                     'tcss'      =>  'ico-pen-2',
                     'url'	=> '/loom/rollinfo',
                     'items'     =>  null,
                 ),
-                array(
+                '/loom/productinfo' => array(
                     'label'	=> '产品管理',
-                    'class'	=> null,
+                    'class'	=> 'icon-list-alt',
                     'acss'      =>  'blue',
                     'tcss'      =>  'ico-layout-7',
                     'url'	=> '/loom/productinfo',
                     'items'     =>  null,
                 ),
-                array(
+                '/loom/chaineinfo' => array(
                     'label' => '经纱管理',
-                    'class' => null,
+                    'class' => 'icon-th',
                     'acss'      =>  'purple',
                     'tcss'      =>  'ico-box',
                     'url'   => '/loom/chaineinfo',
                     'items'     =>  null,
                 ),
-                array(
+                '/loom/weftinfo' => array(
                     'label' => '纬纱管理',
-                    'class' => null,
+                    'class' => 'icon-th',
                     'acss'      =>  'purple',
                     'tcss'      =>  'ico-box',
                     'url'   => '/loom/weftinfo',
@@ -65,7 +80,7 @@ class LoomController extends CController
                 ),                                
                 array(
                     'label'	=> '员工管理',
-                    'class'	=> null,
+                    'class'	=> 'icon-user-md',
                     'acss'      =>  'purple',
                     'tcss'      =>  'ico-box',
                     'url'	=> 'icons.html',
@@ -73,7 +88,7 @@ class LoomController extends CController
                 ),
                 array(
                     'label'	=> '其他操作',
-                    'class'	=> null,
+                    'class'	=> 'icon-check-empty',
                     'acss'      =>  'orange',
                     'tcss'      =>  'ico-cloud',
                     'url'	=> 'grid_sys.html',
@@ -97,7 +112,13 @@ class LoomController extends CController
         }
         parent::init();
         $this->view = Yii::app()->getViewRenderer();
+        $reqUri = Yii::app()->getRequest()->getRequestUri();
+        if (strpos($reqUri, '?') !== false) {
+            $reqUri = substr($reqUri, 0, strpos($reqUri, '?'));
+        }
 
+        $this->view->currentURI = $reqUri;
+        $this->view->currentCaption = $this->getCurrentCaption($reqUri);
         $fscname = null;//
         if (Yii::app()->user->getId() !== null) {
             $fscname = Yii::app()->user->fscname;
@@ -138,7 +159,27 @@ class LoomController extends CController
                     ),
             );
     }
-
+    
+    private function getCurrentCaption($uri) {
+        if (isset($this->menus['items'])) {
+            $menu = $this->menus['items'];
+            if (isset($menu[$uri])) {
+                return $menu[$uri]['label'];
+            }
+            else {
+                $loops = sizeof($menu);
+                for ($i = 0; $i < $loops; $i++) {
+                    if  (isset($menu[$i])) {
+                        $submenu = $menu[$i]['items'];
+                        if (is_array($submenu)) {
+                            
+                           return isset($submenu[$uri]) ? $submenu[$uri]['label'] : '其它';
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 ?>

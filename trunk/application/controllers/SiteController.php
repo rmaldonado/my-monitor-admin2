@@ -8,7 +8,7 @@ class SiteController extends LoomController {
         
         $this->view->media = array(
             'scripts'   => array(
-                'lsite.js',
+                'site/index.js',
             ),
         );
         $productRows = array();
@@ -22,7 +22,7 @@ class SiteController extends LoomController {
             );
         }
         $this->view->product = $productRows;
-        $this->render('index', $data);
+        $this->render('sp_index', $data);
     }
     
     public function actionCharteffect() {
