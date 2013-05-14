@@ -12,6 +12,9 @@
 <script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery.flot.pie.min.js"></script>
 <script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery.flot.resize.min.js"></script>
 
+<script type='text/javascript' src='{$sitemedia.uri}/media/smarttheme/js/lib/hichart/highcharts.src.js'></script>
+<script type='text/javascript' src="{$sitemedia.uri}/media/smarttheme/js/lib/hichart/modules/exporting.js"></script>
+
 <script src="{$sitemedia.uri}/media/smarttheme/js/ace-elements.min.js"></script>
 <script src="{$sitemedia.uri}/media/smarttheme/js/ace.min.js"></script>
 {if isset($media.scripts)}
