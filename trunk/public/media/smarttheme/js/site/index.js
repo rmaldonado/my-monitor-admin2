@@ -101,7 +101,7 @@ $(function() {
         {label: "第四车间", data: 418.6, color: "#DA5430"},
         {label: "第五车间", data: 510, color: "#FEE074"}
     ];
-    var placeholder = $('#piechart-placeholder').css({'width': '90%', 'min-height': '150px'});
+    var placeholder = $('#piechart-placeholder').css({'width': '95%', 'min-height': '200px'});
     $.plot(placeholder, data, {
         series: {
             pie: {
@@ -181,7 +181,7 @@ $(function() {
     }
 
 
-    var sales_charts = $('#sales-charts').css({'width': '100%', 'height': '220px'});
+    var sales_charts = $('#sales-charts').css({'width': '100%', 'height': '240px'});
     $.plot("#sales-charts", [
         {label: "Domains", data: d1},
         {label: "Hosting", data: d2},
