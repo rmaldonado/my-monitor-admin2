@@ -1,9 +1,9 @@
-<div class="page-header">
+{*<div class="page-header">
     <div class="icon">
         <span class="ico-eye-open"></span>
     </div>
-    <h1>织机状态 {*<small>METRO STYLE ADMIN PANEL</small>*}</h1>    
-</div>
+    <h1>织机状态 <small>METRO STYLE ADMIN PANEL</small></h1>    
+</div>*}
 <div class="row-fluid">
     <div class="span12">
         {include file="loomstatus/index_status.tpl"}

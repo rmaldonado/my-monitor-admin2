@@ -5,9 +5,9 @@ class LoomstatusController extends LoomComController {
         $viewName = 'index';
         $infoRows = array();
         $num = 1;
-        for($i = 1; $i < 20; $i++) {
+        for($i = 1; $i < 10; $i++) {
             $row = array();
-            for($j = 1; $j < 20; $j++) {
+            for($j = 1; $j < 15; $j++) {
                 $row[] = array(
                     'sid'   => sprintf('A%03d', $num++),
                     'st'    =>  $j == 3 ? 'stop' : ($j == 7 ? 'low' : 'run')

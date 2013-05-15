@@ -205,3 +205,46 @@ create table t5_events_base (
    flooms varchar(400) not null default ',' comment '管理的织机编号用逗号分割',
    fstatus tinyint unsigned not null default 1 comment '数据有效性默认1-有效'
 );
+/* 
+按小时汇总数据，计算出每个小时内产生的数据量
+*/
+CREATE TABLE t5_hourdata_base (
+  fhourid int(11) unsigned not null  comment '将数据产生的时间分和秒设置为零',
+  frepeatid int(11) unsigned not null  comment 'loom repeater id',
+  flcardid tinyint unsigned not null  comment 'loom collector id',
+  frstatus  int(11) unsigned not null  comment 'loom status', 
+  ftimestamp int(11) unsigned not null  comment 'loom status changed time',  
+  frlength  int(11) unsigned not null  comment 'lustring length offset',
+  fpowersec int(11) unsigned not null  comment 'loom powner on elapsed seconds offset',
+  frunsec   int(11) unsigned not null  comment 'loom run seconds offset',
+  fwbrknum int(11) unsigned not null  comment 'weft broken times offset',
+  fsbrknum int(11) unsigned not null  comment 'side silk broken times offset',
+  fobrknum int(11) unsigned not null  comment 'other silk broken times offset',
+  frpmnum  int(11) unsigned not null  comment 'electric motor revolutions per minute offset',
+  ftbrknum int(11) unsigned not null  comment 'silk warp broken times offset',
+  fextnum  int(11) unsigned not null  comment 'unused extension column offset',
+  faddtm   int(11) unsigned not null comment 'data inserted time',
+  fupdatetm int(11) unsigned not null comment 'data update time',
+  PRIMARY KEY (fhourid, frepeatid,flcardid)
+);
+/* 
+获取织机在比统计程序前一次更新新的一行数据
+*/
+create table t5_loomlsdata_base (
+  frepeatid int(11) unsigned not null  comment 'loom repeater id',
+  flcardid tinyint unsigned not null  comment 'loom collector id',
+  frstatus  int(11) unsigned not null  comment 'loom status',
+  ftimestamp int(11) unsigned not null  comment 'loom status changed time',
+  frlength  int(11) unsigned not null  comment 'lustring length',
+  fpowersec int(11) unsigned not null  comment 'loom powner on elapsed seconds',
+  frunsec   int(11) unsigned not null  comment 'loom run seconds',
+  fwbrknum int(11) unsigned not null  comment 'weft broken times',
+  fsbrknum int(11) unsigned not null  comment 'side silk broken times',
+  fobrknum int(11) unsigned not null  comment 'other silk broken times',
+  frpmnum  int(11) unsigned not null  comment 'electric motor revolutions per minute',
+  ftbrknum int(11) unsigned not null  comment 'silk warp broken times',
+  fextnum  int(11) unsigned not null  comment 'unused extension column',
+  fupdatetm   int(11) unsigned not null comment 'data update time',
+  primary key pk_loom_status(frepeatid, flcardid, ftimestamp)
+);
+

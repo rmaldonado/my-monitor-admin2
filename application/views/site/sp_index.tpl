@@ -31,34 +31,56 @@
                     <div class="infobox-icon"><i class="icon-comments"></i></div>
                     <div class="infobox-data">
                         <span class="infobox-data-number">93.2%</span>
-                        <span class="infobox-content">平均效率</span>
+                        <span class="infobox-content">本月效率</span>
                     </div>
                     <div class="stat stat-success">8%</div>
                 </div>
 
 
-                <div class="infobox infobox-blue">
+                <div class="infobox infobox-green">
                     <div class="infobox-icon"><i class="icon-twitter"></i></div>
                     <div class="infobox-data">
                         <span class="infobox-data-number">98.5%</span>
-                        <span class="infobox-content">今日最高效率</span>
+                        <span class="infobox-content">本日效率</span>
                     </div>
                     {*<div class="badge badge-success"></div>*}
                 </div>
-
-
-
-
-
-                <div class="infobox infobox-pink">
+                
+                <div class="infobox infobox-green">
                     <div class="infobox-icon"><i class="icon-shopping-cart"></i></div>
                     <div class="infobox-data">
                         <span class="infobox-data-number">96.5%</span>
-                        <span class="infobox-content">瞬时效率</span>
+                        <span class="infobox-content">本班效率</span>
                     </div>
                     <div class="stat stat-important">4%</div>
                 </div>
-
+{* -------------------------------------- *}
+                <div class="infobox infobox-blue">
+                    <div class="infobox-icon"><i class="icon-comments"></i></div>
+                    <div class="infobox-data">
+                        <span class="infobox-data-number">589 </span>
+                        <span class="infobox-content">本月平均转速(转/分)</span>
+                    </div>
+                    <div class="stat stat-success">8%</div>
+                </div>
+                <div class="infobox infobox-blue">
+                    <div class="infobox-icon"><i class="icon-comments"></i></div>
+                    <div class="infobox-data">
+                        <span class="infobox-data-number">593 rpm</span>
+                        <span class="infobox-content">本日平均转速(转/分)</span>
+                    </div>
+                    <div class="stat stat-success">8%</div>
+                </div>
+                
+                <div class="infobox infobox-blue">
+                    <div class="infobox-icon"><i class="icon-comments"></i></div>
+                    <div class="infobox-data">
+                        <span class="infobox-data-number">688 rpm</span>
+                        <span class="infobox-content">本班平均转速(转/分)</span>
+                    </div>
+                    <div class="stat stat-success">8%</div>
+                </div>
+{* -------------------------------------- *}              
 
 
                 <div class="infobox infobox-red">
@@ -85,13 +107,14 @@
 
                 <div class="infobox infobox-blue2">
                     <div class="infobox-progress">
-                        <div class="easy-pie-chart percentage" data-percent="42" data-size="46"><span class="percent">42</span>%
+                        <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
+                            <span class="percent">42</span>%
                         </div>
                     </div>
 
                     <div class="infobox-data">
                         <span class="infobox-text">234</span>
-                        <span class="infobox-content"><span class="approx">~</span> 总产量(单位：米)</span>
+                        <span class="infobox-content"><span class="approx">~</span>总产量(单位：米)</span>
                     </div>
                 </div>
 
@@ -110,7 +133,7 @@
 
                 <div class="infobox infobox-small infobox-dark infobox-green">
                     <div class="infobox-data">
-                        <span class="infobox-content"><b>200</b></span>
+                        <span class="infobox-content" style="font-size:24px;"><b>200</b></span>
                         <br />
                         <span class="infobox-content">运转织机</span>
                     </div>
@@ -118,7 +141,7 @@
 
                 <div class="infobox infobox-small infobox-dark infobox-red">
                     <div class="infobox-data">
-                        <span class="infobox-content"><b>32</b></span>
+                        <span class="infobox-content" style="font-size:24px;"><b>32</b></span>
                         <br />
                         <span class="infobox-content">停台</span>
                     </div>
@@ -126,7 +149,7 @@
 
                 <div class="infobox infobox-small infobox-dark infobox-orange2">
                     <div class="infobox-data">
-                        <span class="infobox-content"><b>32</b></span>
+                        <span class="infobox-content" style="font-size:24px;"><b>32</b></span>
                         <br />
                         <span class="infobox-content">离线</span>
                     </div>
