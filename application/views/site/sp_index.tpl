@@ -180,7 +180,7 @@
 
         </div><!--/row-->
 
-
+{*
         <div class="hr hr32 hr-dotted"></div>
 
 
@@ -709,7 +709,7 @@
         </div><!--/row-->
 
 
-
+*}
 
 
 

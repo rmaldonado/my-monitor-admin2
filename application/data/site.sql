@@ -25,15 +25,16 @@ create table t5_companyinfo (
 create table t5_loominfo_base (
   fid int(11) unsigned not null auto_increment primary key,
   floomsn int(11) unsigned not null comment 'loom serial number',
-  floomid varchar(64) not null comment 'loom id which show in status window',
+  floomname varchar(64) not null comment 'loom id which show in status window',
   floomx float not null default 0 comment 'loom x axis position',
   floomy float not null default 0 comment 'loom y axis position',
   fcompanyid int(11) unsigned not null comment 'which belon compay id',
   frepeaterid int(11) unsigned not null comment 'repeater address',
-  fgatherid int(11) unsigned not null comment 'gather card address',
+  flcardid int(11) unsigned not null comment 'gather card address',
   fstatus tinyint unsigned not null default 0,
   frollid   int(11) unsigned not null default 0 comment 'upper spindle primary id',
-  floominfo varchar(128) comment 'loom extension info'
+  floominfo varchar(128) comment 'loom extension info',
+  UNIQUE  uk_loominfo(frepeaterid, flcardid)
 );
 
 create table t5_rollinfo_base (
