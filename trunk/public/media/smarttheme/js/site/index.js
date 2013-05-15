@@ -1,5 +1,5 @@
 $(function() {
-    $('#piechart-placeholder').highcharts({
+    $('#__piechart-placeholder').highcharts({
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
