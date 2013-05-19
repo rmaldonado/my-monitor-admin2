@@ -32,7 +32,7 @@ class Loominfo extends  LoomComBaseModel
 	 */
 	public function tableName()
 	{
-		return '{{loominfo_base}}';
+		return '{{loominfo}}';
 	}
 
 	/**
@@ -63,7 +63,7 @@ class Loominfo extends  LoomComBaseModel
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'fcompany' => array(self::BELONGS_TO, 'Companyinfo', array('fid'=>'fcompanyid')),
+			'fcompany' => array(self::BELONGS_TO, 'Companyinfo', array('fid'=>'fcompanyid'))
 		);
 	}
 
@@ -123,5 +123,15 @@ class Loominfo extends  LoomComBaseModel
 		return new CActiveDataProvider('Loominfo', array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	function getLastRollinfo()
+	{
+		$criteria = new CDbCriteria;
+		$criteria->condition = 'frefloomid LIKE %,'.$this->fid.',%';
+		$criteria->order = 'fid DESC';
+		$criteria->limit = 1;
+		$ri = Rollinfo::model()->find($criteria);
+		return $ri;
 	}
 }
