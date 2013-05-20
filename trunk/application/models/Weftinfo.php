@@ -32,7 +32,7 @@ class Weftinfo extends LoomComBaseModel
 	 */
 	public function tableName()
 	{
-		return '{{weftinfo_base}}';
+		return '{{weftinfo}}';
 	}
 
 	/**

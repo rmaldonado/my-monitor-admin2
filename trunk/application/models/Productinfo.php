@@ -38,7 +38,7 @@ class Productinfo extends LoomComBaseModel
 	 */
 	public function tableName()
 	{
-		return '{{productinfo_base}}';
+		return '{{productinfo}}';
 	}
 
 	/**

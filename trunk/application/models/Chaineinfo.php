@@ -31,7 +31,7 @@ class Chaineinfo extends LoomComBaseModel
 	 */
 	public function tableName()
 	{
-		return '{{chaineinfo_base}}';
+		return '{{chaineinfo}}';
 	}
 
 	/**

@@ -44,7 +44,7 @@ class Rollinfo extends LoomComBaseModel
 	 */
 	public function tableName()
 	{
-		return '{{rollinfo_base}}';
+		return '{{rollinfo}}';
 	}
 
 	/**
