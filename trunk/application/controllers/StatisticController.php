@@ -15,7 +15,7 @@ class StatisticController extends LoomComController{
     public function ActionEffect() {
 
         $looms = array();
-        $ls = LoomInfo::model()->findAll();
+        $ls = Loominfo::model()->findAll();
         for ($i=0; $i < count($ls); $i++) { 
             $l = $ls[$i];
             $looms[$l->frepeaterid][$l->flcardid] = $l->floomname;
