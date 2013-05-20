@@ -180,7 +180,7 @@ create table t5_punchcard_base (
 );
 
 
-create table t5_events_base (  
+create table t5_events_base (
   faddtm int(11) unsigned not null comment 'data insert time',
   frepeatid int(11) unsigned not null comment 'loom repeater id',
   flcardid int(11) unsigned not null comment 'loom collector card id',
@@ -247,4 +247,20 @@ create table t5_loomlsdata_base (
   fupdatetm   int(11) unsigned not null comment 'data update time',
   primary key pk_loom_status(frepeatid, flcardid, ftimestamp)
 );
-
+/**
+ depracated
+**/
+create table t5_hourevents_base (
+  faddtm int(11) unsigned not null comment 'data insert time',
+  frepeatid int(11) unsigned not null comment 'loom repeater id',
+  flcardid int(11) unsigned not null comment 'loom collector card id',
+  ftimestamp int(11) unsigned not null comment 'punch card timestamp',
+  feventid int(11) unsigned not null comment '',
+  frlength  int(11) unsigned not null comment 'product silk length',
+  fwbrknum int(11) unsigned not null  comment '',
+  fsbrknum int(11) unsigned not null  comment '',
+  fobrknum int(11) unsigned not null  comment '',
+  ftbrknum int(11) unsigned not null  comment '',
+  fstatus int(11) unsigned not null comment 'data status',
+  primary key pk_events(frepeatid, flcardid, ftimestamp, feventid)
+);
