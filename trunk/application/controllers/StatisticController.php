@@ -163,12 +163,73 @@ class StatisticController extends LoomComController{
         }
 
 
-        
+        /////////////////
+        if (false) {
+            $objPHPExcel = new PHPExcel();
+            // $objPHPExcel->getProperties()->setCreator("Maarten Balliauw");
+            // $objPHPExcel->getProperties()->setLastModifiedBy("Maarten Balliauw");
+            // $objPHPExcel->getProperties()->setTitle("Office 2007 XLSX Test Document");
+            // $objPHPExcel->getProperties()->setSubject("Office 2007 XLSX Test Document");
+            // $objPHPExcel->getProperties()->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.");        
+
+            $objPHPExcel->setActiveSheetIndex(0);
+            // $objPHPExcel->getActiveSheet()->SetCellValue('A1', 'Hello');
+            // $objPHPExcel->getActiveSheet()->SetCellValue('B2', 'world!');
+            // $objPHPExcel->getActiveSheet()->SetCellValue('C1', 'Hello');
+            // $objPHPExcel->getActiveSheet()->SetCellValue('D2', 'world!');
+            //setCellValueByColumnAndRow( [string $pColumn = 0], [string $pRow = 1], [mixed $pValue = null], [bool $returnCell = false])
+            $objPHPExcel->setCellValueByColumnAndRow( 0, 1, '机台');
+            $objPHPExcel->setCellValueByColumnAndRow( 1, 1, '运转效率');
+            $objPHPExcel->setCellValueByColumnAndRow( 2, 1, '总停时间');
+            $objPHPExcel->setCellValueByColumnAndRow( 3, 1, '总停次数');
+            $objPHPExcel->setCellValueByColumnAndRow( 4, 1, '违停时间');
+            $objPHPExcel->setCellValueByColumnAndRow( 5, 1, '违停次数');
+            $objPHPExcel->setCellValueByColumnAndRow( 6, 1, '经停时间');
+            $objPHPExcel->setCellValueByColumnAndRow( 7, 1, '经停次数');                 
+            $objPHPExcel->setCellValueByColumnAndRow( 8, 1, '耳丝停时间');
+            $objPHPExcel->setCellValueByColumnAndRow( 9, 1, '耳丝停次数');
+            $objPHPExcel->setCellValueByColumnAndRow( 10, 1, '其他停时间');
+            $objPHPExcel->setCellValueByColumnAndRow( 11, 1, '其他停次数');    
+
+            $i = 1;
+            foreach ($time_slice as $k => $slice) { 
+                $i++;
+                $objPHPExcel->setCellValueByColumnAndRow( 0, 1, $slice['name']);
+                $f = '--';
+                if (isset($slice['efficiency'])) {
+                        $f = sprintf("%.2f", $slice['efficiency']*100) . '%';
+                }
+                $objPHPExcel->setCellValueByColumnAndRow( 1, $i, $f);
+                $objPHPExcel->setCellValueByColumnAndRow( 2, $i, $slice['stop_time']);
+                $objPHPExcel->setCellValueByColumnAndRow( 3, $i, $slice['stop_times']);
+                $objPHPExcel->setCellValueByColumnAndRow( 4, $i, isset($slice[8]) ? $slice[8]['time_len'] : '--');
+                $objPHPExcel->setCellValueByColumnAndRow( 5, $i, $slice['wbrknum']);
+                $objPHPExcel->setCellValueByColumnAndRow( 6, $i, isset($slice[1]) ? $slice[1]['time_len'] : '--');
+                $objPHPExcel->setCellValueByColumnAndRow( 7, $i, $slice['tbrknum']);
+                $objPHPExcel->setCellValueByColumnAndRow( 8, $i, isset($slice[2]) ? $slice[2]['time_len'] : '--');
+                $objPHPExcel->setCellValueByColumnAndRow( 9, $i, $slice['sbrknum']);
+                $objPHPExcel->setCellValueByColumnAndRow( 10, $i, $slice['other_time']);
+                $objPHPExcel->setCellValueByColumnAndRow( 11, $i, $slice['obrknum']);
+            }
+            $objPHPExcel->setCellValueByColumnAndRow( 0, 1, '');
 
 
-        //TODO
-        $viewName = 'effect';
-        $this->render($viewName, array('time_slice' => $time_slice, 'looms' => $looms));
+
+
+            // $objPHPExcel->getActiveSheet()->setTitle('Simple');
+
+            $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+            // $objWriter->save(str_replace('.php', '.xlsx', __FILE__));
+            echo $objWriter->save();
+
+            Yii::app()->end();
+        } else {
+                    //TODO
+            $viewName = 'effect';
+            $this->render($viewName, array('time_slice' => $time_slice, 'looms' => $looms));
+        }
+
+
     }
     
     public function ActionProduct() {
