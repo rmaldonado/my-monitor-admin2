@@ -3,7 +3,11 @@
         <div class="icon"><i class="icon-bar-chart"></i></div>
         <h2>详细信息</h2>
         <ul class="buttons">
-            <li><a href="#myModal" role="button" data-toggle="modal"><div class="icon"><span class="icon-info-sign"></span></div></a></li>
+            <li><a href="#myModal" role="button" data-toggle="modal">
+                    <div class="icon">
+                        <span class="icon-info-sign"></span></div>
+                </a>
+            </li>
         </ul>
     </div>
     
