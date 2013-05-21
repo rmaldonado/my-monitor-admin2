@@ -25,7 +25,7 @@ class LoomController extends CController
                 ),
                 array(
                     'label'	=> '统计信息',
-                    'class'	=> 'icon-edit',
+                    'class'	=> 'icon-bar-chart',
                     'url'	=> '/loom/statistic',
                     'acss'      =>  'green',
                     'tcss'      =>  'ico-chart-4',
@@ -72,7 +72,7 @@ class LoomController extends CController
                 ),
                 '/loom/weftinfo' => array(
                     'label' => '纬纱管理',
-                    'class' => 'icon-th',
+                    'class' => 'icon-th-list',
                     'acss'      =>  'purple',
                     'tcss'      =>  'ico-box',
                     'url'   => '/loom/weftinfo',
