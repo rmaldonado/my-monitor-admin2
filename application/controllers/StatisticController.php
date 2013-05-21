@@ -38,15 +38,24 @@ class StatisticController extends LoomComController{
         
 
         $c = new CDbCriteria;
-        $c->select = 'SUM(fwbrknum), SUM(fsbrknum), SUM(fobrknum), SUM(frpmnum),SUM(ftbrknum)';
+        $c->select = 'frepeatid, flcardid, SUM(fwbrknum) as swb, SUM(fsbrknum) as ssb, SUM(fobrknum) as sob, SUM(frpmnum) as srp, SUM(ftbrknum) as stb';
         $c->group = 'frepeatid, flcardid';
-        $c->params = array(
-            ':date_start'=>$date_start,':date_end'=>$date_end,
-        );
+        // $c->params = array(
+        //     ':date_start'=>$date_start,':date_end'=>$date_end,
+        // );
 
         $results = Hourdata::model()->findAll($c);
+//var_dump($results);
+        $sums = array();
 
+        $n = count($results);
+echo $n;        
+        for ($i=0; $i < $n; $i++) { 
+            $r = $results[$i];
+            $sums[] = array($r['flcardid']);
+        }
 
+print_r($sums);
 
 
         $criteria = new CDbCriteria;
