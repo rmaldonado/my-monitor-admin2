@@ -28,7 +28,7 @@
             <div class="span7 infobox-container">
 
                 <div class="infobox infobox-green">
-                    <div class="infobox-icon"><i class="icon-comments"></i></div>
+                    <div class="infobox-icon"><i class="icon-bar-chart"></i></div>
                     <div class="infobox-data">
                         <span class="infobox-data-number">93.2%</span>
                         <span class="infobox-content">本月效率</span>
@@ -37,8 +37,8 @@
                 </div>
 
 
-                <div class="infobox infobox-green">
-                    <div class="infobox-icon"><i class="icon-twitter"></i></div>
+                <div class="infobox infobox-purple">
+                    <div class="infobox-icon"><i class="icon-bar-chart"></i></div>
                     <div class="infobox-data">
                         <span class="infobox-data-number">98.5%</span>
                         <span class="infobox-content">本日效率</span>
@@ -46,8 +46,8 @@
                     {*<div class="badge badge-success"></div>*}
                 </div>
                 
-                <div class="infobox infobox-green">
-                    <div class="infobox-icon"><i class="icon-shopping-cart"></i></div>
+                <div class="infobox infobox-orange2">
+                    <div class="infobox-icon"><i class="icon-bar-chart"></i></div>
                     <div class="infobox-data">
                         <span class="infobox-data-number">96.5%</span>
                         <span class="infobox-content">本班效率</span>
@@ -56,7 +56,7 @@
                 </div>
 {* -------------------------------------- *}
                 <div class="infobox infobox-blue">
-                    <div class="infobox-icon"><i class="icon-comments"></i></div>
+                    <div class="infobox-icon"><i class="icon-cogs"></i></div>
                     <div class="infobox-data">
                         <span class="infobox-data-number">589 </span>
                         <span class="infobox-content">本月平均转速(转/分)</span>
@@ -64,7 +64,7 @@
                     <div class="stat stat-success">8%</div>
                 </div>
                 <div class="infobox infobox-blue">
-                    <div class="infobox-icon"><i class="icon-comments"></i></div>
+                    <div class="infobox-icon"><i class="icon-cogs"></i></div>
                     <div class="infobox-data">
                         <span class="infobox-data-number">593 rpm</span>
                         <span class="infobox-content">本日平均转速(转/分)</span>
@@ -73,7 +73,7 @@
                 </div>
                 
                 <div class="infobox infobox-blue">
-                    <div class="infobox-icon"><i class="icon-comments"></i></div>
+                    <div class="infobox-icon"><i class="icon-cogs"></i></div>
                     <div class="infobox-data">
                         <span class="infobox-data-number">688 rpm</span>
                         <span class="infobox-content">本班平均转速(转/分)</span>
@@ -84,7 +84,9 @@
 
 
                 <div class="infobox infobox-red">
-                    <div class="infobox-icon"><i class="icon-beaker"></i></div>
+                    <div class="infobox-chart">
+                        <span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
+                    </div>
                     <div class="infobox-data">
                         <span class="infobox-data-number">567</span>
                         <span class="infobox-content">今日产量(单位：米)</span>
@@ -106,10 +108,8 @@
 
 
                 <div class="infobox infobox-blue2">
-                    <div class="infobox-progress">
-                        <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
-                            <span class="percent">42</span>%
-                        </div>
+                    <div class="infobox-chart">
+                        <span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
                     </div>
 
                     <div class="infobox-data">
