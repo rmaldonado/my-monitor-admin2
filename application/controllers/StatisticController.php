@@ -37,6 +37,17 @@ class StatisticController extends LoomComController{
         }
         
 
+        $c = new CDbCriteria;
+        $c->select = 'SUM(fwbrknum), SUM(fsbrknum), SUM(fobrknum), SUM(frpmnum),SUM(ftbrknum)';
+        $c->group = 'frepeatid, flcardid';
+        $c->params = array(
+            ':date_start'=>$date_start,':date_end'=>$date_end,
+        );
+
+        $results = Hourdata::model()->findAll($c);
+
+
+
 
         $criteria = new CDbCriteria;
         $criteria->condition = "ftimestamp>:date_start and ftimestamp<:date_end and fstatus=1";
