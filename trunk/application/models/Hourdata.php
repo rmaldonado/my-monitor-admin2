@@ -1,26 +1,31 @@
 <?php
 
 /**
- * This is the model class for table "{{events_base}}".
+ * This is the model class for table "{{Hourdata}}".
  *
- * The followings are the available columns in table '{{events_base}}':
- * @property string $faddtm
+ * The followings are the available columns in table '{{Hourdata}}':
+ * @property string $fhourid
  * @property string $frepeatid
- * @property string $flcardid
+ * @property integer $flcardid
+ * @property string $frstatus
  * @property string $ftimestamp
- * @property string $feventid
  * @property string $frlength
+ * @property string $fpowersec
+ * @property string $frunsec
  * @property string $fwbrknum
  * @property string $fsbrknum
  * @property string $fobrknum
+ * @property string $frpmnum
  * @property string $ftbrknum
- * @property string $fstatus
+ * @property string $fextnum
+ * @property string $faddtm
+ * @property string $fupdatetm
  */
-class Events extends CActiveRecord
+class Hourdata extends LoomComBaseModel
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @return Events the static model class
+	 * @return Hourdata the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -32,7 +37,7 @@ class Events extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{events_base}}';
+		return '{{Hourdata}}';
 	}
 
 	/**
@@ -43,11 +48,12 @@ class Events extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('faddtm, frepeatid, flcardid, ftimestamp, feventid, frlength, fwbrknum, fsbrknum, fobrknum, ftbrknum, fstatus', 'required'),
-			array('faddtm, frepeatid, flcardid, ftimestamp, feventid, frlength, fwbrknum, fsbrknum, fobrknum, ftbrknum, fstatus', 'length', 'max'=>11),
+			array('fhourid, frepeatid, flcardid, frstatus, ftimestamp, frlength, fpowersec, frunsec, fwbrknum, fsbrknum, fobrknum, frpmnum, ftbrknum, fextnum, faddtm, fupdatetm', 'required'),
+			array('flcardid', 'numerical', 'integerOnly'=>true),
+			array('fhourid, frepeatid, frstatus, ftimestamp, frlength, fpowersec, frunsec, fwbrknum, fsbrknum, fobrknum, frpmnum, ftbrknum, fextnum, faddtm, fupdatetm', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('faddtm, frepeatid, flcardid, ftimestamp, feventid, frlength, fwbrknum, fsbrknum, fobrknum, ftbrknum, fstatus', 'safe', 'on'=>'search'),
+			array('fhourid, frepeatid, flcardid, frstatus, ftimestamp, frlength, fpowersec, frunsec, fwbrknum, fsbrknum, fobrknum, frpmnum, ftbrknum, fextnum, faddtm, fupdatetm', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,17 +74,22 @@ class Events extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'faddtm' => 'Faddtm',
+			'fhourid' => 'Fhourid',
 			'frepeatid' => 'Frepeatid',
 			'flcardid' => 'Flcardid',
+			'frstatus' => 'Frstatus',
 			'ftimestamp' => 'Ftimestamp',
-			'feventid' => 'Feventid',
 			'frlength' => 'Frlength',
+			'fpowersec' => 'Fpowersec',
+			'frunsec' => 'Frunsec',
 			'fwbrknum' => 'Fwbrknum',
 			'fsbrknum' => 'Fsbrknum',
 			'fobrknum' => 'Fobrknum',
+			'frpmnum' => 'Frpmnum',
 			'ftbrknum' => 'Ftbrknum',
-			'fstatus' => 'Fstatus',
+			'fextnum' => 'Fextnum',
+			'faddtm' => 'Faddtm',
+			'fupdatetm' => 'Fupdatetm',
 		);
 	}
 
@@ -93,17 +104,21 @@ class Events extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('faddtm',$this->faddtm,true);
+		$criteria->compare('fhourid',$this->fhourid,true);
 
 		$criteria->compare('frepeatid',$this->frepeatid,true);
 
-		$criteria->compare('flcardid',$this->flcardid,true);
+		$criteria->compare('flcardid',$this->flcardid);
+
+		$criteria->compare('frstatus',$this->frstatus,true);
 
 		$criteria->compare('ftimestamp',$this->ftimestamp,true);
 
-		$criteria->compare('feventid',$this->feventid,true);
-
 		$criteria->compare('frlength',$this->frlength,true);
+
+		$criteria->compare('fpowersec',$this->fpowersec,true);
+
+		$criteria->compare('frunsec',$this->frunsec,true);
 
 		$criteria->compare('fwbrknum',$this->fwbrknum,true);
 
@@ -111,11 +126,17 @@ class Events extends CActiveRecord
 
 		$criteria->compare('fobrknum',$this->fobrknum,true);
 
+		$criteria->compare('frpmnum',$this->frpmnum,true);
+
 		$criteria->compare('ftbrknum',$this->ftbrknum,true);
 
-		$criteria->compare('fstatus',$this->fstatus,true);
+		$criteria->compare('fextnum',$this->fextnum,true);
 
-		return new CActiveDataProvider('Events', array(
+		$criteria->compare('faddtm',$this->faddtm,true);
+
+		$criteria->compare('fupdatetm',$this->fupdatetm,true);
+
+		return new CActiveDataProvider('Hourdata', array(
 			'criteria'=>$criteria,
 		));
 	}
