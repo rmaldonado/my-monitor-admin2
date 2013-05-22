@@ -32,7 +32,7 @@ class Events extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{events_base}}';
+		return '{{events}}';
 	}
 
 	/**

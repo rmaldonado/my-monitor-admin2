@@ -23,6 +23,10 @@
  */
 class Hourdata extends LoomComBaseModel
 {
+
+
+	public $ssb;
+	public $swb;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Hourdata the static model class
