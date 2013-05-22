@@ -37,6 +37,9 @@ class StatisticController extends LoomComController{
         }
         
 
+        $db = Events::model()->getDbConnection();
+        $c = Events::model()->getCompanyId();
+var_dump($c);        
         $c = new CDbCriteria;
         $c->select = 'frepeatid, flcardid, SUM(fwbrknum) as swb, SUM(fsbrknum) as ssb, SUM(fobrknum) as sob, SUM(frpmnum) as srp, SUM(ftbrknum) as stb';
         $c->group = 'frepeatid, flcardid';
@@ -44,18 +47,28 @@ class StatisticController extends LoomComController{
         //     ':date_start'=>$date_start,':date_end'=>$date_end,
         // );
 
-        $results = Hourdata::model()->findAll($c);
-//var_dump($results);
+        //$results = Hourdata::model()->findAll($c);
+        $sql = "select frepeatid, flcardid, SUM(fwbrknum) as swb, SUM(fsbrknum) as ssb, SUM(fobrknum) as sob, SUM(frpmnum) as srp, SUM(ftbrknum) as stb
+                from {{hourdata}}
+                
+                group by frepeatid, flcardid";
+        //where ftimestamp>:date_start and ftimestamp<:date_end
+        echo $sql;                
+        $cmd = $db->createCommand($sql);
+        //$cmd->bindValue(':date_start', $date_start);
+        //$cmd->bindValue(':date_end', $date_end);
+        $results = $cmd->queryAll();
+print_r($results);
         $sums = array();
 
         $n = count($results);
 echo $n;        
         for ($i=0; $i < $n; $i++) { 
             $r = $results[$i];
-            $sums[] = array($r['flcardid']);
+            $sums[] = $r; //array($r['flcardid'],$r['swb'],$r['ssb']);
         }
 
-print_r($sums);
+//print_r($sums);
 
 
         $criteria = new CDbCriteria;
