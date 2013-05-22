@@ -40,14 +40,14 @@
                                  </div>
                                  <div class="span2">产量:</div>
                                  <div class="span3">                                     
-                                     <input type="text" class="input-small" readonly="readonly" value="356 码">
+                                     <input type="text" class="input-medium" readonly="readonly" value="356 码">
                                  </div>                                 
                              </div>
                              <div class="row-form">
                                  <div class="span2">并轴组别:</div>
-                                 <div class="span3"><input type="password" value="inputpassword"></div>
+                                 <div class="span4"><input type="password" class="input-medium" value="inputpassword"></div>
                                  <div class="span2">织轴号：</div>
-                                 <div class="span3"><input type="password" value="inputpassword"></div>
+                                 <div class="span4"><input type="password" class="input-medium" value="inputpassword"></div>
                              </div>
                              <div class="row-fluid">
                                  <table class="table">

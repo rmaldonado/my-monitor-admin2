@@ -11,6 +11,7 @@
 <script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery.flot.min.js"></script>
 <script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery.flot.pie.min.js"></script>
 <script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery.flot.resize.min.js"></script>
+<script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery.timer.src.js"></script>
 
 <script type='text/javascript' src='{$sitemedia.uri}/media/smarttheme/js/lib/hichart/highcharts.src.js'></script>
 <script type='text/javascript' src="{$sitemedia.uri}/media/smarttheme/js/lib/hichart/modules/exporting.js"></script>
