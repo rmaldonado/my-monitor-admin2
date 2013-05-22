@@ -16,7 +16,7 @@
  * @property string $ftbrknum
  * @property string $fstatus
  */
-class Events extends CActiveRecord
+class Events extends LoomComBaseModel
 {
 	/**
 	 * Returns the static model of the specified AR class.

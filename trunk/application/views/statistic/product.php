@@ -35,11 +35,11 @@ $this->endWidget();
 ?>
 </div>
 
-
 		<table id="table_bug_report" class="table table-striped table-bordered table-hover">
 			<thead>
 				<tr>
 					<th>机台</th>
+					<th>产量</th>
 					<th>运转效率</th>
 					<th>总停时间</th>
 					<th>总停次数</th>
@@ -60,6 +60,7 @@ $this->endWidget();
 ?>
 				<tr>
 					<td><?php echo $slice['name']; ?></td>
+					<td><?php echo $slice['output']; ?></td>
 					<td><?php if (isset($slice['efficiency'])) {
 						printf("%.2f", $slice['efficiency']*100);
 						echo '%';
