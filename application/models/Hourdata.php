@@ -44,7 +44,7 @@ class Hourdata extends LoomComBaseModel
 	 */
 	public function tableName()
 	{
-		return '{{Hourdata}}';
+		return '{{hourdata}}';
 	}
 
 	/**
