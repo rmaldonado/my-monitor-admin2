@@ -36,12 +36,18 @@ class TbButtonColumn extends CButtonColumn
 	{
 		parent::initDefaultButtons();
 
-		if ($this->viewButtonIcon !== false && !isset($this->buttons['view']['icon']))
+		if ($this->viewButtonIcon !== false && !isset($this->buttons['view']['icon'])) {
 			$this->buttons['view']['icon'] = $this->viewButtonIcon;
-		if ($this->updateButtonIcon !== false && !isset($this->buttons['update']['icon']))
+			$this->buttons['view']['options'] = array('class' => 'btn btn-mini btn-success');
+		}
+		if ($this->updateButtonIcon !== false && !isset($this->buttons['update']['icon'])) {
 			$this->buttons['update']['icon'] = $this->updateButtonIcon;
-		if ($this->deleteButtonIcon !== false && !isset($this->buttons['delete']['icon']))
+			$this->buttons['update']['options'] = array('class' => 'btn btn-mini btn-info');
+		}
+		if ($this->deleteButtonIcon !== false && !isset($this->buttons['delete']['icon'])) {
 			$this->buttons['delete']['icon'] = $this->deleteButtonIcon;
+			$this->buttons['delete']['options'] = array('class' => 'btn btn-mini btn-danger');
+		}
 	}
 
 	/**

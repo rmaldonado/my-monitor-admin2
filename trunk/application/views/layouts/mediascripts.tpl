@@ -1,6 +1,6 @@
 {assign var="jssuffix" value=$sitemedia.jssuffix}
 <script type='text/javascript' src='{$sitemedia.uri}/media/js/plugins/jquery/jquery-1.9.1.min.js'></script>
-<script type='text/javascript' src='{$sitemedia.uri}/media/js/plugins/jquery/jquery-ui-1.10.1.custom.min.js'></script>
+<script type='text/javascript' src='{$sitemedia.uri}/media/js/plugins/jquery/jquery-ui.min.js'></script>
 <script type='text/javascript' src='{$sitemedia.uri}/media/js/plugins/jquery/jquery-migrate-1.1.1.min.js'></script>
 <script type='text/javascript' src='{$sitemedia.uri}/media/js/plugins/jquery/globalize.js'></script>
 <script type='text/javascript' src='{$sitemedia.uri}/media/js/plugins/other/excanvas.js'></script>

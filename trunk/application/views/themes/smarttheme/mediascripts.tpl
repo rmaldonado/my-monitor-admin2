@@ -3,7 +3,7 @@
 <!--[if lt IE 9]>
 <script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/excanvas.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery-ui-1.10.2.custom.min.js"></script>
+<script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery-ui.min.js"></script>
 <script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery.ui.touch-punch.min.js"></script>
 <script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery.slimscroll.min.js"></script>
 <script type="text/javascript" src="{$sitemedia.uri}/media/smarttheme/js/lib/jquery/jquery.easy-pie-chart.min.js"></script>

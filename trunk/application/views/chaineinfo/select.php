@@ -52,16 +52,17 @@ $columns = array(
 
 ?>
 
-<div class="block">
-<div class="head orange">
-	<h2>Chaineinfos</h2>
-	<ul class="buttons">
-                <li><a onclick="source('table_main'); return false;" href="#"><div class="icon"><span class="ico-info"></span></div></a></li>
-                <li><a class="ublock" data="/loom/site/product" href="#"><div class="icon"><span class="ico-undo"></span></div></a></li>
-                <li><a class="cblock" href="#"><div class="icon"><span class="ico-sort"></span></div></a></li>
-    </ul>	
+<div class="widget-box">
+<div class="widget-header">
+    <h5 class="bigger lighter">&nbsp;</h5>
+    <div class="widget-toolbar widget-toolbar-light">
+        <a class="btn" href="<?php echo $this->createUrl('create'); ?>"><i class="icon-pencil"></i>新增</a>
+                <!--li><a class="ublock" data="/loom/site/product" href="#"><div class="icon"><span class="ico-undo"></span></div></a></li>
+                <li><a class="cblock" href="#"><div class="icon"><span class="ico-sort"></span></div></a></li-->
+    </div>  
 </div>
-<div class="data-fluid">
+<div class="widget-body">
+    <div class="widget-main no-padding">
 <table class=" table lcnp table-striped table-bordered table-condensed">
 <thead>
 	<tr>
@@ -94,7 +95,8 @@ for ($j=0; $j < $n; $j++) {
         echo $value;
         echo "</td>";
     }
-    echo "<td><button data-row='".CJSON::encode($row)."' class='chaine-item'>选择</button></td>";
+    //echo "<td><button data-row='".CJSON::encode($row)."' class='chaine-item'>选择</button></td>";
+    echo '<td><button class="btn btn-mini btn-info weft-item" data-row=\''.CJSON::encode($row).'\'><i class="icon-check"></i></button></td>';
     echo "</tr>";
 }
 
@@ -103,5 +105,6 @@ for ($j=0; $j < $n; $j++) {
 ?>
 </tbody>
 </table>
+    </div>
 </div>
 </div>

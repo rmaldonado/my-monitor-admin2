@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/media/smarttheme/css/fonts.css" />
-
+<link rel="stylesheet" href="{$sitemedia.uri}/media/smarttheme/css/lib/jquery/jquery-ui.min.css"/>
 <link rel="stylesheet" href="{$sitemedia.uri}/media/smarttheme/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="{$sitemedia.uri}/media/smarttheme/css/bootstrap-responsive.min.css"/>
 <link rel="stylesheet" href="{$sitemedia.uri}/media/smarttheme/css/ace.min.css" />

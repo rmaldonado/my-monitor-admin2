@@ -161,14 +161,15 @@ $code = '
 	});
 	
 
-	$(".chaine-item", "#dialog-select-chaineinfo").live("click", function (e) {
+	$("#dialog-select-chaineinfo").delegate(".chaine-item", "click", function (e) {
 		var $this = $(this);
 		var data = JSON.parse($this.attr("data-row"));
 		console.log(data);
 		$("#fchaineid").val(data["fid"]);
 		var html = "";
 		
-		var fsm = {
+		var fsm='.CJSON::encode($fc).';
+		/*var fsm = {
 			"fnumber":"总经根数",
 			"fdensity":"经纱密度",
 			"fminirate":"经缩率（%）",
@@ -178,7 +179,7 @@ $code = '
 			"flotnum":"经纱号数",
 			"fsn":"经纱批号",
 			"ffactory":"经纱厂家"
-		};
+		};*/
 
 		for(var key in fsm) {
 			html += fsm[key] + " : " + data[key] + "<br/>";
@@ -187,14 +188,15 @@ $code = '
 
 		$("#dialog-select-chaineinfo").dialog("close");
 	});	
-	$(".weft-item", "#dialog-select-weftinfo").live("click", function (e) {
+	$("#dialog-select-weftinfo").delegate(".weft-item", "click", function (e) {
 		var $this = $(this);
 		var data = JSON.parse($this.attr("data-row"));
 		console.log(data);
 		$("#fweftid").val(data["fid"]);
 		var html = "";
 		
-		var fsm = {
+		var fsm='.CJSON::encode($fw).';
+		/*var fsm = {
 			"fdensity": "维密",
 			"fcycle": "周期转数",
 			"fnumber": "周期纬纱",
@@ -205,7 +207,7 @@ $code = '
 			"flotnum": "纬纱号数",
 			"fsn": "纬纱批号",
 			"ffactory": "纬纱厂家"
-		};
+		};*/
 
 		for(var key in fsm) {
 			html += fsm[key] + " : " + data[key] + "<br/>";
