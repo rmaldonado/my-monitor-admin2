@@ -10,7 +10,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 ?>
 <?php echo $form->errorSummary($model); ?>
 <div class="row-fluid">
-	<div class="span4">
+	<div class="span6">
 <fieldset>
 <legend>织轴信息</legend>
 <?php
@@ -22,11 +22,11 @@ echo $form->textFieldRow($model, 'ftension');
 echo $form->textFieldRow($model, 'fsnum');
 echo $form->textFieldRow($model, 'frpm');
 echo $form->textFieldRow($model, 'feffect');
-echo $form->checkBoxListRow($model, 'fsilktype1', array(1=>'双织轴', 2=>'试织', 4=>'三纬', 8=>'提花', 16=>'双纬'));
+echo $form->checkBoxListRow($model, 'fsilktype1', array(1=>'双织轴', 2=>'试织', 4=>'三纬', 8=>'提花', 16=>'双纬'), array('inline'=>true));
 ?>
 </fieldset>
 	</div>
-	<div class="span4">
+	<div class="span6">
 		<fieldset>
 		<legend>时间人员信息</legend>
 <?php
@@ -40,7 +40,10 @@ echo $form->textFieldRow($model, 'frealoperator');
 ?>
 		</fieldset>
 	</div>
-	<div class="span4">
+
+</div>
+<div class="row-fluid">
+	<div class="span6">
 		<fieldset>
 		<legend>其他信息</legend>
 <?php
@@ -49,7 +52,7 @@ echo $form->textFieldRow($model, 'fpcardno');
 echo $form->textFieldRow($model, 'fmemo');
 ?>
 		</fieldset>
-	</div>
+	</div>	
 </div>
 <div class="row-fluid">
 	<div class="span4">
@@ -272,14 +275,15 @@ $code = '
 	});
 
 
-	$(".chaine-item", "#dialog-select-chaineinfo").live("click", function (e) {
+	$("#dialog-select-chaineinfo").delegate(".chaine-item", "click", function (e) {
 		var $this = $(this);
 		var data = JSON.parse($this.attr("data-row"));
 		console.log(data);
 		$("#fchaineid").val(data["fid"]);
 		var html = "";
 
-		var fsm = {
+		var fsm='.CJSON::encode($fc).';
+		/*var fsm = {
 			"fnumber":"总经根数",
 			"fdensity":"经纱密度",
 			"fminirate":"经缩率（%）",
@@ -289,7 +293,7 @@ $code = '
 			"flotnum":"经纱号数",
 			"fsn":"经纱批号",
 			"ffactory":"经纱厂家"
-		};
+		};*/
 
 		for(var key in fsm) {
 			html += fsm[key] + " : " + data[key] + "<br/>";
@@ -298,7 +302,7 @@ $code = '
 
 		$("#dialog-select-chaineinfo").dialog("close");
 	});
-	$(".weft-item", "#dialog-select-weftinfo").live("click", function (e) {
+	$("#dialog-select-weftinfo").delegate(".weft-item", "click", function (e) {
 		var $this = $(this);
 		var data = JSON.parse($this.attr("data-row"));
 		console.log(data);
@@ -326,14 +330,15 @@ $code = '
 		$("#weftinfo_detail").html(html);
 		$("#dialog-select-weftinfo").dialog("close");
 	});
-	$(".product-item", "#dialog-select-productinfo").live("click", function (e) {
+	$("#dialog-select-productinfo").delegate(".product-item", "click", function (e) {
 		var $this = $(this);
 		var data = JSON.parse($this.attr("data-row"));
 		console.log(data);
 		$("#fproductid").val(data["fid"]);
 		var html = "";
 
-		var fsm = {
+		var fsm='.CJSON::encode($fp).';
+		/*var fsm = {
 			"fprodcutsn": "产品代码",
 			"fproductnm": "产品名称",
 			"fsilksp": "布匹规格",
@@ -350,7 +355,7 @@ $code = '
 			"fweftid": "纬纱参数代码ID",
 			"finfo": "其它备注信息",
 			"fstatus": "产品有效状态",
-		};
+		};*/
 
 		for(var key in fsm) {
 			html += fsm[key] + " : " + data[key] + "<br/>";

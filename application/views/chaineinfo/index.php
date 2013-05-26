@@ -1,27 +1,26 @@
 
 <div class="page-header">
-    <div class="icon">
-        <span class="ico-arrow-right"></span>
-    </div>
     <h1>经纱管理</h1>    
 </div>
 
-<div class="block">
-<div class="head orange">
-    <h2>&nbsp;</h2>
-    <ul class="buttons">
-        <li><a href="<?php echo $this->createUrl('create'); ?>"><div class="icon"><span class="ico-plus"></span></div></a></li>
+<div class="widget-box">
+<div class="widget-header">
+    <h5 class="bigger lighter">&nbsp;</h5>
+    <div class="widget-toolbar widget-toolbar-light">
+        <a class="btn" href="<?php echo $this->createUrl('create'); ?>"><i class="icon-pencil"></i>新增</a>
                 <!--li><a class="ublock" data="/loom/site/product" href="#"><div class="icon"><span class="ico-undo"></span></div></a></li>
                 <li><a class="cblock" href="#"><div class="icon"><span class="ico-sort"></span></div></a></li-->
-    </ul>   
+    </div>  
 </div>
-<div class="data-fluid">
+<div class="widget-body">
+    <div class="widget-main no-padding">
 <?php 
 
 $this->widget('bootstrap.widgets.TbGridView', array(
     'type'=>'striped bordered condensed',
     'dataProvider'=>$dataProvider,
-    'template'=>"{items}",
+    //'template'=>"{items}",
+    'template'=>'{summary}{items}{pager}', 
     'columns'=>array(
         array('name'=>'fid', 'header'=>'#'),
         array('name'=>'fnumber', 'header'=>'总经根数'),
@@ -35,11 +34,12 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         array('name'=>'ffactory', 'header'=>'经纱厂家'),
         array(
             'class'=>'bootstrap.widgets.TbButtonColumn',
-            'htmlOptions'=>array('style'=>'width: 50px'),
+            'htmlOptions'=>array('style'=>'width: 100px'),
         ),
     ),
 )); 
 
 ?>
+    </div>
 </div>
 </div>
