@@ -16,70 +16,123 @@ $this->menu=array(
 	'itemView'=>'_view',
 ));*/ ?>
 
-<ul id="loom-list">
+<ul id="looms-selectable">
 <?php
-
+//echo Yii::app()->user->fcompanyid;
 $data=$dataProvider->getData();
+define('MAXX', 20);
 $n = count($data);
 
-$cn = 4; //列数
+if (!function_exists('check_position')) {
+	function check_position ($x, $y) {
+		static $_position;
+		if (!isset($_position)) {
+			$_position = array();
+		}
+		//print_r($_position);
+		if (count($_position) <= $x) {
+			for ($i=count($_position); $i <= $x; $i++) { 
+				$_position[$i] = array();
+			}
+		}
+		if (count($_position[$x]) <= $y) {
+			for ($i=count($_position[$x]); $i <= $y; $i++) { 
+				$_position[$x][$i] = false;
+			}
+		}
+
+		if ($_position[$x][$y]) {
+			$find = false;
+			for ($i=0; $i < count($_position[$x]); $i++) { 
+				if ($_position[$x][$i] == false) {
+					$y = $i;
+					$find = true;
+					break;
+				}
+			}
+
+			if (!$find) {
+				for ($i=0; $i < count($_position); $i++) { 
+					for ($j=0; $j < count($_position[$i]); $j++) { 
+						if ($_position[$i][$j] == false) {
+							$x = $i;
+							$y = $j;
+							$find = true;
+							break;
+						}
+					}
+				}
+			}
+
+			if (!$find) {
+				$m = $x;
+				$n = $y;
+				$sy = false;
+				while ($_position[$x][$y]) {
+					if ($m > MAXX) {
+						$sy = true;
+						$m = 0;
+					}
+					if ($sy) {
+						$n++;
+					} else {
+						$m++;	
+					}
+					
+					if (!isset($_position[$x])) {
+						$_position[$x] = array();
+					}
+					if (count($_position[$x]) <= $y) {
+						for ($i=count($_position[$x]); $i <= $y; $i++) { 
+							if (!isset($_position[$x][$i])) {
+								$_position[$x][$i] = false;
+							}
+						}
+					}
+				}
+
+			}
+
+		}
+
+		$_position[$x][$y] = true;
+
+		return array($x, $y);
+
+	}
+}
+
+$cn = 15; //列数
 $rn = ceil($n/$cn); //行数
+
+$w = 30;
+$h = 20;
 
 for ($j=0; $j < $n; $j++) { 
     $row = $data[$j];
-    $cls = ''
-    echo "<li"
+    $cls = '';
+    //$p = check_position($row->floomx, $row->floomy);
+    //$style = 'left:'.($p[0]*$w).'px;top:'.($p[1]*$h).'px';
+    echo "<li";
     if ($cls) {
     	echo ' class="'.$cls.'" ';
     }
+    //echo " style='{$style}'";
     echo ">";
     echo $row->getAttribute('floomsn');
     echo "</li>";
 }
 
 $code = '
-$( ".column" ).sortable({
-	connectWith: ".column"
-});
-$( ".portlet" ).addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
-		.find( ".portlet-header" )
-		.addClass( "ui-widget-header ui-corner-all" )
-		.prepend( "<span class=\'ui-icon ui-icon-minusthick\'></span>")
-		.end()
-		.find( ".portlet-content" );
-$( ".portlet-header .ui-icon" ).click(function() {
-	$( this ).toggleClass( "ui-icon-minusthick" ).toggleClass( "ui-icon-plusthick" );
-	$( this ).parents( ".portlet:first" ).find( ".portlet-content" ).toggle();
-});
-//$( ".column" ).disableSelection();
-
-
-$( "#loom-list" ).sortable();
-
-
-
-$( "#loom-list" ).selectable();
+$( "#looms-selectable" ).selectable();
 ';
 
 $css = '
-.column { width: 170px; float: left; padding-bottom: 100px; }
-.portlet { margin: 0 1em 1em 0; }
-.portlet-header { margin: 0.3em; padding-bottom: 4px; padding-left: 0.2em; }
-.portlet-header .ui-icon { float: right; }
-.portlet-content { padding: 0.4em; }
-.ui-sortable-placeholder { border: 1px dotted black; visibility: visible !important; height: 50px !important; }
-.ui-sortable-placeholder * { visibility: hidden; }
 
-#sortable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
-#sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
-
-
-
-#selectable .ui-selecting { background: #FECA40; }
-#selectable .ui-selected { background: #F39814; color: white; }
-#selectable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
-#selectable li { margin: 3px; padding: 1px; float: left; width: 100px; height: 80px; font-size: 4em; text-align: center; }
-
+#looms-selectable .ui-selecting { background: #FECA40; }
+#looms-selectable .ui-selected { background: #F39814; color: white; }
+#looms-selectable { list-style-type: none; margin: 0; padding: 0; width: 550px; }
+#looms-selectable li { margin: 3px; padding: 1px; float: left; width: 30px; height: 30px; font-size: 1em; text-align: center; border: 1px solid #f00; }
 
 ';
 
@@ -90,3 +143,4 @@ $cs->registerCss('loom-list-select-css', $css);
 
 ?>
 </ul>
+

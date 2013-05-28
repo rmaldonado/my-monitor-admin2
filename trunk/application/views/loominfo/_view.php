@@ -8,9 +8,7 @@
 	<?php echo CHtml::encode($data->floomsn); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('floomid')); ?>:</b>
-	<?php echo CHtml::encode($data->floomid); ?>
-	<br />
+
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('floomx')); ?>:</b>
 	<?php echo CHtml::encode($data->floomx); ?>

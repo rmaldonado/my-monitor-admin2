@@ -139,7 +139,14 @@ class LoominfoController extends LoomController
 
 	public function actionSelect()
 	{
+
+		if(Yii::app()->request->isAjaxRequest){  
+		    //$this->layout='//layouts/column2';
+			$this->layout = '//layouts/ajax';
+		}
+				
 		$dataProvider=new CActiveDataProvider('Loominfo', array(
+			'pagination'=>false,
     		'criteria'=>array(
         		'condition'=>'fcompanyid='.Yii::app()->user->fcompanyid
         )));

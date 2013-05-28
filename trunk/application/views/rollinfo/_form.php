@@ -10,6 +10,21 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 ?>
 <?php echo $form->errorSummary($model); ?>
 <div class="row-fluid">
+	<div class="span12">
+		<fieldset>
+		<legend>织轴信息</legend>
+<?php		
+$this->widget('bootstrap.widgets.TbButton', array(
+		'buttonType'=>'button',
+		'label'=>'选择织机',
+		'htmlOptions' => array(
+			'id'=>'btn-select-loominfo'
+		)));
+echo $form->hiddenField($model, 'frefloomid', array('id'=>'frefloomid'));		
+?>
+		</fieldset>
+	</div>
+
 	<div class="span6">
 <fieldset>
 <legend>织轴信息</legend>
@@ -203,6 +218,7 @@ $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'
 $this->endWidget();
 
 ?>
+<div id="dialog-select-loominfo"></div>
 <div id="dialog-select-productinfo"></div>
 <div id="dialog-select-chaineinfo"></div>
 
@@ -236,22 +252,30 @@ $this->endWidget();
 
 
 <?php
-
+$loom_index = $this->createUrl('loominfo/select');
 $product_index = $this->createUrl('productinfo/select');
 $weft_index = $this->createUrl('weftinfo/select');
 $chaine_index = $this->createUrl('chaineinfo/select');
+
 $product_get = $this->createUrl('productinfo/select');
 $weft_get = $this->createUrl('weftinfo/select');
 $chaine_get= $this->createUrl('chaineinfo/select');
 $code = '
 	//$("#jDialog_modal").dialog();
+	$("#btn-select-loominfo").click(function () {
+		var url = "'.$loom_index.'";
+		var d = $("#dialog-select-loominfo");
+		d.load(url);
+		d.dialog({autoOpen: false, modal: true, width: 550, height: 450}).dialog("open");
+	});
+
 	$("#btn-select-productinfo").click(function (e) {
 		console.log("#select-productinfo");
 		var url = "'.$product_index.'";
 		var d = $("#dialog-select-productinfo");
 		d.empty();
 		d.load(url);
-		d.dialog({autoOpen: false, modal: true}).dialog("open");
+		d.dialog({autoOpen: false, modal: true, width: 550, height: 450}).dialog("open");
 	});
 
 	$("#btn-select-weftinfo").click(function (e) {
@@ -261,7 +285,7 @@ $code = '
 		//var b = $(".modal-body", d).load(url);
 		d.empty();
 		d.load(url);
-		d.dialog({autoOpen: false, modal: true}).dialog("open");
+		d.dialog({autoOpen: false, modal: true, width: 550, height: 450}).dialog("open");
 	});
 
 	$("#btn-select-chaineinfo").click(function(e) {
@@ -271,7 +295,7 @@ $code = '
 		//d.modal();
 		d.empty();
 		d.load(url);
-		d.dialog({autoOpen: false, modal: true}).dialog("open");
+		d.dialog({autoOpen: false, modal: true, width: 550, height: 450}).dialog("open");
 	});
 
 
