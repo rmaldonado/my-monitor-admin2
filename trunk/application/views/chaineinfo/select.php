@@ -96,7 +96,7 @@ for ($j=0; $j < $n; $j++) {
         echo "</td>";
     }
     //echo "<td><button data-row='".CJSON::encode($row)."' class='chaine-item'>选择</button></td>";
-    echo '<td><button class="btn btn-mini btn-info weft-item" data-row=\''.CJSON::encode($row).'\'><i class="icon-check"></i></button></td>';
+    echo '<td><button class="btn btn-mini btn-info chaine-item" data-row=\''.CJSON::encode($row).'\'><i class="icon-check"></i></button></td>';
     echo "</tr>";
 }
 

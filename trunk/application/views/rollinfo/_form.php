@@ -1,7 +1,7 @@
 
 <p class="note">Fields with <span class="required">*</span> are required.</p>
 <?php /** @var BootActiveForm $form */
-
+Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
 $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     //'id'=>'horizontalForm',
     'type'=>'horizontal',
@@ -22,6 +22,8 @@ $this->widget('bootstrap.widgets.TbButton', array(
 		)));
 echo $form->hiddenField($model, 'frefloomid', array('id'=>'frefloomid'));		
 ?>
+<div id="loominfo_detail">
+</div>
 		</fieldset>
 	</div>
 
@@ -45,12 +47,61 @@ echo $form->checkBoxListRow($model, 'fsilktype1', array(1=>'双织轴', 2=>'试�
 		<fieldset>
 		<legend>时间人员信息</legend>
 <?php
-echo $form->textFieldRow($model, 'flasttime');
+//echo $form->textFieldRow($model, 'flasttime');
+echo '<div class="control-group ">';
+echo $form->labelEx($model,'flasttime', array('class' => 'control-label'));
+echo '<div class="controls">';
+$this->widget('CJuiDateTimePicker', array(
+		'model' => $model,
+		'attribute' => 'flasttime',
+		'mode'=>'datetime',
+		'options' => array(
+			'dateFormat' => 'yy-mm-dd'
+		)
+));
+echo '</div></div>';
+
 echo $form->textFieldRow($model, 'flastoperator');
-echo $form->textFieldRow($model, 'frolltime');
+//echo $form->textFieldRow($model, 'frolltime');
+echo '<div class="control-group ">';
+echo $form->labelEx($model,'frolltime', array('class' => 'control-label'));
+echo '<div class="controls">';
+$this->widget('CJuiDateTimePicker', array(
+		'model' => $model,
+		'attribute' => 'frolltime',
+		'mode'=>'datetime',
+		'options' => array(
+			'dateFormat' => 'yy-mm-dd'
+		)
+));
+echo '</div></div>';
 echo $form->textFieldRow($model, 'frolloperator');
-echo $form->textFieldRow($model, 'fpltime');
-echo $form->textFieldRow($model, 'frealtime');
+//echo $form->textFieldRow($model, 'fpltime');
+echo '<div class="control-group ">';
+echo $form->labelEx($model,'fpltime', array('class' => 'control-label'));
+echo '<div class="controls">';
+$this->widget('CJuiDateTimePicker', array(
+		'model' => $model,
+		'attribute' => 'fpltime',
+		'mode'=>'datetime',
+		'options' => array(
+			'dateFormat' => 'yy-mm-dd'
+		)
+));
+echo '</div></div>';
+//echo $form->textFieldRow($model, 'frealtime');
+echo '<div class="control-group ">';
+echo $form->labelEx($model,'frealtime', array('class' => 'control-label'));
+echo '<div class="controls">';
+$this->widget('CJuiDateTimePicker', array(
+		'model' => $model,
+		'attribute' => 'frealtime',
+		'mode'=>'datetime',
+		'options' => array(
+			'dateFormat' => 'yy-mm-dd'
+		)
+));
+echo '</div></div>';
 echo $form->textFieldRow($model, 'frealoperator');
 ?>
 		</fieldset>
@@ -262,11 +313,27 @@ $weft_get = $this->createUrl('weftinfo/select');
 $chaine_get= $this->createUrl('chaineinfo/select');
 $code = '
 	//$("#jDialog_modal").dialog();
+	var loom_is_load = false;
 	$("#btn-select-loominfo").click(function () {
 		var url = "'.$loom_index.'";
 		var d = $("#dialog-select-loominfo");
-		d.load(url);
-		d.dialog({autoOpen: false, modal: true, width: 550, height: 450}).dialog("open");
+		if (!loom_is_load) {
+			d.load(url);
+			loom_is_load = true;
+		}
+		d.dialog({autoOpen: false, modal: true, width: 650, height: 450, buttons: [{
+			text: "确定", click: function () {
+				var fids = [];
+				var fns = [];
+				for (var key in LoomSelected) {
+					fids.push(key);
+					fns.push(LoomSelected[key]);
+				}
+				$("#loominfo_detail").html(fns.join(", "));
+				$("#frefloomid").val(fids.join(","));
+				$( this ).dialog( "close" );
+			}
+		}]}).dialog("open");
 	});
 
 	$("#btn-select-productinfo").click(function (e) {
@@ -275,7 +342,7 @@ $code = '
 		var d = $("#dialog-select-productinfo");
 		d.empty();
 		d.load(url);
-		d.dialog({autoOpen: false, modal: true, width: 550, height: 450}).dialog("open");
+		d.dialog({autoOpen: false, modal: true, width: 650, height: 450}).dialog("open");
 	});
 
 	$("#btn-select-weftinfo").click(function (e) {
@@ -285,7 +352,7 @@ $code = '
 		//var b = $(".modal-body", d).load(url);
 		d.empty();
 		d.load(url);
-		d.dialog({autoOpen: false, modal: true, width: 550, height: 450}).dialog("open");
+		d.dialog({autoOpen: false, modal: true, width: 650, height: 450}).dialog("open");
 	});
 
 	$("#btn-select-chaineinfo").click(function(e) {
