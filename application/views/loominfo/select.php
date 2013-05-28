@@ -1,13 +1,4 @@
-<?php
-$this->breadcrumbs=array(
-	'Loominfos',
-);
 
-$this->menu=array(
-	array('label'=>'Create Loominfo', 'url'=>array('create')),
-	array('label'=>'Manage Loominfo', 'url'=>array('admin')),
-);
-?>
 
 <h1>Select Looms</h1>
 
@@ -114,6 +105,7 @@ for ($j=0; $j < $n; $j++) {
     //$p = check_position($row->floomx, $row->floomy);
     //$style = 'left:'.($p[0]*$w).'px;top:'.($p[1]*$h).'px';
     echo "<li";
+    echo ' data-id="'.$row->fid.'"';
     if ($cls) {
     	echo ' class="'.$cls.'" ';
     }
@@ -131,16 +123,31 @@ $css = '
 
 #looms-selectable .ui-selecting { background: #FECA40; }
 #looms-selectable .ui-selected { background: #F39814; color: white; }
-#looms-selectable { list-style-type: none; margin: 0; padding: 0; width: 550px; }
+#looms-selectable { list-style-type: none; margin: 0; padding: 0; width: 600px; }
 #looms-selectable li { margin: 3px; padding: 1px; float: left; width: 30px; height: 30px; font-size: 1em; text-align: center; border: 1px solid #f00; }
 
 ';
 
 
 $cs=Yii::app()->clientScript;
-$cs->registerScript('loom-list-select', $code, CClientScript::POS_READY);
+//$cs->registerScript('loom-list-select', $code);
 $cs->registerCss('loom-list-select-css', $css);
 
 ?>
 </ul>
 
+<script type="text/javascript">
+	var LoomSelected = {};
+	$( "#looms-selectable" ).selectable({
+		selected: function ( event, ui ) {
+			var item = $(ui.selected);
+			var _id = item.attr('data-id');
+			LoomSelected[_id] = item.text();
+		},
+		unselected: function (event, ui ) {
+			var item = $(ui.unselected);
+			var _id = item.attr('data-id');
+			delete LoomSelected[_id];			
+		}
+	});
+</script>

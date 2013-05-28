@@ -179,14 +179,14 @@ class StatisticController extends LoomComController{
         foreach ($time_slice as $k => $slice) { 
             //$slice = $time_slice[$i];
             $fid = $slice['loomid'];
-            $rollinfo = Rollinfo::model()->findByAttributes(array(), "frefloomid LIKE '%,{$fid},%'" );
+            $rollinfo = Rollinfo::model()->findByAttributes(array(), "(frefloomid = 'ALL' OR frefloomid LIKE '%,{$fid},%')" );
             if (!$rollinfo) {
                 $removes[] = $k;
                 continue;
             }
             $fdensity = $rollinfo->fweft->fdensity;
 
-            $time_slice[$k]['output'] = ($slice['srp'])/$fdensity;
+            $time_slice[$k]['output'] = ($slice['srpnum'])/$fdensity;
 
             $stop_time = 0;
             $other_time = 0;
@@ -228,7 +228,7 @@ class StatisticController extends LoomComController{
             unset($time_slice[$removes[$i]]);
         }
 
-print_r($time_slice);
+//print_r($time_slice);
         //TODO
         $viewName = 'product';
         $this->render($viewName, array('time_slice' => $time_slice));
@@ -330,11 +330,13 @@ print_r($time_slice);
                     $card_info['sbrknum'] = $sums[$repeat_id][$card_id]['ssb']; //$slice['max_fsbrknum'] - $slice['min_fsbrknum'];
                     $card_info['tbrknum'] = $sums[$repeat_id][$card_id]['stb']; //$slice['max_ftbrknum'] - $slice['min_ftbrknum'];
                     $card_info['obrknum'] = $sums[$repeat_id][$card_id]['sob']; //$slice['max_fobrknum'] - $slice['min_fobrknum'];
+                    $card_info['srpnum'] = $sums[$repeat_id][$card_id]['srp']; //$slice['max_fobrknum'] - $slice['min_fobrknum'];
                 } else {
                     $card_info['wbrknum'] = 0;
                     $card_info['sbrknum'] = 0;
                     $card_info['tbrknum'] = 0;
-                    $card_info['obrknum'] = 0;                
+                    $card_info['obrknum'] = 0;    
+                    $card_info['srpnum'] = 0;            
                 }
 
                 // if ($last_r) {

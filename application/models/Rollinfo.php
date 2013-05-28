@@ -215,4 +215,24 @@ class Rollinfo extends LoomComBaseModel
 		}
 	}
 
+
+	public function beforeValidate() {
+		if ($this->frolltime) {
+			$this->frolltime = strtotime($this->frolltime);
+		}
+		
+		if ($this->fpltime) {
+			$this->fpltime = strtotime($this->fpltime);
+		}
+
+		if ($this->frealtime) {
+			$this->frealtime = strtotime($this->frealtime);
+		}
+
+		if ($this->flasttime) {
+			$this->flasttime = strtotime($this->flasttime);
+		}
+
+	}
+
 }
