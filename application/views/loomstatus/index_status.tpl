@@ -16,12 +16,21 @@
     <div class="row-fluid">
         <div class="span12 container">
             <div class="rows show-grid" id="loomstatus">
-{foreach $looms.info as $row}{foreach $row as $col}
-               <div class="btn btn-small {if $col.st == 'run'}  btn-success rbtn 
+{foreach $looms.info as $row}{*foreach $row as $col*}
+               <div id="l_{$row.frepeaterid}_{$row.flcardid}" rel="popover" class="btn btn-small rbtn rbtn-et {*if $col.st == 'run'}  btn-success rbtn 
                     {else if $col.st == 'low'} btn-spark rbtn-et
-                    {else} rbtn-et{/if}">{$col.sid}</div>
-{/foreach}{/foreach}
+                    {else} rbtn-et{/if*}">{$row.floomname}</div>
+{*/foreach*}{/foreach}
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    var tmp = {$looms.json};
+    var loomsinfo = {};
+    for (var i = 0; i < tmp.length; i++) {
+        var l = tmp[i];
+        var _id = 'l_'+l['frepeaterid']+'_'+l['flcardid'];
+        loomsinfo[_id] = l;
+    };
+</script>

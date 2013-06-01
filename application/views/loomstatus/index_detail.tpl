@@ -22,7 +22,7 @@
             </ul>
         </li>
     </ul>
-    <div class="tab-content" id="myTabContent">
+    <div class="tab-content" id="myTabContent" style="overflow:none;">
         <div id="home" class="tab-pane fade in active">
             <div class="row-fluid">
 
@@ -36,24 +36,24 @@
                                  <div class="span2">品名:</div>
                                  <div class="span4">
                                      <!--input type="text" class="validate[required] datepicker" id="datepick_1" placeholder="Placeholder example"-->
-                                     <input type="text" class="input-medium" readonly="readonly" value="RMPFF-1244-CM">
+                                     <input type="text" class="input-medium" readonly="readonly" id="product_name" value="">
                                  </div>
                                  <div class="span2">产量:</div>
-                                 <div class="span3">                                     
-                                     <input type="text" class="input-medium" readonly="readonly" value="356 码">
+                                 <div class="span4">                                     
+                                     <input type="text" class="input-medium" readonly="readonly" id="product_output" value="">
                                  </div>                                 
                              </div>
                              <div class="row-form">
                                  <div class="span2">并轴组别:</div>
-                                 <div class="span4"><input type="password" class="input-medium" value="inputpassword"></div>
+                                 <div class="span4"><input type="text" class="input-medium" id="roll_group" value=""></div>
                                  <div class="span2">织轴号：</div>
-                                 <div class="span4"><input type="password" class="input-medium" value="inputpassword"></div>
+                                 <div class="span4"><input type="text" class="input-medium" id="roll_no" value=""></div>
                              </div>
                              <div class="row-fluid">
-                                 <table class="table">
+                                 <table class="table" id="loom_num_status">
                                      <tr><td colspan="6"></td></tr>
                                      <tr>
-                                         <td><span>运&nbsp;转</span></td>
+                                         <td>运&nbsp;转</td>
                                          <td>纬&nbsp;停</td>
                                          <td>边丝停</td>
                                          <td>耳丝停</td>
@@ -61,12 +61,12 @@
                                          <td>效&nbsp;率</td>
                                      </tr>
                                      <tr>
-                                         <td><span style="min-width: 36px;" class="label label-success">32423 </span></td>
-                                         <td><span style="min-width: 36px;" class="label label-warning">2</span></td>
-                                         <td><span style="min-width: 36px;" class="label label-important">3 </span></td>
-                                         <td><span style="min-width: 36px;" class="label label-important">3 </span></td>
-                                         <td><span style="min-width: 36px;" class="label label-important">3 </span></td>
-                                         <td><span style="min-width: 36px;" class="label label-info">98% </span></td>                                     
+                                         <td><span style="min-width: 36px;" class="label label-success" id="loom_runsec"> </span></td>
+                                         <td><span style="min-width: 36px;" class="label label-warning" id="loom_wbrknum"></span></td>
+                                         <td><span style="min-width: 36px;" class="label label-important" id="loom_sbrknum"> </span></td>
+                                         <td><span style="min-width: 36px;" class="label label-important" id="loom_tbrknum"> </span></td>
+                                         <td><span style="min-width: 36px;" class="label label-important" id="loom_obrknum"> </span></td>
+                                         <td><span style="min-width: 36px;" class="label label-info" id="loom_effect"> </span></td>                                     
                                      </tr>
                                  </table>                                        
                              </div>
@@ -80,11 +80,11 @@
                      <div class="block">                               
                          <div class="data-fluid">
                              <div class="row-form">
-                                 <h3>在织：80台；尽机：3台；故障：1台</h3>
-                                 <h3>当前效率：98.56%</h3>
-                                 <h3>本班效率：99%</h3>
-                                 <h3>本周效率：</h3>
-                                 <h3>本月效率：</h3>
+                                 <h3>在织：<span id="run_num"></span>台；尽机：<span id="comp_num"></span>台；故障：<span id="fault_num"></span>台</h3>
+                                 <h3>当前效率：<span id="effect_current"></span></h3>
+                                 <h3>本班效率：<span id="effect_team"></span></h3>
+                                 <h3>本周效率：<span id="effect_week"></span></h3>
+                                 <h3>本月效率：<span id="effect_month"></span></h3>
                              </div>
                          </div>                
                      </div>
@@ -100,22 +100,40 @@
                 <div class="data-fluid">
 
                     <div class="row-form">
-                        <div class="span2">品名:</div>
-                        <div class="span3">
-                            <!--input type="text" class="validate[required] datepicker" id="datepick_1" placeholder="Placeholder example"-->
-                            <input type="text" readonly="readonly" value="RMPFF-1244-CM">
-                        </div>
-                        <div class="span2">产量:</div>
-                        <div class="span3">                                     
-                            <input type="text" readonly="readonly" value="356 码">
-                        </div>                                 
+                        <div class="span1">经纱规格:</div>
+                        <div class="span3"><input type="text" readonly="readonly" id="chaine_fspinfo"></div>
+                        <div class="span1">经纱厂家:</div>
+                        <div class="span3"><input type="text" readonly="readonly" id="chaine_ffactory"></div>
+                        <div class="span1">经纱批号:</div>
+                        <div class="span3"><input type="text" readonly="readonly" id="chaine_fsn"></div>
                     </div>
                     <div class="row-form">
-                        <div class="span2">并轴组别:</div>
-                        <div class="span3"><input type="password" value="inputpassword"></div>
-                        <div class="span2">织轴号：</div>
-                        <div class="span3"><input type="password" value="inputpassword"></div>
+                        <div class="span1">经纱密度:</div>
+                        <div class="span3"><input type="text" readonly="readonly" id="chaine_fdensity"></div>
+                        <div class="span1">经缩率:</div>
+                        <div class="span3"><input type="text" readonly="readonly" id="chaine_fminirate"></div>
+                        <div class="span1">总经根数:</div>
+                        <div class="span3"><input type="text" readonly="readonly" id="chaine_fnumber"></div>
                     </div>
+
+                    <div class="row-form">
+                        <div class="span1">纬纱规格:</div>
+                        <div class="span3"><input type="text" value="" id="weft_fspinfo"></div>
+                        <div class="span1">纬纱厂家:</div>
+                        <div class="span3"><input type="text" value="" id="weft_ffactory"></div>
+                        <div class="span1">纬纱厂家:</div>
+                        <div class="span3"><input type="text" value="" id="weft_fsn"></div>                        
+                    </div>
+                    <div class="row-form">
+                        <div class="span1">纬密:</div>
+                        <div class="span3"><input type="text" value="" id="weft_fdensity"></div>
+                        <div class="span1">周期转速:</div>
+                        <div class="span3"><input type="text" value="" id="weft_fcycle"></div>
+                        <div class="span1">周期纬纱:</div>
+                        <div class="span3"><input type="text" value="" id="weft_fnumber"></div>                        
+                    </div>
+
+
                     <div class="row-form">
                         <table class="table">
                             <tr><td colspan="6"></td></tr>

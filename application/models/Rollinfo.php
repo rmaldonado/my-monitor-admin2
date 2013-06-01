@@ -111,6 +111,7 @@ class Rollinfo extends LoomComBaseModel
 			'forderid' => '订单号',
 			'fpcardno' => '制程卡号',
 			'fmemo' => '备注信息',
+			'frefloomid' => '关联织布机'
 		);
 	}
 
@@ -216,7 +217,35 @@ class Rollinfo extends LoomComBaseModel
 	}
 
 
-	public function beforeValidate() {
+	public function getFrolltime1() {
+		return date('Y-m-d H:i', $this->frolltime);
+	}
+	public function setFrolltime1() {
+		$this->frolltime = strtotime($this->frolltime);
+	}
+
+	public function getFpltime1() {
+		return date('Y-m-d H:i', $this->fpltime);
+	}
+	public function setFpltime1() {
+		$this->fpltime = strtotime($this->fpltime);
+	}
+
+	public function getFrealtime1() {
+		return date('Y-m-d H:i', $this->frealtime);
+	}
+	public function setFrealtime1() {
+		$this->frealtime = strtotime($this->frealtime);
+	}
+
+	public function getFlasttime1() {
+		return date('Y-m-d H:i', $this->flasttime);
+	}
+	public function setFlasttime1() {
+		$this->flasttime = strtotime($this->flasttime);
+	}	
+
+	/*public function beforeValidate() {
 		if ($this->frolltime) {
 			$this->frolltime = strtotime($this->frolltime);
 		}
@@ -233,6 +262,6 @@ class Rollinfo extends LoomComBaseModel
 			$this->flasttime = strtotime($this->flasttime);
 		}
 
-	}
+	}*/
 
 }
