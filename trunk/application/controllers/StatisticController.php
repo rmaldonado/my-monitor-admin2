@@ -242,7 +242,7 @@ class StatisticController extends LoomComController{
         for ($i=0; $i < count($ls); $i++) { 
             $l = $ls[$i];
             $looms[$l->frepeaterid][$l->flcardid] = array('name'=> $l->floomname, 'fid' => $l->fid);
-        }        
+        }
 
 
         $c = new CDbCriteria;

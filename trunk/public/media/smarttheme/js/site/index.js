@@ -1,5 +1,25 @@
 $(function() {
 
+     window.__update = function() {
+        $.get('/loom/site/summary', {}, function (data) {
+            if (data) {
+                $('#loom_total_num').html(data['total_num']);
+                $('#loom_run_num').html(data['run_num']);
+                $('#loom_fault_num').html(data['fault_num']);
+                $('#loom_stop_num').html(data['stop_num']);
+                $('#loom_effect_month').html(data['effect_month']);
+                $('#loom_effect_day').html(data['effect_day']);
+                $('#loom_rpm_month').html(data['rpm_month']);
+                $('#loom_rpm_day').html(data['rpm_day']);
+            };
+        }, 'json');
+    }
+
+
+    __update();
+    setInterval('__update()', 30000);
+
+
     $('.dialogs,.comments').slimScroll({
         height: '300px'
     });

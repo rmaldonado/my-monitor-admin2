@@ -53,7 +53,7 @@ echo $form->labelEx($model,'flasttime', array('class' => 'control-label'));
 echo '<div class="controls">';
 $this->widget('CJuiDateTimePicker', array(
 		'model' => $model,
-		'attribute' => 'flasttime',
+		'attribute' => 'flasttime1',
 		'mode'=>'datetime',
 		'options' => array(
 			'dateFormat' => 'yy-mm-dd'
@@ -68,7 +68,7 @@ echo $form->labelEx($model,'frolltime', array('class' => 'control-label'));
 echo '<div class="controls">';
 $this->widget('CJuiDateTimePicker', array(
 		'model' => $model,
-		'attribute' => 'frolltime',
+		'attribute' => 'frolltime1',
 		'mode'=>'datetime',
 		'options' => array(
 			'dateFormat' => 'yy-mm-dd'
@@ -82,7 +82,7 @@ echo $form->labelEx($model,'fpltime', array('class' => 'control-label'));
 echo '<div class="controls">';
 $this->widget('CJuiDateTimePicker', array(
 		'model' => $model,
-		'attribute' => 'fpltime',
+		'attribute' => 'fpltime1',
 		'mode'=>'datetime',
 		'options' => array(
 			'dateFormat' => 'yy-mm-dd'
@@ -95,7 +95,7 @@ echo $form->labelEx($model,'frealtime', array('class' => 'control-label'));
 echo '<div class="controls">';
 $this->widget('CJuiDateTimePicker', array(
 		'model' => $model,
-		'attribute' => 'frealtime',
+		'attribute' => 'frealtime1',
 		'mode'=>'datetime',
 		'options' => array(
 			'dateFormat' => 'yy-mm-dd'

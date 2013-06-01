@@ -30,7 +30,7 @@
                 <div class="infobox infobox-green">
                     <div class="infobox-icon"><i class="icon-bar-chart"></i></div>
                     <div class="infobox-data">
-                        <span class="infobox-data-number">93.2%</span>
+                        <span class="infobox-data-number" id="loom_effect_month"></span>
                         <span class="infobox-content">本月效率</span>
                     </div>
                     <div class="stat stat-success">8%</div>
@@ -40,7 +40,7 @@
                 <div class="infobox infobox-purple">
                     <div class="infobox-icon"><i class="icon-bar-chart"></i></div>
                     <div class="infobox-data">
-                        <span class="infobox-data-number">98.5%</span>
+                        <span class="infobox-data-number" id="loom_effect_day"></span>
                         <span class="infobox-content">本日效率</span>
                     </div>
                     {*<div class="badge badge-success"></div>*}
@@ -49,7 +49,7 @@
                 <div class="infobox infobox-orange2">
                     <div class="infobox-icon"><i class="icon-bar-chart"></i></div>
                     <div class="infobox-data">
-                        <span class="infobox-data-number">96.5%</span>
+                        <span class="infobox-data-number">--</span>
                         <span class="infobox-content">本班效率</span>
                     </div>
                     <div class="stat stat-important">4%</div>
@@ -58,7 +58,7 @@
                 <div class="infobox infobox-blue">
                     <div class="infobox-icon"><i class="icon-cogs"></i></div>
                     <div class="infobox-data">
-                        <span class="infobox-data-number">589 </span>
+                        <span class="infobox-data-number" id="loom_rpm_month"></span>
                         <span class="infobox-content">本月平均转速(转/分)</span>
                     </div>
                     <div class="stat stat-success">8%</div>
@@ -66,7 +66,7 @@
                 <div class="infobox infobox-blue">
                     <div class="infobox-icon"><i class="icon-cogs"></i></div>
                     <div class="infobox-data">
-                        <span class="infobox-data-number">593 rpm</span>
+                        <span class="infobox-data-number" id="loom_rpm_day"></span>
                         <span class="infobox-content">本日平均转速(转/分)</span>
                     </div>
                     <div class="stat stat-success">8%</div>
@@ -75,7 +75,7 @@
                 <div class="infobox infobox-blue">
                     <div class="infobox-icon"><i class="icon-cogs"></i></div>
                     <div class="infobox-data">
-                        <span class="infobox-data-number">688 rpm</span>
+                        <span class="infobox-data-number">--</span>
                         <span class="infobox-content">本班平均转速(转/分)</span>
                     </div>
                     <div class="stat stat-success">8%</div>
@@ -88,7 +88,7 @@
                         <span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
                     </div>
                     <div class="infobox-data">
-                        <span class="infobox-data-number">567</span>
+                        <span class="infobox-data-number">--</span>
                         <span class="infobox-content">今日产量(单位：米)</span>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                         <span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
                     </div>
                     <div class="infobox-data">
-                        <span class="infobox-data-number">36,251</span>
+                        <span class="infobox-data-number">--</span>
                         <span class="infobox-content">本月产量(单位：米)</span>
                     </div>
                     <div class="badge badge-success">7.2% <i class="icon-arrow-up"></i></div>
@@ -113,7 +113,7 @@
                     </div>
 
                     <div class="infobox-data">
-                        <span class="infobox-text">234</span>
+                        <span class="infobox-text">--</span>
                         <span class="infobox-content"><span class="approx">~</span>总产量(单位：米)</span>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                 <div class="infobox infobox-small infobox-dark infobox-blue2">
 
                     <div class="infobox-data">
-                        <span class="infobox-content" style="font-size:24px;"><b>456</b></span>
+                        <span class="infobox-content" style="font-size:24px;"><b id="loom_total_num"></b></span>
                         <br />
                         <span class="infobox-content">全部织机</span>
                     </div>
@@ -133,7 +133,7 @@
 
                 <div class="infobox infobox-small infobox-dark infobox-green">
                     <div class="infobox-data">
-                        <span class="infobox-content" style="font-size:24px;"><b>200</b></span>
+                        <span class="infobox-content" style="font-size:24px;"><b id="loom_run_num"></b></span>
                         <br />
                         <span class="infobox-content">运转织机</span>
                     </div>
@@ -141,7 +141,7 @@
 
                 <div class="infobox infobox-small infobox-dark infobox-red">
                     <div class="infobox-data">
-                        <span class="infobox-content" style="font-size:24px;"><b>32</b></span>
+                        <span class="infobox-content" style="font-size:24px;"><b id="loom_fault_num">32</b></span>
                         <br />
                         <span class="infobox-content">停台</span>
                     </div>
@@ -149,7 +149,7 @@
 
                 <div class="infobox infobox-small infobox-dark infobox-orange2">
                     <div class="infobox-data">
-                        <span class="infobox-content" style="font-size:24px;"><b>32</b></span>
+                        <span class="infobox-content" style="font-size:24px;"><b id="loom_stop_num"></b></span>
                         <br />
                         <span class="infobox-content">离线</span>
                     </div>
