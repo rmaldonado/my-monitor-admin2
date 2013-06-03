@@ -134,7 +134,7 @@
                     </div>
 
 
-                    <div class="row-form">
+                    {*<div class="row-form">
                         <table class="table">
                             <tr><td colspan="6"></td></tr>
                             <tr>
@@ -154,7 +154,7 @@
                                 <td><span style="min-width: 36px;" class="label label-info">98% </span></td>                                     
                             </tr>
                         </table>                                        
-                    </div>
+                    </div>*}
                 </div>
             </div>            
         </div>

@@ -74,7 +74,7 @@ class SiteController extends LoomController {
             $month_start = strtotime(date("Y-m-d", $month_start));
 
             $c = array(
-                'select' => 'AVG(fpowersec) AS fpowersec, AVG(frunsec) AS frunsec, AVG(frpmnum) AS frpmnum',
+                'select' => 'AVG(fpowersec) AS fpowersec, AVG(frunsec) AS frunsec, AVG(frpmnum) AS frpmnum, SUM(frpmnum) AS frlength',
                 'condition' => "fhourid>:start",
                 //'order' => 't.fid'
             );
@@ -96,6 +96,12 @@ class SiteController extends LoomController {
             $a['rpm_week'] = $week['frpmnum'] == null ? '-' : $week['frpmnum'];
             $a['rpm_month'] = $month['frpmnum'] == null ? '-' : $month['frpmnum'];
 
+            $rollinfo = Rollinfo::model()->find();
+            $fdensity = $rollinfo->fweft->fdensity;
+
+            $a['output_day'] = $day['frlength'] > 0 ? round(($day['frlength']/$fdensity), 2)  : '-';
+            $a['output_week'] = $week['frlength'] > 0 ? round(($week['frlength']/$fdensity), 2)  : '-';
+            $a['output_month'] = $month['frlength'] > 0 ? round(($month['frlength']/$fdensity), 2)  : '-';            
 
         echo CJSON::encode($a);
     }

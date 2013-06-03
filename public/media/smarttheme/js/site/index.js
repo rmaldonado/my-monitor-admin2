@@ -11,6 +11,8 @@ $(function() {
                 $('#loom_effect_day').html(data['effect_day']);
                 $('#loom_rpm_month').html(data['rpm_month']);
                 $('#loom_rpm_day').html(data['rpm_day']);
+                $('#loom_output_month').html(data['output_month']);
+                $('#loom_output_day').html(data['output_day']);                
             };
         }, 'json');
     }
