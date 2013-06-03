@@ -88,7 +88,7 @@
                         <span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
                     </div>
                     <div class="infobox-data">
-                        <span class="infobox-data-number">--</span>
+                        <span class="infobox-data-number" id="loom_output_day">--</span>
                         <span class="infobox-content">今日产量(单位：米)</span>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                         <span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
                     </div>
                     <div class="infobox-data">
-                        <span class="infobox-data-number">--</span>
+                        <span class="infobox-data-number" id="loom_output_month">--</span>
                         <span class="infobox-content">本月产量(单位：米)</span>
                     </div>
                     <div class="badge badge-success">7.2% <i class="icon-arrow-up"></i></div>
